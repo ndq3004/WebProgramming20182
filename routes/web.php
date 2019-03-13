@@ -17,11 +17,7 @@ Route::get('/', function () {
 });
 Route::get('ngoc', function () {
 	$josnArr = array(
-		array("quan" => "ngoc"),
-		array("quan" => "ngoc"),
-		array("quan" => "quan"),
-		array("quan" => "quan"),
-		array("quan" => "quan")
+
 	);
 	return json_encode($josnArr);
 });
