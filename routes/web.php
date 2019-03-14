@@ -26,3 +26,24 @@ Route::get('db', function () {
 	return json_encode($dbQ);
 });
 Route::post("getData", "UserController@postData");
+
+
+/*
+* Create by Quan
+*/
+//get view
+Route::get("login", function(){
+	return File::get(public_path() . '/views/login.html'); 
+});
+
+Route::get("register", function(){
+	return File::get(public_path() . '/views/register.html'); 
+});
+
+Route::get("userAdmin", function(){
+	return File::get(public_path() . '/views/Users.html'); 
+});
+
+Route::get("courseAdmin", function(){
+	return File::get(public_path() . '/views/Courses.html'); 
+});
