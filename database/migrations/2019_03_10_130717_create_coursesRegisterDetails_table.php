@@ -15,7 +15,6 @@ class CreateCoursesRegisterDetailsTable extends Migration
     {
         Schema::create('courseRegisterDetails', function (Blueprint $table) {
             $table->increments('id');
-            
             $table->timestamps();
         });
     }

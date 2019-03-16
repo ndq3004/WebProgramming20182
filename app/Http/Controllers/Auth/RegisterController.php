@@ -6,6 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Hash;
 
 class RegisterController extends Controller
 {
@@ -67,5 +68,33 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+    public function postSingin(Request $request)
+    {
+    $validatedData = $request->validate([
+        'firstname' => 'required',
+        'lastname' => 'required',
+        'email' => 'required|email|unique:users,email',
+        'password' => 'required|min:8',
+        'confirmPassword' => 'required|same:password',
+    ],[
+        'firstname'=>'Vui lòng nhập tên đăng nhập',
+        'lastname'=>'Vui lòng nhập tên đăng nhập',
+        'email.required'=>'Vui lòng nhập email',
+        'email.email'=>'Không đúng định dạng email',
+        'email.unique'=>'Email đã có người sử dụng',
+        'password.required'=>'Vui lòng nhập mật khẩu',
+        'password.min'=>'Mật khẩu ít nhất 6 ký tự',
+        'confirmpassword.required'=>'Vui lòng nhập lại mật khẩu',
+        'confirmpassword.same'=>'Mật khẩu không giống nhau'
+
+    ]);
+    $user = new User();
+    $user->firstname=$request->firstname;
+    $user->lastname=$request->lastname; 
+    $user->email=$request->email;
+    $user->password=Hash::make($request->password);
+    $user->save();
+    return redirect()->back()->with('thanhcong','Tạo tài khoản thành công');
     }
 }
