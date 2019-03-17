@@ -12,21 +12,18 @@
 */
 
 Route::get('/', function () {
-    // return view('register');
-    return File::get(public_path() . '/demo.html');
+     // return view('login');
+    return File::get(public_path() . '/views/login.html');
 });
-Route::get('ngoc', function () {
-	$josnArr = array(
-		array("quan" => "ngoc"),
-		array("quan" => "ngoc"),
-		array("quan" => "quan"),
-		array("quan" => "quan"),
-		array("quan" => "quan")
-	);
-	return json_encode($josnArr);
+
+Route::get('register', function () {
+     // return view('login');
+    return File::get(public_path() . '/views/registerTest.html');
 });
+
 Route::get('db', function () {
 	$dbQ = DB::table("users") -> get();
 	return json_encode($dbQ);
 });
-Route::post("getData", "UserController@postData");
+Route::post("register", "UserController@register")->name('register');
+Route::post('dangnhap','LoginController@dangnhap')->name('dangnhap');
