@@ -12,20 +12,15 @@
 */
 
 Route::get('/', function () {
-    // return view('register');
-    return File::get(public_path() . '/demo.html');
+     // return view('login');
+    return File::get(public_path() . '/views/login.html');
 });
-Route::get('ngoc', function () {
-	$josnArr = array(
-		"arr1", "arr2"
-	);
-	return json_encode($josnArr);
-});
+
 Route::get('db', function () {
 	$dbQ = DB::table("users") -> get();
 	return json_encode($dbQ);
 });
-Route::post("getData", "UserController@postData");
+Route::post('dangnhap','LoginController@dangnhap')->name('dangnhap');
 
 
 /*
