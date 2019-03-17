@@ -47,3 +47,6 @@ Route::get("userAdmin", function(){
 Route::get("courseAdmin", function(){
 	return File::get(public_path() . '/views/Courses.html'); 
 });
+Route::get('register',['as'=>'signin','uses'=>'RegisterController@postSignin']);
+
+Route::post('register',['as'=>'signin','uses'=>'RegisterController@postSignin']);
