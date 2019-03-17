@@ -14,11 +14,11 @@ class AddAttributeToCoursesRegisterDetailsTable extends Migration
     public function up()
     {
         Schema::table('courseRegisterDetails', function (Blueprint $table) {
-            //
             $table->string('user_Id');
             $table->string('course_Id');
             $table->string('UserName');
             $table->string('courseName');
+            $table->timestamp();
         });
     }
 
@@ -29,8 +29,6 @@ class AddAttributeToCoursesRegisterDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::table('courseRegisterDetails', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('courseRegisterDetails');
     }
 }
