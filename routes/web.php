@@ -14,6 +14,14 @@
 Route::get('/', function () {
     return view('index');
 });
+
+
+Route::get('db', function () {
+	$dbQ = DB::table("users") -> get();
+	return json_encode($dbQ);
+});
+Route::post('dangnhap','LoginController@dangnhap')->name('dangnhap');
+
 /*
 * Create by Quan
 */
