@@ -12,32 +12,23 @@
   <title>Admin - Login</title>
 
   <!-- Custom fonts for this template-->
-  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
   <!-- Custom styles for this template-->
-  <link href="../css/sb-admin.css" rel="stylesheet">
+  <link href="../public/css/sb-admin.css" rel="stylesheet">
 
 </head>
 
 <body class="bg-dark">
+  <nav class="navbar navbar-expand navbar-dark bg-dark static-top password"> <!-- header -->
 
-  <div class="container">
-     <nav class="navbar navbar-expand navbar-dark bg-dark static-top password"> <!-- header -->
-
-      <a class="navbar-brand mr-1" href="index.html">
-        <img src="../image/logo.png" alt="" class="logo">
-        <h6 class="nameweb"> Learning English</h6>
-      </a>
-
-    
-
-    <!-- Navbar Search -->
-   
-
-    <!-- Navbar -->
-    
-
+    <a class="navbar-brand mr-1" href="index.html">
+      <img src="../public/image/logo.png" alt="" class="logo">
+      <h6 class="nameweb"> Learning English</h6>
+    </a>
   </nav> <!-- heets header  -->
+  <div class="container">
+   
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Login</div>
       <div class="card-body">
@@ -73,11 +64,11 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="../../vendor/jquery/jquery.min.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../public/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 </body>
 

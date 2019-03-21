@@ -11,10 +11,10 @@
   <title>Admin - Register - public</title>
 
   <!-- Custom fonts for this template-->
-  <link href="../register_files/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../public/register_files/all.min.css" rel="stylesheet" type="text/css">
 
   <!-- Custom styles for this template-->
-  <link href="../register_files/sb-admin.css" rel="stylesheet">
+  <link href="../public/register_files/sb-admin.css" rel="stylesheet">
 
 </head>
 
