@@ -48,6 +48,24 @@
     </form>
 
     <!-- Navbar -->
+   <!--  @foreach($courses as $value)
+    {{$value->Courses}}<br>
+    @endforeach
+    {!!$courses->links()!!}
+
+    <ul class="pagination">
+      <li class="disabled"><span>«</span></li>
+      <li class="active"><span>1</span></li>
+      <li><a href="view?page=2" >2</a></li>
+      <li><a href="view?page=3">3</a></li>
+      <li><a href="view?page=2"rel="next">»</a></li>
+    </ul>
+
+    <ul class="pager">
+      <li><a href="http://yourhost/view?page=4" rel="prev">«</a>li>
+       <li><a href="http://yourhost/view?page=6"rel="next">»</a></li>
+    </ul>
+ -->
     <ul class="navbar-nav ml-auto ml-md-0">
       <li class="nav-item dropdown no-arrow mx-1">
         <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
