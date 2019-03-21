@@ -50,7 +50,7 @@
             @endforeach
           </div>
           @endif
-          @if(session::has('thanhcong'))
+          @if(Session::has('thanhcong'))
           <div class="alert alert-success">{{Session::get('thanhcong')}}</div>
           @endif
           <div class="form-group">
