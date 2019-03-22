@@ -10755,21 +10755,21 @@ h6.hotline {
 }
 nav.navbar.navbar-expand.navbar-dark.bg-dark.static-top.password img.logo {
       width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    position: absolute;
-    left: -176px;   
+      height: 100px;
+      border-radius: 50px;
+      /* position: absolute; */
+      left: -176px;
 }
 body.bg-dark {
   position: relative;
 }
 nav.navbar.navbar-expand.navbar-dark.bg-dark.static-top.password h6.nameweb{
       float: right;
-    padding-top: 30px;
-    padding-left: 19px;
-    font-size: 25px;
-    position: absolute;
-    left: -68px;
+      padding-top: 30px;
+      padding-left: 19px;
+      font-size: 25px;
+      /* position: absolute; */
+      left: -68px;
 }
 tbody tr:hover{
   color: red;

@@ -14,6 +14,14 @@
 Route::get('/', function () {
     return view('index');
 });
+
+
+Route::get('db', function () {
+	$dbQ = DB::table("users") -> get();
+	return json_encode($dbQ);
+});
+Route::post('dangnhap','LoginController@dangnhap')->name('dangnhap');
+
 /*
 * Create by Quan
 */
@@ -22,11 +30,11 @@ Route::get("login", function(){
 	return view('login');
 	// return File::get(public_path() . '/views/login.html'); 
 });
-
-Route::get("register", function(){
-	return view('register');
+Route::get('register',['as'=>'register','uses'=>'Auth\RegisterController@test']);
+// Route::get("register", function(){
+// 	return view('register');
 	// return File::get(public_path() . '/views/register.html'); 
-});
+// });
 
 Route::get("userAdmin", function(){
 	return view('Users');
@@ -47,3 +55,5 @@ Route::post('auth/login', 'UserController@login');
 Route::group(['middleware' => 'jwt.auth'], function () {
     Route::get('user-info', 'UserController@getUserInfo');
 });
+
+Route::get('courses',['as'=>'courses','uses'=>'UserController@courses']);
