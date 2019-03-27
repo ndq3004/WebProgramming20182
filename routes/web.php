@@ -31,10 +31,10 @@ Route::get("login", function(){
 	// return File::get(public_path() . '/views/login.html'); 
 });
 Route::get('register',['as'=>'register','uses'=>'Auth\RegisterController@test']);
-// Route::get("register", function(){
-// 	return view('register');
+Route::get("register", function(){
+	return view('register');
 	// return File::get(public_path() . '/views/register.html'); 
-// });
+});
 
 Route::get("userAdmin", function(){
 	return view('Users');
