@@ -15,7 +15,8 @@ class AdminController extends Controller
     	return view('index');
     }
     public function user(){
-    	return view('users');
+    	$users = User::select()->get();
+        return view('users',['users'=>$users]);
     }
     public function course(){
     	return view('course');
