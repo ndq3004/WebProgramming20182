@@ -55,3 +55,10 @@ Route::post('auth/login', 'UserController@login');
 Route::group(['middleware' => 'jwt.auth'], function () {
     Route::get('user-info', 'UserController@getUserInfo');
 });
+Route::get('/profile', function(){
+	return view("userprofile");
+	// return File::get(public_path() . '/views/profile.blade.php');
+});
+Route::get('/index', function(){
+	return view("userindex");
+});
