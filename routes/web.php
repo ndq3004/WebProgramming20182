@@ -56,4 +56,12 @@ Route::group(['middleware' => 'jwt.auth'], function () {
     Route::get('user-info', 'UserController@getUserInfo');
 });
 
-Route::get('courses',['as'=>'courses','uses'=>'UserController@courses']);
+
+
+//Route Admin
+Route::get('index',['as'=>'index','uses'=>'AdminController@index']);
+Route::get('user',['as'=>'user','uses'=>'AdminController@user']);
+Route::get('course',['as'=>'course','uses'=>'AdminController@course']);
+
+
+

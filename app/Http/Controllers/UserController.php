@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use JWTAuth;
 use JWTAuthException;
+use App\Course;
 
 
 class UserController extends Controller
@@ -50,11 +51,15 @@ class UserController extends Controller
         $user = JWTAuth::toUser($request->token);
         return response()->json(['result' => $user]);
     }
-    public function cources(){
+    // public function cources(){
 
-        $cources = cources::paginate(10);
+    //     $cources = cources::paginate(10);
 
-        return view('Courses',['courses'=>$courses]);
+    //     return view('Courses',['courses'=>$courses]);
     }
+    public function Courses(){
+        return view('Courses');
+    }
+   
 
 }

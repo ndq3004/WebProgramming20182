@@ -233,23 +233,15 @@
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>STT</th>
-                    <th>Họ Tên</th>
-                    <th>Email</th>                    
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Age</th>
+                    <th>Start date</th>
+                    <th>Salary</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <?php 
-                    $stt =1;
-                  ?>
-                  @foreach($users as $us)
-                  <tr>
-                    <td>{{$stt++}}</td>
-                    <td>{{$us->name}}</td>
-                    <td>{{$us->email}}</td>                    
-                  </tr>
-                  @endforeach
-                </tbody>
+                
               </table>
             </div>
           </div>
