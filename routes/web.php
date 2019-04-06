@@ -30,7 +30,7 @@ Route::get("login", function(){
 	return view('login');
 	// return File::get(public_path() . '/views/login.html'); 
 });
-
+Route::get('register',['as'=>'register','uses'=>'Auth\RegisterController@test']);
 Route::get("register", function(){
 	return view('register');
 	// return File::get(public_path() . '/views/register.html'); 
@@ -55,6 +55,7 @@ Route::post('auth/login', 'UserController@login');
 Route::group(['middleware' => 'jwt.auth'], function () {
     Route::get('user-info', 'UserController@getUserInfo');
 });
+
 Route::get('/profile', function(){
 	return view("userprofile");
 	// return File::get(public_path() . '/views/profile.blade.php');
@@ -62,3 +63,6 @@ Route::get('/profile', function(){
 Route::get('/index', function(){
 	return view("userindex");
 });
+
+
+Route::get('courses',['as'=>'courses','uses'=>'UserController@courses']);

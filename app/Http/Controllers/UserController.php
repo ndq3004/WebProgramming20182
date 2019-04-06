@@ -51,4 +51,11 @@ class UserController extends Controller
         return response()->json(['result' => $user]);
     }
 
+    public function cources(){
+
+        $cources = cources::paginate(10);
+
+        return view('Courses',['courses'=>$courses]);
+    }
+
 }
