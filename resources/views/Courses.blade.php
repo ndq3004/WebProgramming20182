@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin - Home</title>
+  <title>SB Admin - Courses</title>
 
   <!-- Custom fonts for this template-->
   <link href="../public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -48,6 +48,24 @@
     </form>
 
     <!-- Navbar -->
+   <!--  @foreach($courses as $value)
+    {{$value->Courses}}<br>
+    @endforeach
+    {!!$courses->links()!!}
+
+    <ul class="pagination">
+      <li class="disabled"><span>«</span></li>
+      <li class="active"><span>1</span></li>
+      <li><a href="view?page=2" >2</a></li>
+      <li><a href="view?page=3">3</a></li>
+      <li><a href="view?page=2"rel="next">»</a></li>
+    </ul>
+
+    <ul class="pager">
+      <li><a href="http://yourhost/view?page=4" rel="prev">«</a>li>
+       <li><a href="http://yourhost/view?page=6"rel="next">»</a></li>
+    </ul>
+ -->
     <ul class="navbar-nav ml-auto ml-md-0">
       <li class="nav-item dropdown no-arrow mx-1">
         <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -120,12 +138,12 @@
           <span>Charts</span></a>
       </li> -->
       <li class="nav-item">
-        <a class="nav-link" href="Courses.html">
+        <a class="nav-link" href="/courseAdmin">
           <i class="fas fa-book"></i>
           <span>Courses</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="Users.html">
+        <a class="nav-link" href="/userAdmin">
           <i class="fas fa-user"></i>
           <span>Users</span></a>
       </li>
@@ -223,32 +241,31 @@
         </div> -->
 
         <!-- DataTables Example -->
-        
         <div class="card mb-3">
           <div class="card-header">
-            <i class="fas fa-table"></i>
+            <i class="fas fa-book"></i>
             Courses</div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
+                    <th>Courses</th>
+                    <th>Class</th>
+                    <th>Content</th>
+                    <th>Teacher</th>
                     <th>Start date</th>
-                    <th>Salary</th>
+                    <th>Money</th>
                   </tr>
                 </thead>
                 <tfoot>
                   <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
+                    <th>Courses</th>
+                    <th>Class</th>
+                    <th>Content</th>
+                    <th>Teacher</th>
                     <th>Start date</th>
-                    <th>Salary</th>
+                    <th>Money</th>
                   </tr>
                 </tfoot>
                 <tbody>
