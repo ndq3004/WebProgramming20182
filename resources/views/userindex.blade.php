@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
 
@@ -8,17 +9,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
-  <title>SB Admin - Home</title>
+  <link rel="stylesheet" type="text/css" href="userindex.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <title>Home</title>
 
   <!-- Custom fonts for this template-->
-  <link href="../public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
   <!-- Page level plugin CSS-->
-  <link href="../public/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <link href="../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="../public/css/sb-admin.css" rel="stylesheet">
+  <link href="../css/sb-admin.css" rel="stylesheet">
 
 </head>
 
@@ -27,7 +32,7 @@
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top"> <!-- header -->
 
       <a class="navbar-brand mr-1" href="index.html">
-        <img src="../public/image/logo.png" alt="" class="logo">
+        <img src="../image/logo.png" alt="" class="logo">
         <h6 class="nameweb"> Learning English</h6>
       </a>
 
@@ -88,10 +93,7 @@
 
   </nav> <!-- heets header  -->
 
-  <div id="wrapper">
-
-    <!-- Sidebar -->
-    <ul class="sidebar navbar-nav">
+  
       <!-- <li class="nav-item active">
         <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -119,29 +121,14 @@
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Charts</span></a>
       </li> -->
-      <li class="nav-item">
-        <a class="nav-link" href="Courses.html">
-          <i class="fas fa-book"></i>
-          <span>Courses</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="Users.html">
-          <i class="fas fa-user"></i>
-          <span>Users</span></a>
-      </li>
-    </ul>
+     
 
     <div id="content-wrapper">
 
       <div class="container-fluid">
 
         <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="#">Home</a>
-          </li>
-          <li class="breadcrumb-item active">Courses</li>
-        </ol>
+        
 
         <!-- Icon Cards-->
         <!-- <div class="row">
@@ -225,53 +212,122 @@
         <!-- DataTables Example -->
         
         <div class="card mb-3">
-          <div class="card-header">
-            <i class="fas fa-table"></i>
-            Courses</div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                  <tr>
-                    <th>STT</th>
-                    <th>Họ Tên</th>
-                    <th>Email</th>                    
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php 
-                    $stt =1;
-                  ?>
-                  @foreach($users as $us)
-                  <tr>
-                    <td>{{$stt++}}</td>
-                    <td>{{$us->name}}</td>
-                    <td>{{$us->email}}</td>                    
-                  </tr>
-                  @endforeach
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          
+           <h1 style="text-align:center;" ;style="color:red;" >Các khóa học cơ bản</h1>  
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+      <li data-target="#myCarousel" data-slide-to="5"></li>
+      <li data-target="#myCarousel" data-slide-to="6"></li>
+    </ul>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../image/logo.jpg" alt="Level 0"  width="1400" height="500">
+         
+        <div class="carousel-caption">
+        <h3 style="color: black;">Khóa học cơ bản</h3>
+        <p style="color: black;"> Cho người mới bắt đầu</p>
+      </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../image/2.jpg" alt="Level 1"  width="1400" height="500">
+        <div class="carousel-caption">
+        <h3 style="color: black;">Khóa học chuyên sâu</h3>
+        </div>
+      </div>
+    
+      <div class="carousel-item">
+        <img src="../image/3.jpg" alt="Level 2"  width="1400" height="500">
+        <div class="carousel-caption">
+        <h3 style="color: black;">Khóa học luyện nghe</h3>
+       </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="../image/4.jpg" alt="Level 3"  width="1400" height="500">
+        <div class="carousel-caption">
+        <h3 style="color: black;">Khóa học luyện viết</h3>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="../image/5.jpg" alt="Level 4"  width="1400" height="500">
+        <div class="carousel-caption">
+        <h3 style="color: black;">Khóa học luyện phát âm</h3>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="../image/6.jpg" alt="Level 5"  width="1400" height="500">
+        <div class="carousel-caption">
+        <h3 style="color: black;">Khóa học luyện từ vựng</h3>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="../image/7.jpg" alt="Level 6"  width="1400" height="500">
+        <div class="carousel-caption">
+        <h3 style="color: black;">Khóa học trả phí</h3>
+        </div>
+      </div>
+
+    </div>
+
+   
+         <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+          
         </div>
 
       </div>
+      <div class="detail" style="text-align: center;">
+        <h2 style="color: red;">Đội ngũ giảng viên giảng dạy</h2>
+        
       <!-- /.container-fluid -->
 
       <!-- Sticky Footer -->
-      <footer class="sticky-footer">
+      <!-- Footer -->
+
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    
+    <!-- Copyright -->
+    <div class="giangvien" style="background-color: lightblue;">
+      <ul>
+        <li> TS. Nguyến Đình Quân</li>
+        <li> TS. Nguyến Thị Hường</li>
+        <li> TS. Hoàng Phương Loan</li>
+        <li> TS. Bùi Thị Mến</li>
+      </ul>
+    </div>
+    
+<div id="footer" style="background-color: pink;">
+
+<h6 style="display: block;"> Learning English</h6>
+<h6 style ="display: block;">Hotline: 0989999999</h6>
+</div>
+
+<!-- <footer class="sticky-footer">
         <a class="navbar-brand mr-1" href="index.html">
           <img src="../image/logo.png" alt="" class="logo">
           <h6 class="nameweb"> Learning English</h6>
         </a>
         <h6 class="hotline">Hotline: 0989999999</h6>
-        <!-- <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright © Your Website 2019</span>
-          </div>
-        </div> -->
-      </footer>
+  </footer> -->
+  <!-- Footer -->
 
     </div>
     <!-- /.content-wrapper -->
@@ -304,23 +360,23 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="../public/vendor/jquery/jquery.min.js"></script>
-  <script src="../public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="../public/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Page level plugin JavaScript-->
-  <script src="../public/vendor/chart.js/Chart.min.js"></script>
-  <script src="../public/vendor/datatables/jquery.dataTables.js"></script>
-  <script src="../public/vendor/datatables/dataTables.bootstrap4.js"></script>
+  <script src="../vendor/chart.js/Chart.min.js"></script>
+  <script src="../vendor/datatables/jquery.dataTables.js"></script>
+  <script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="../public/js/sb-admin.min.js"></script>
+  <script src="../js/sb-admin.min.js"></script>
 
   <!-- Demo scripts for this page-->
-  <script src="../public/js/demo/datatables-demo.js"></script>
-  <script src="../public/js/demo/chart-area-demo.js"></script>
+  <script src="../js/demo/datatables-demo.js"></script>
+  <script src="../js/demo/chart-area-demo.js"></script>
 
 </body>
 
