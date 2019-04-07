@@ -12,13 +12,13 @@
   <title>SB Admin - Home</title>
 
   <!-- Custom fonts for this template-->
-  <link href="../public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
   <!-- Page level plugin CSS-->
-  <link href="../public/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <link href="../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="../public/css/sb-admin.css" rel="stylesheet">
+  <link href="../css/sb-admin.css" rel="stylesheet">
 
 </head>
 
@@ -27,7 +27,7 @@
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top"> <!-- header -->
 
       <a class="navbar-brand mr-1" href="index.html">
-        <img src="../public/image/logo.png" alt="" class="logo">
+        <img src="../image/logo.png" alt="" class="logo">
         <h6 class="nameweb"> Learning English</h6>
       </a>
 
@@ -233,23 +233,15 @@
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>STT</th>
-                    <th>Họ Tên</th>
-                    <th>Email</th>                    
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Age</th>
+                    <th>Start date</th>
+                    <th>Salary</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <?php 
-                    $stt =1;
-                  ?>
-                  @foreach($users as $us)
-                  <tr>
-                    <td>{{$stt++}}</td>
-                    <td>{{$us->name}}</td>
-                    <td>{{$us->email}}</td>                    
-                  </tr>
-                  @endforeach
-                </tbody>
+                
               </table>
             </div>
           </div>
@@ -304,23 +296,23 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="../public/vendor/jquery/jquery.min.js"></script>
-  <script src="../public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="../public/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Page level plugin JavaScript-->
-  <script src="../public/vendor/chart.js/Chart.min.js"></script>
-  <script src="../public/vendor/datatables/jquery.dataTables.js"></script>
-  <script src="../public/vendor/datatables/dataTables.bootstrap4.js"></script>
+  <script src="../vendor/chart.js/Chart.min.js"></script>
+  <script src="../vendor/datatables/jquery.dataTables.js"></script>
+  <script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="../public/js/sb-admin.min.js"></script>
+  <script src="../js/sb-admin.min.js"></script>
 
   <!-- Demo scripts for this page-->
-  <script src="../public/js/demo/datatables-demo.js"></script>
-  <script src="../public/js/demo/chart-area-demo.js"></script>
+  <script src="../js/demo/datatables-demo.js"></script>
+  <script src="../js/demo/chart-area-demo.js"></script>
 
 </body>
 
