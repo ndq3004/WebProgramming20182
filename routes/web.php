@@ -23,9 +23,8 @@ Route::get('db', function () {
 Route::post('dangnhap','LoginController@dangnhap')->name('dangnhap');
 
 /*
-* Create by Quan
+* Get view 
 */
-//get view
 Route::get("login", function(){
 	return view('login');
 	// return File::get(public_path() . '/views/login.html'); 
@@ -38,12 +37,10 @@ Route::get("register", function(){
 
 Route::get("userAdmin", function(){
 	return view('Users');
-	// return File::get(public_path() . '/views/Users.html'); 
 });
 
 Route::get("courseAdmin", function(){
 	return view('Courses');
-	// return File::get(public_path() . '/views/Courses.html'); 
 });
 
 /*
@@ -57,11 +54,17 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 });
 
 
+Route::get('/profile', function(){
+	return view("userprofile");
+	// return File::get(public_path() . '/views/profile.blade.php');
+});
+Route::get('/index', function(){
+	return view("userindex");
+});
 
+//Route::get('courses',['as'=>'courses','uses'=>'UserController@courses']);
 //Route Admin
 Route::get('index',['as'=>'index','uses'=>'AdminController@index']);
 Route::get('user',['as'=>'user','uses'=>'AdminController@user']);
 Route::get('course',['as'=>'course','uses'=>'AdminController@course']);
-
-
 
