@@ -14,11 +14,11 @@ class AdminController extends Controller
     public function index(){
     	return view('index');
     }
-    public function user(){
+    public function users(){
     	$users = User::select()->get();
-        return view('users',['users'=>$users]);
+        return view('Users',['users'=>$users]);
     }
-    public function course(){
+    public function courses(){
     	return view('course');
     }
 }

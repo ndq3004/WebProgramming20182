@@ -85,7 +85,7 @@
           <a class="btn btn-primary btn-block" href="login.html">Register</a>
         </form>
         <div class="text-center">
-          <a class="d-block small mt-3" href="file:///D:/web_btl/WebProgramming20182/public/views/login.html">Login Page</a>
+          <a class="d-block small mt-3" href="/views/login.blade.php">Login Page</a>
           <a class="d-block small" href="file:///D:/web_btl/WebProgramming20182/public/views/forgot-password.html">Forgot Password?</a>
         </div>
       </div>
@@ -93,8 +93,8 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="/views/register_files/jquery.min.js.tải xuống"></script>
-  <script src="/views/register_files/bootstrap.bundle.min.js.tải xuống"></script>
+  <script src="/views/register_files/jquery.min.js"></script>
+  <script src="/views/register_files/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
   <script src="/views/register_files/jquery.easing.min.js.tải xuống"></script>

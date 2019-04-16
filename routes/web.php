@@ -35,9 +35,7 @@ Route::get("register", function(){
 	// return File::get(public_path() . '/views/register.html'); 
 });
 
-Route::get("userAdmin", function(){
-	return view('Users');
-});
+Route::get("userAdmin", 'AdminController@users');
 
 Route::get("courseAdmin", function(){
 	return view('Courses');
@@ -68,3 +66,7 @@ Route::get('index',['as'=>'index','uses'=>'AdminController@index']);
 Route::get('user',['as'=>'user','uses'=>'AdminController@user']);
 Route::get('course',['as'=>'course','uses'=>'AdminController@course']);
 
+/*
+* Generate data
+*/
+Route::get('gendata', 'GenerateDataController@handleDatabase');
