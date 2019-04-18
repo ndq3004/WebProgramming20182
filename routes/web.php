@@ -59,7 +59,10 @@ Route::get('/profile', function(){
 	// return File::get(public_path() . '/views/profile.blade.php');
 });
 Route::get('/home', function(){
-	return view("test");
+	return view("testhome");
+});
+Route::get('/userindex', function(){
+	return view("userindex");
 });
 
 //Route::get('courses',['as'=>'courses','uses'=>'UserController@courses']);
