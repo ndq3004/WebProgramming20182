@@ -12,21 +12,33 @@
 */
 
 Route::get('/', function () {
-    // return view('register');
-    return File::get(public_path() . '/demo.html');
+    return view('welcome');
 });
-Route::get('ngoc', function () {
-	$josnArr = array(
-		array("quan" => "ngoc"),
-		array("quan" => "ngoc"),
-		array("quan" => "quan"),
-		array("quan" => "quan"),
-		array("quan" => "quan")
-	);
-	return json_encode($josnArr);
+
+/*
+* Get view login, register
+*/
+Route::get('login', 'UserController@viewLogin');
+Route::get('register', 'UserController@viewRegister');
+/*
+* signin and signup using JWT 
+*/
+Route::post('auth/register', 'UserController@register');
+Route::post('auth/login', 'UserController@login');
+
+Route::group(['middleware' => 'jwt.auth'], function () {
+    Route::get('user-info', 'UserController@getUserInfo');
 });
-Route::get('db', function () {
-	$dbQ = DB::table("users") -> get();
-	return json_encode($dbQ);
-});
-Route::post("getData", "UserController@postData");
+
+
+/*
+* Get admin view and data
+*/
+Route::get('index',['as'=>'index','uses'=>'AdminController@index']);
+Route::get('courseAdmin',['as'=>'course','uses'=>'AdminController@course']);
+
+Route::get("userAdmin", 'AdminController@users');
+/*
+* Generate data
+*/
+Route::get('gendata', 'GenerateDataController@handleDatabase');
