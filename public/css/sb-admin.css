@@ -10774,3 +10774,6 @@ nav.navbar.navbar-expand.navbar-dark.bg-dark.static-top.password h6.nameweb{
 tbody tr:hover{
   color: red;
 }
+.card.card-register.mx-auto.mt-5 {
+    top: 100px;
+}

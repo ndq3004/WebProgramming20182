@@ -18,19 +18,22 @@ class UserController extends Controller
     }
    
     public function register(Request $request){
+        //console log==========
         $out = new \Symfony\Component\Console\Output\ConsoleOutput();
             $out->writeln($request->name);
+        //===================
         $user = $this->user->create([
-          'name' => $request->get('name'),
+          'name' => $request->get('name'),  
           'email' => $request->get('email'),
           'password' => bcrypt($request->get('password'))
         ]);
 
-        return response()->json([
-            'status'=> 200,
-            'message'=> 'User created successfully',
-            'data'=>$user
-        ]);
+        // return response()->json([
+        //     'status'=> 200,
+        //     'message'=> 'User created successfully',
+        //     'data'=>$user
+        // ]);
+        return view('Users', ['users'=>$user]);
     }
     
     public function login(Request $request){
@@ -56,6 +59,11 @@ class UserController extends Controller
         $cources = cources::paginate(10);
 
         return view('Courses',['courses'=>$courses]);
+    }
+
+    public function allUser(){
+        $users = DB::table('user')->get();
+        return view("Users", ['users'=>$users]); 
     }
 
 }
