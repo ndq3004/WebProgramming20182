@@ -12,35 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
-
-
-Route::get('db', function () {
-	$dbQ = DB::table("users") -> get();
-	return json_encode($dbQ);
-});
-Route::post('dangnhap','LoginController@dangnhap')->name('dangnhap');
 
 /*
-* Get view 
+* Get view login, register
 */
-Route::get("login", function(){
-	return view('login');
-	// return File::get(public_path() . '/views/login.html'); 
-});
-Route::get('register',['as'=>'register','uses'=>'Auth\RegisterController@test']);
-Route::get("register", function(){
-	return view('register');
-	// return File::get(public_path() . '/views/register.html'); 
-});
-
-Route::get("userAdmin", 'AdminController@users');
-
-Route::get("courseAdmin", function(){
-	return view('Courses');
-});
-
+Route::get('login', 'UserController@viewLogin');
+Route::get('register', 'UserController@viewRegister');
 /*
 * signin and signup using JWT 
 */
@@ -52,20 +31,13 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 });
 
 
-Route::get('/profile', function(){
-	return view("userprofile");
-	// return File::get(public_path() . '/views/profile.blade.php');
-});
-Route::get('/home', function(){
-	return view("test");
-});
-
-//Route::get('courses',['as'=>'courses','uses'=>'UserController@courses']);
-//Route Admin
+/*
+* Get admin view and data
+*/
 Route::get('index',['as'=>'index','uses'=>'AdminController@index']);
-Route::get('user',['as'=>'user','uses'=>'AdminController@user']);
-Route::get('course',['as'=>'course','uses'=>'AdminController@course']);
+Route::get('courseAdmin',['as'=>'course','uses'=>'AdminController@course']);
 
+Route::get("userAdmin", 'AdminController@users');
 /*
 * Generate data
 */
