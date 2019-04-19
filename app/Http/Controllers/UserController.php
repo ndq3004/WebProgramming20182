@@ -17,6 +17,15 @@ class UserController extends Controller
     public function __construct(User $user){
         $this->user = $user;
     }
+
+    public function viewRegister(){
+     
+        return view('register');
+    }
+
+    public function viewLogin(){
+        return view('login');
+    }
    
     public function register(Request $request){
         $out = new \Symfony\Component\Console\Output\ConsoleOutput();
@@ -39,12 +48,16 @@ class UserController extends Controller
         $token = null;
         try {
            if (!$token = JWTAuth::attempt($credentials)) {
-            return response()->json(['invalid_email_or_password'], 422);
+               $res = json(['error' => ['reason' => 'invalid_email_or_password','status' => 422]]);
+            // return response()->json(['reason' => 'invalid_email_or_password','status' => 422]);
+            return redirect('login');
            }
         } catch (JWTAuthException $e) {
-            return response()->json(['failed_to_create_token'], 500);
+            // return response()->json(['error' => ['reason' => 'error!', 'status' => 500]]);
+            return redirect('login');
         }
-        return response()->json(compact('token'));
+        // return response()->json(compact('token'));
+        return redirect('login');
     }
 
     public function getUserInfo(Request $request){

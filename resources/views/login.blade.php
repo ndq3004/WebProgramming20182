@@ -12,10 +12,10 @@
   <title>Admin - Login</title>
 
   <!-- Custom fonts for this template-->
-  <link href="../public/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
   <!-- Custom styles for this template-->
-  <link href="../public/css/sb-admin.css" rel="stylesheet">
+  <link href="/css/sb-admin.css" rel="stylesheet">
 
 </head>
 
@@ -23,7 +23,7 @@
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top password"> <!-- header -->
 
     <a class="navbar-brand mr-1" href="index.html">
-      <img src="../public/image/logo.png" alt="" class="logo">
+      <img src="/image/logo.png" alt="" class="logo">
       <h6 class="nameweb"> Learning English</h6>
     </a>
   </nav> <!-- heets header  -->
@@ -32,9 +32,12 @@
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Login</div>
       <div class="card-body">
-        <form>
+        <form action="auth/login" method="post">
+          @if($error != null)
+          @endif
           <div class="form-group">
             <div class="form-label-group">
+              
               <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
               <label for="inputEmail">Email address</label>
             </div>
@@ -53,7 +56,7 @@
               </label>
             </div>
           </div>
-          <a class="btn btn-primary btn-block" href="index.html">Login</a>
+          <a type="submit" class="btn btn-primary btn-block">Login</a>
         </form>
         <div class="text-center">
           <a class="d-block small mt-3" href="register.html">Register an Account</a>
@@ -65,10 +68,10 @@
 
   <!-- Bootstrap core JavaScript-->
   <script src="../vendor/jquery/jquery.min.js"></script>
-  <script src="../public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="../public/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 </body>
 
