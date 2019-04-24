@@ -18,7 +18,7 @@
 <body>
 <div id="header">
 <div class="container_12"><div class="grid_6">
-  <div class="logo"><a target="_blank" href=""><image src="image/logo1.png" alt="logo" /></a></div>
+  <div class="logo"><a target="_blank" href=""><image src="image/logo3.jpg" alt="logo" /></a></div>
 </div>
 <div class="grid_6"><div class="search"> <form method="post" action="handler.php">
    <input name="textfield" type="text" class="colortext"  value="  Search" />
@@ -118,7 +118,7 @@
 </div>
 
 <div class="grid_5">
-
+<h4><u> Giới thiệu về trang web</u></h4>
 
 </div>
 <div class="clear"></div>
@@ -156,9 +156,9 @@ sau khi học</span></div>
 <div id="facebook">
 <div class="container_12">
 <div class="grid_3">
-<image src="image/10.png" alt="image" />
-</div><div class="grid_9"><image class="image3" src="image/f1.png" alt="image" /><image src="image/f2.png" class="image"  alt="image" /><image src="image/f3.png" class="image"  alt="image" /><image src="image/f4.png" class="image"  alt="image" /><image src="image/f5.png" class="image"  alt="image" /><image src="image/f6.png" class="image" alt="image" /><image src="image/f7.png" class="image" alt="image" /><image src="image/f8.png"  class="image" alt="image" /><image src="image/f9.png"  class="image" alt="image" /><image src="image/f10.png"  class="image" alt="image" /><image src="image/f11.png"  class="image" alt="image" /><image src="image/f4.png"  class="image" alt="image" /><image src="image/f5.png"  class="image" alt="image" /><image src="image/f6.png" class="image"  alt="image" /><image src="image/f7.png" class="image"  alt="image" /><image src="image/f8.png"  class="image" alt="image" /><image src="image/f9.png" class="image" alt="image" /><image src="image/f10.png"  class="image" alt="image" /></div>
-<div class="grid_12 fase"></div>
+<!-- <image src="image/10.png" alt="image" />
+</div><div class="grid_9"><image class="image3" src="image/f1.png" alt="image" /><image src="image/f2.png" class="image"  alt="image" /><image src="image/f3.png" class="image"  alt="image" /><image src="image/f4.png" class="image"  alt="image" /><image src="image/f5.png" class="image"  alt="image" /><image src="image/f6.png" class="image" alt="image" /><image src="image/f7.png" class="image" alt="image" /><image src="image/f8.png"  class="image" alt="image" /><image src="image/f9.png"  class="image" alt="image" /><image src="image/f10.png"  class="image" alt="image" /><image src="image/f11.png"  class="image" alt="image" /><image src="image/f4.png"  class="image" alt="image" /><image src="image/f5.png"  class="image" alt="image" /><image src="image/f6.png" class="image"  alt="image" /><image src="image/f7.png" class="image"  alt="image" /><image src="image/f8.png"  class="image" alt="image" /><image src="image/f9.png" class="image" alt="image" /><image src="image/f10.png"  class="image" alt="image" /></div> -->
+<!-- <div class="grid_12 fase"></div>
 <div class="grid_1"><image src="image/12.png" alt="image" /></div>
 <div class="grid_5"><p class="text11">When I was young I observed that nine out of every ten things I did were failures, so I did ten times more work.<br /><br /><strong>Dave Donovan, MEC Student</strong></p></div>
 <div class="grid_1"><image src="image/12.png" alt="image" /></div>
@@ -166,33 +166,17 @@ sau khi học</span></div>
 
 </div>
 
-</div>
+</div> -->
 <div id="line"><p class="line1"></p></div>
-<div id="footer"><div class="container_12"><div class="grid_6 "><div> <image class="logo2" src="image/13.png" alt="image" /></div>
-
-
-
-<div class="text12">© 2001-2011 All Rights Reserved</div></div>
+<div id="footer"><div class="container_12"><div class="grid_6 "><div> <image class="logo2" src="image/logo2.jpg" alt="image" /></div>
 
 
 <div class="grid_2">
-<div class="news">MEC News</div>
-<div class="blue"><a target="_blank" href="">Overview</a></div>
-<div class="blue"><a target="_blank" href="">Store</a></div>
-<div class="blue"><a target="_blank" href="">Hosting</a></div>
-<div class="blue"><a target="_blank" href="">Videos</a></div>
+<div class="news">Trụ sở </div>
+<div class="blue"><p>Đại học bách khoa Hà Nội</p></div>
 </div><div class="grid_2">
-<div class="news">Resources</div>
-<div class="blue"><a target="_blank" href="">Overview</a></div>
-<div class="blue"><a target="_blank" href="">Store</a></div>
-<div class="blue"><a target="_blank" href="">Hosting</a></div>
-<div class="blue"><a target="_blank" href="">Videos</a></div>
-</div><div class="grid_2">
-<div class="news">Contact Us</div>
-<div class="blue"><a target="_blank" href="">Support</a></div>
-<div class="blue"><a target="_blank" href="">FAQ</a></div>
-<div class="blue"><a target="_blank" href="">Forum</a></div>
-<div class="blue"><a target="_blank" href="">Privacy Policy</a></div></div>
+<div class="news">Hotline</div>
+<div class="blue"><p>19001236</p></div>
 </div></div></div>
 
 </body>

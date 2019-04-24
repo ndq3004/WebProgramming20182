@@ -31,9 +31,23 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 });
 
 
+Route::get('/profile', function(){
+	return view("userprofile");
+	// return File::get(public_path() . '/views/profile.blade.php');
+});
+Route::get('/home', function(){
+	return view("testhome");
+});
+Route::get('/userindex', function(){
+	return view("userindex");
+});
+
+//Route::get('courses',['as'=>'courses','uses'=>'UserController@courses']);
+//Route Admin
 /*
 * Get admin view and data
 */
+
 Route::get('index',['as'=>'index','uses'=>'AdminController@index']);
 Route::get('courseAdmin',['as'=>'course','uses'=>'AdminController@course']);
 
