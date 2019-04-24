@@ -42,3 +42,4 @@ Route::get("userAdmin", 'AdminController@users');
 * Generate data
 */
 Route::get('gendata', 'GenerateDataController@handleDatabase');
+Route::get('lienket', 'AdminController@user1');

@@ -32,19 +32,31 @@
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Login</div>
       <div class="card-body">
-        <form action="auth/login" method="post">
-          @if($error != null)
+          @if(count($errors) > 0)
+            @foreach($errors->all() as $err)
+            <div class="alert alert-danger">
+                {{ $err }}<br>
+            </div>
+            @endforeach
           @endif
+          @if (session('notice'))
+            <div class="alert alert-danger">
+                {{ session('notice') }}
+            </div>
+          @endif
+        <form action="auth/login" method="post">
+        
+
           <div class="form-group">
             <div class="form-label-group">
               
-              <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
+              <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
               <label for="inputEmail">Email address</label>
             </div>
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
+              <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="required">
               <label for="inputPassword">Password</label>
             </div>
           </div>
@@ -56,7 +68,7 @@
               </label>
             </div>
           </div>
-          <a type="submit" class="btn btn-primary btn-block">Login</a>
+          <input type="submit" class="btn btn-primary btn-block" value="Login">
         </form>
         <div class="text-center">
           <a class="d-block small mt-3" href="register.html">Register an Account</a>

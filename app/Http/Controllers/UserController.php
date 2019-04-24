@@ -44,20 +44,26 @@ class UserController extends Controller
     }
     
     public function login(Request $request){
+        $this->validate($request,[
+            'email'=>'required',
+            'password'=>'required|min:3|max:32'
+        ],[
+            'password.min'=>'Password không nhỏ hơn 3 kí tự',
+            'password.max'=>'Password không lớn hơn 3 kí tự'
+        ]);
         $credentials = $request->only('email', 'password');
         $token = null;
+
         try {
            if (!$token = JWTAuth::attempt($credentials)) {
-               $res = json(['error' => ['reason' => 'invalid_email_or_password','status' => 422]]);
-            // return response()->json(['reason' => 'invalid_email_or_password','status' => 422]);
-            return redirect('login');
+               $error = ['reason' => 'invalid_email_or_password','status' => 422];
+            return redirect('login')->with('notice','Sai tên tài khoản hoặc mật khẩu!');
            }
         } catch (JWTAuthException $e) {
-            // return response()->json(['error' => ['reason' => 'error!', 'status' => 500]]);
-            return redirect('login');
+            return redirect('login')->with('notice','Lỗi đăng nhập!');
         }
-        // return response()->json(compact('token'));
-        return redirect('login');
+        return response()->json(compact('token'));
+        // return redirect()->route('home', array('token'=>json(compact('token'))));
     }
 
     public function getUserInfo(Request $request){

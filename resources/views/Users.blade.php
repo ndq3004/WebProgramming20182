@@ -133,7 +133,7 @@
                     <th>Point</th>                  
                   </tr>
                 </thead>
-                
+          
                 @if($users)
                 <tbody>
                   <?php 

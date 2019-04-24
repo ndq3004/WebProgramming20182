@@ -21,5 +21,8 @@ class AdminController extends Controller
     	$users = User::select()->get();
         return view('Users',['users'=>$users]);
     }
-    
+    public function user1(){
+        $user = new User(); 
+        $user::user_role();
+    }
 }
