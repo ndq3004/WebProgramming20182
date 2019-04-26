@@ -59,7 +59,7 @@ Route::get('/profile', function(){
 	// return File::get(public_path() . '/views/profile.blade.php');
 });
 Route::get('/home', function(){
-	return view("testhome");
+	return view("test");
 });
 Route::get('/userindex', function(){
 	return view("userindex");
