@@ -10,6 +10,9 @@ class Course extends Model
     public $timestamps = 'false';
 
     public function User_course(){
-        return $this->belongsToMany('users','user_course', 'user_id', 'course_id');
+        return $this->belongsToMany('App\User','user_course', 'user_id', 'course_id');
+    }
+    public function examination(){
+        return $this->hasMany('App\Examination', 'course_id', 'course_id');
     }
 }
