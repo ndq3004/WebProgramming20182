@@ -31,4 +31,11 @@ class User extends Authenticatable
   
     public $timestamps = false;
 
+    public function user_role(){
+        return $this->belongsToMany('role','user_role', 'role_id', 'user_id');
+    }
+    public function user_course(){
+        return $this->belongsToMany('courses','user_course', 'course_id', 'user_id');
+    }
+
 }
