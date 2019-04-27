@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Shop</title>
+        <title>Thông tin người dùng</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
@@ -87,10 +87,10 @@
                                 <a href=""></a>
                             </li>
                             <li>
-                                <a href="">Giới thiệu</a>
+                                <a href="">Các khóa học miễn phí</a>
                             </li>
                             <li>
-                                <a href="">Địa chỉ</a>
+                                <a href="">Các khóa học trả phí</a>
                             </li>
                             
                             <li>
