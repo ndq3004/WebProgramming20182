@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Nguyen DInh QUan</title>
-</head>
-<body>
+@extends('welcome1')
 
-<script type="text/javascript" src="js/script.js"></script>
-</body>
-</html>
+@section('last')
+<p>Tao la quan</p>
+<form action="auth/login">
+    @if(1)
+    @endif
+</form>
+@endsection
