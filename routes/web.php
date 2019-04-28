@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return File::get(public_path() . '/views/landingPage.html');
 });
 
 /*
@@ -57,3 +57,5 @@ Route::get("userAdmin", 'AdminController@users');
 */
 Route::get('gendata', 'GenerateDataController@handleDatabase');
 Route::get('lienket', 'AdminController@user1');
+
+Route::get('getrole','UserController@GetRole');

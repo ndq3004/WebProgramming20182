@@ -18,7 +18,7 @@ class CreateExaminationTable extends Migration
             $table->increments('exam_id');
             $table->string('name');
             $table->string('level');
-            $table->string('numRegister');//so nguoi dang ki hoc
+            $table->string('numRegister')->default('0');//so nguoi dang ki hoc
             $table->string('numRate')->default('0');//số lượt đánh giá
             $table->string('avgRate')->default('0');//điểm đánh giá trung bình
             $table->string('course_id');

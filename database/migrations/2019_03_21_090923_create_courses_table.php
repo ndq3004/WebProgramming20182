@@ -20,7 +20,7 @@ class CreateCoursesTable extends Migration
             $table->string('discription');
             $table->string('link');
             $table->integer('number-lession');
-
+            $table->string('type');// basic, multichoise, video
         });
     }
 
