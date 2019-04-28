@@ -1,220 +1,133 @@
-
 <!DOCTYPE html>
-<html lang="vi">
-
-<head>
-
-  <meta charset="utf-8">
+<html>
+    <head>
+        <title>home</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="js/bootstrap.min.js">
+        <link rel="stylesheet" type="text/css" href="js/jquery-3.2.1.min.js">
+        <link rel="stylesheet" type="text/css" href="css/userprofile.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/specimen_stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="css/960.css">
+    <link rel="stylesheet" type="text/css" href="css/text.css">
+    <link rel="stylesheet" type="text/css" href="css/grid_12-825-55-15.css">
+   <script src="../js/easytabs.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="stylesheet" type="text/css" href="css/userindex.css">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  
-  <title>Home</title>
- <base href="{{asset('')}}">
-  <!-- Custom fonts for this template-->
-  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-  <!-- Page level plugin CSS-->
-  <link href="../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="../css/sb-admin.css" rel="stylesheet">
-
-</head>
-
-<body id="page-top">
-
-  <nav class="navbar navbar-expand navbar-dark bg-dark static-top"> <!-- header -->
-
-      <a class="navbar-brand mr-1" href="index.html">
-        <img src="../image/logo.png" alt="" class="logo">
-        <h6 class="nameweb"> Learning English</h6>
-      </a>
-
-    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-      <i class="fas fa-bars"></i>
-    </button>
-
-    <!-- Navbar Search -->
-    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-
-    <!-- Navbar -->
-    <ul class="navbar-nav ml-auto ml-md-0">
-      <li class="nav-item dropdown no-arrow mx-1">
-        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-bell fa-fw"></i>
-          <span class="badge badge-danger">9+</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown no-arrow mx-1">
-        <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-envelope fa-fw"></i>
-          <span class="badge badge-danger">7</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown no-arrow">
-        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-user-circle fa-fw"></i>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <a class="dropdown-item" href="#">Settings</a>
-          <a class="dropdown-item" href="#">Activity Log</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
-        </div>
-      </li>
-    </ul>
-
-  </nav> <!-- heets header  -->
-
-  
-      <!-- <li class="nav-item active">
-        <a class="nav-link" href="index.html">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span>
-        </a>
-      </li> -->
-      <!-- <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Login Screens:</h6>
-          <a class="dropdown-item" href="login.html">Login</a>
-          <a class="dropdown-item" href="register.html">Register</a>
-          <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
-          <div class="dropdown-divider"></div>
-          <h6 class="dropdown-header">Other Pages:</h6>
-          <a class="dropdown-item" href="404.html">404 Page</a>
-          <a class="dropdown-item" href="blank.html">Blank Page</a>
-        </div>
-      </li> -->
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
-      </li> -->
-     
+      
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <base href="{{asset('')}}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <div id="header-top">
+                    <div class="container">
+                        <div class="row clearfix">
+                            <div class="col-md-6" id="header-text">
+                                <!-- <a>Welcome</a>to my shop -->
+                            </div>
+                            <div class="col-md-6">
+                                <nav id="header-nav-top">
+                                    <ul class="list-inline pull-right" id="headermenu">
+                                        <?php if (isset($_SESSION['name'])): ?>
+                                            <li>Xin chào: <?php echo ($_SESSION['name']); ?></li>
+                                            <li>
+                                                <a href=""><i class="fa fa-user"></i> Tài khoản <i class="fa fa-caret-down"></i></a>
+                                                <ul id="header-submenu">
+                                                    <li><a href="info-user.php">Thông tin</a></li>
+                                                    <li><a href="thoat.php">Đăng xuất</a></li>
+                                                </ul>
+                                            </li>
+                                        <?php else: ?>    
+                                            <li>
+                                                <a href=""><i class="fa fa-unlock"></i> Đăng ký</a>
+                                            </li>
+                                            
+                                            <li>
+                                                <a href="login.blade.php"><i class="fa fa-share-square-o"></i> Đăng nhập</a>
+                                            </li>
+                                        <?php endif; ?>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: -15px; margin-bottom: -15px; " class="container">
+                    <div class="row" id="header-main">
+                        
+                        <div style="margin: auto; width: 20%;">
+                            <a href=""> <img style="height: 65px; width: 270px;" src="image/logo1.png" alt="logo"></a>
+                           
+                        </div>
+                        <!--<div class="col-md-3" id="header-right">
+                            <div class="pull-right">
+                                <div class="pull-left">
+                                    <i class="glyphicon glyphicon-phone-alt"></i>
+                                </div>
+                                <div class="pull-right">
+                                    <p id="hotline">HOTLINE</p>
+                                    <p>0986420994</p>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+            <div id="menunav">
+                <div class="container" style="padding-top:1px;padding-bottom: 1px;">
+                    <nav>
+                        <div class="home pull-left">
+                            <a href="">Trang chủ</a>
+                        </div>
+                        <ul id="menu-main">
+                            <li>
+                                <a href=""></a>
+                            </li>
+                            <li>
+                                <a href="">Các khóa học miễn phí</a>
+                            </li>
+                            <li>
+                                <a href="">Các khóa học trả phí</a>
+                            </li>
+                            
+                            <li>
+                                <style type="text/css">
+                                    .fc:focus
+                                    {
+                                        box-shadow: 0 0 10px dimgray;
+                                    }
+                                </style>
+                                <form  action="search.blade.php" class="form-inline" method="GET">
+                                    <input required style="margin-top: 4px; height: 32px; background-color: #353535; color: white; border-color: #353535; border-radius: 3px;" class="form-control fc" type="text" placeholder="Search..." name="search"> 
+                                    <button style="margin-top: 4px; height: 32px; background-color: #444; color: white; border-color: #444" class="fa fa-search form-control" type="submit" name="submit">
+                                    </button>
+                                </form>
+                                
+                            </li>
+                        </ul>
+            
+                    </nav>
+                </div>
+            </div>
+            </div>
 
     <div id="content-wrapper">
 
-      <div class="container-fluid">
+      <div class="container>
 
-        <!-- Breadcrumbs-->
-        
-
-        <!-- Icon Cards-->
-        <!-- <div class="row">
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-primary o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-comments"></i>
-                </div>
-                <div class="mr-5">26 New Messages!</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-warning o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-list"></i>
-                </div>
-                <div class="mr-5">11 New Tasks!</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-success o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-shopping-cart"></i>
-                </div>
-                <div class="mr-5">123 New Orders!</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-danger o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-life-ring"></i>
-                </div>
-                <div class="mr-5">13 New Tickets!</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
- -->
-        <!-- Area Chart Example-->
-        <!-- <div class="card mb-3">
-          <div class="card-header">
-            <i class="fas fa-chart-area"></i>
-            Area Chart Example</div>
-          <div class="card-body">
-            <canvas id="myAreaChart" width="100%" height="30"></canvas>
-          </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-        </div> -->
-
-        <!-- DataTables Example -->
-        
-        <div class="card mb-3">
-          
-           <h1 style="text-align:center;" ;style="color:red;" >Các khóa học cơ bản</h1>  
+        <div class="card mb-3">  
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ul class="carousel-indicators">
@@ -230,7 +143,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="../image/logo.jpg" alt="Level 0"  width="1400" height="500">
+        <img src="../image/6.jpg" alt="Level 0"  width="1450" height="450">
          
         <div class="carousel-caption">
         <h3 style="color: black;">Khóa học cơ bản</h3>
@@ -238,45 +151,45 @@
       </div>
       </div>
       <div class="carousel-item">
-        <img src="../image/2.jpg" alt="Level 1"  width="1400" height="500">
-        <div class="carousel-caption">
+        <img src="../image/2.jpg" alt="Level 1"  width="1450" height="450">
+        <!-- <div class="carousel-caption">
         <h3 style="color: black;">Khóa học chuyên sâu</h3>
-        </div>
+        </div> -->
       </div>
     
       <div class="carousel-item">
-        <img src="../image/3.jpg" alt="Level 2"  width="1400" height="500">
-        <div class="carousel-caption">
+        <img src="../image/3.jpg" alt="Level 2"  width="1450" height="450">
+        <!-- <div class="carousel-caption">
         <h3 style="color: black;">Khóa học luyện nghe</h3>
-       </div>
+       </div> -->
       </div>
 
       <div class="carousel-item">
-        <img src="../image/4.jpg" alt="Level 3"  width="1400" height="500">
-        <div class="carousel-caption">
+        <img src="../image/4.jpg" alt="Level 3"  width="1450" height="450">
+        <!-- <div class="carousel-caption">
         <h3 style="color: black;">Khóa học luyện viết</h3>
-        </div>
+        </div> -->
       </div>
 
       <div class="carousel-item">
-        <img src="../image/5.jpg" alt="Level 4"  width="1400" height="500">
-        <div class="carousel-caption">
+        <img src="../image/5.jpg" alt="Level 4"  width="1450" height="450">
+        <!-- <div class="carousel-caption">
         <h3 style="color: black;">Khóa học luyện phát âm</h3>
-        </div>
+        </div> -->
       </div>
 
       <div class="carousel-item">
-        <img src="../image/6.jpg" alt="Level 5"  width="1400" height="500">
-        <div class="carousel-caption">
+        <img src="../image/6.jpg" alt="Level 5"  width="1450" height="450">
+        <!-- <div class="carousel-caption">
         <h3 style="color: black;">Khóa học luyện từ vựng</h3>
-        </div>
+        </div> -->
       </div>
 
       <div class="carousel-item">
-        <img src="../image/7.jpg" alt="Level 6"  width="1400" height="500">
-        <div class="carousel-caption">
+        <img src="../image/7.jpg" alt="Level 6"  width="1450" height="450">
+        <!-- <div class="carousel-caption">
         <h3 style="color: black;">Khóa học trả phí</h3>
-        </div>
+        </div> -->
       </div>
 
     </div>
@@ -293,10 +206,67 @@
         </div>
 
       </div>
-      <div class="detail" style="text-align: center;">
+
+
+<div class="clear"></div>
+<div class="grid_12 modern"></div>
+
+<div class="grid_12 modern1"></div>
+</div></div>
+<div id="middle"><div class="layout">
+<div class="col1"><div class="wrap"><p class="line1"></p></div></div>
+<div class="col2"><span class="text6">Những thông tin về trang web</span></div>
+<div class="col3"><div class="wrap"><p class="line1"></p></div></div></div>
+</div>
+<div id="grey1">
+<div class="container_12"><div class="grid_12 four"></div>
+
+<<!-- div class="grid_3"><span class="text10">1. Nguyễn Đình Quân</span>
+<p class="text3"># Sau khi biết đến trang web này, em đã học được nhiều khóa học bổ ích ở đây.<br># Các khóa học được phân chia theo mực độ để người học dễ dàng lựa chọn hơn.</p></div>
+<div class="grid_3"><span class="text9">2. Hoàng Phương Loan </span>
+  <p class="text3"># Các khóa học ở đây đã giúp cho việc học tiếng anh của em dễ dàng hơn, ngoài ra còn có các bài test rất hiệu quả để đánh giá xem học viên hiểu bài đến đâu.<br># Sau khi học ở đây, trình độ tiếng anh của em được cải thiện.</p>
+</div>
+<div class="grid_3"><span class="text8">3. Nguyễn Thị Hường</span>
+<p class="text3"># Em biết đến trang web này nhờ bạn bè e đã học ở đây<br># Sau vài tháng học tập, em thấy học tiếng anh ở đây khá hiểu quả.</p>
+</div>
+<div class="grid_3"><span class="text7">4. Bùi Thị Mến</span>
+<p class="text3"># Khóa học có những video giảng dạy rất chi tiết, giọng phát âm chuẩn.<br># Học ở đây em rèn luyện được cả bốn kỹ năng tiếng anh, em rất vui về điều đó.</p> -->
+</div>
+
+
+
+<div class="clear"></div>
+<div class="grid_12 modern"></div>
+
+<div class="grid_12 modern1"></div>
+</div></div>
+<div id="middle"><div class="layout">
+<div class="col1"><div class="wrap"><p class="line1"></p></div></div>
+<div class="col2"><span class="text6">Cảm nhận của học viên<br />
+sau khi học</span></div>
+<div class="col3"><div class="wrap"><p class="line1"></p></div></div></div>
+</div>
+<div id="grey1">
+<div class="container_12"><div class="grid_12 four"></div>
+
+<div class="grid_3"><span class="text10">1. Nguyễn Đình Quân</span>
+<p class="text3"># Sau khi biết đến trang web này, em đã học được nhiều khóa học bổ ích ở đây.<br># Các khóa học được phân chia theo mực độ để người học dễ dàng lựa chọn hơn.</p></div>
+<div class="grid_3"><span class="text9">2. Hoàng Phương Loan </span>
+  <p class="text3"># Các khóa học ở đây đã giúp cho việc học tiếng anh của em dễ dàng hơn, ngoài ra còn có các bài test rất hiệu quả để đánh giá xem học viên hiểu bài đến đâu.<br># Sau khi học ở đây, trình độ tiếng anh của em được cải thiện.</p>
+</div>
+<div class="grid_3"><span class="text8">3. Nguyễn Thị Hường</span>
+<p class="text3"># Em biết đến trang web này nhờ bạn bè e đã học ở đây<br># Sau vài tháng học tập, em thấy học tiếng anh ở đây khá hiểu quả.</p>
+</div>
+<div class="grid_3"><span class="text7">4. Bùi Thị Mến</span>
+<p class="text3"># Khóa học có những video giảng dạy rất chi tiết, giọng phát âm chuẩn.<br># Học ở đây em rèn luyện được cả bốn kỹ năng tiếng anh, em rất vui về điều đó.</p>
+</div>
+
+
+
+      <!-- <div class="detail" style="text-align: center;">
         <h2 style="color: red;">Đội ngũ giảng viên giảng dạy</h2>
         
-      <!-- /.container-fluid -->
+      <-- /.container-fluid -->
 
       <!-- Sticky Footer -->
       <!-- Footer -->
@@ -306,7 +276,7 @@
     <!-- Copyright -->
     
     <!-- Copyright -->
-    <div class="giangvien" style="background-color: lightblue;">
+   <!-- <--  <div class="giangvien" style="background-color: lightblue;">
       <ul>
         <li> TS. Nguyến Đình Quân</li>
         <li> TS. Nguyến Thị Hường</li>
@@ -321,28 +291,28 @@
 <h6 style ="display: block;">Hotline: 0989999999</h6>
 </div>
 
-<!-- <footer class="sticky-footer">
+<footer class="sticky-footer">
         <a class="navbar-brand mr-1" href="index.html">
           <img src="../image/logo.png" alt="" class="logo">
           <h6 class="nameweb"> Learning English</h6>
         </a>
         <h6 class="hotline">Hotline: 0989999999</h6>
-  </footer> -->
-  <!-- Footer -->
+  </footer>
+  <-- Footer -->
 
-    </div>
-    <!-- /.content-wrapper -->
+    <!-- </div>
+    /.content-wrapper
 
-  </div>
+  </div> -->
   <!-- /#wrapper -->
 
   <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
+ <!--  <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
-  </a>
+  </a> -->
 
   <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -358,8 +328,8 @@
         </div>
       </div>
     </div>
-  </div>
-
+  </div> -->
+  
   <!-- Bootstrap core JavaScript-->
   <script src="../vendor/jquery/jquery.min.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

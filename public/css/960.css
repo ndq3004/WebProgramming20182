@@ -49,7 +49,6 @@ body {
   float: left;
   margin-left: 10px;
   margin-right: 10px;
-  
 }
 .grid_3{
   display: inline;
@@ -57,11 +56,10 @@ body {
   margin-left: 10px;
   margin-right: 10px;
   border-radius: 10px;
-  padding: 10px;
-  background: lightblue;
-
+  background:#3333;
+  width: 150px;
+  height: 170px;
 }
-
 .push_1, .pull_1,
 .push_2, .pull_2,
 .push_3, .pull_3,
@@ -660,7 +658,4 @@ body {
 .container_12,
 .container_16 {
   zoom: 1;
-}
-h3,p{
-  color: black;
 }
