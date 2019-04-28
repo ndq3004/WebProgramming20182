@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\admin;
+use App\roles;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use JWTAuth;
 use JWTAuthException;
 use App\Course;
+use Illuminate\Support\Facades\DB;
 
 
 class UserController extends Controller
@@ -83,11 +86,19 @@ class UserController extends Controller
     public function Courses(){
         return view('Courses');
     }
-   
+
 
     public function allUser(){
         $users = DB::table('user')->get();
         return view("Users", ['users'=>$users]); 
     }
+
+    public function GetRole(){
+        // $role = DB::select('select * from role where role_id=1 ');
+        $ro = admin::find('1')->roles()->get();
+        return $ro;
+    }
+   
+
 
 }

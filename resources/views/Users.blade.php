@@ -12,9 +12,7 @@
   <title>SB Admin - Home</title>
 
   <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
->
-
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <!-- Page level plugin CSS-->
   <link href="/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
@@ -138,6 +136,9 @@
                 @if($users)
                 <tbody>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bb76a5d6a400be3740cb976605d30aa085ff47f9
                   @foreach ($users as $user)
                     {{-- expr --}}
                     <tr>
@@ -145,6 +146,7 @@
                       <td>{{ $user->name }}</td>
                       <td>{{ $user->email }}</td>
                       <td>{{ $user->user_point }}</td>
+<<<<<<< HEAD
 =======
                   <?php 
                     $stt = 0;
@@ -156,6 +158,9 @@
                       <td>{{$user->email}}</td>
                       <td>{{$user->user_point}}</td>
 >>>>>>> 283d3c71e41cc3dc042bd56e571737b8ec3b21b8
+=======
+
+>>>>>>> bb76a5d6a400be3740cb976605d30aa085ff47f9
                     </tr>
                   @endforeach
                   
@@ -235,9 +240,14 @@
   <script src="/js/demo/datatables-demo.js"></script>
   <script src="/js/demo/chart-area-demo.js"></script>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   <script type="text/javascript" src="js/admin/User.js"></script>
 >>>>>>> 283d3c71e41cc3dc042bd56e571737b8ec3b21b8
+=======
+  <script type="text/javascript" src="js/admin/User.js"></script>
+
+>>>>>>> bb76a5d6a400be3740cb976605d30aa085ff47f9
 
   
   
