@@ -4430,7 +4430,7 @@ input[type="button"].btn-block {
 }
 
 .navbar {
-  position: relative;
+  /* position: relative; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10757,8 +10757,8 @@ nav.navbar.navbar-expand.navbar-dark.bg-dark.static-top.password img.logo {
       width: 100px;
       height: 100px;
       border-radius: 50px;
-      /* position: absolute; */
-      left: -176px;
+      position: absolute;
+      left: 0px !important;
 }
 body.bg-dark {
   position: relative;
@@ -10768,8 +10768,8 @@ nav.navbar.navbar-expand.navbar-dark.bg-dark.static-top.password h6.nameweb{
       padding-top: 30px;
       padding-left: 19px;
       font-size: 25px;
-      /* position: absolute; */
-      left: -68px;
+      position: absolute;
+      left: 105px;
 }
 tbody tr:hover{
   color: red;
