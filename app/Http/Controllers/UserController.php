@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use JWTAuth;
 use JWTAuthException;
+use App\Course;
 
 
 class UserController extends Controller
@@ -15,6 +16,15 @@ class UserController extends Controller
 
     public function __construct(User $user){
         $this->user = $user;
+    }
+
+    public function viewRegister(){
+     
+        return view('register');
+    }
+
+    public function viewLogin(){
+        return view('login');
     }
    
     public function register(Request $request){
@@ -37,16 +47,26 @@ class UserController extends Controller
     }
     
     public function login(Request $request){
+        $this->validate($request,[
+            'email'=>'required',
+            'password'=>'required|min:3|max:32'
+        ],[
+            'password.min'=>'Password không nhỏ hơn 3 kí tự',
+            'password.max'=>'Password không lớn hơn 3 kí tự'
+        ]);
         $credentials = $request->only('email', 'password');
         $token = null;
+
         try {
            if (!$token = JWTAuth::attempt($credentials)) {
-            return response()->json(['invalid_email_or_password'], 422);
+               $error = ['reason' => 'invalid_email_or_password','status' => 422];
+            return redirect('login')->with('notice','Sai tên tài khoản hoặc mật khẩu!');
            }
         } catch (JWTAuthException $e) {
-            return response()->json(['failed_to_create_token'], 500);
+            return redirect('login')->with('notice','Lỗi đăng nhập!');
         }
         return response()->json(compact('token'));
+        // return redirect()->route('home', array('token'=>json(compact('token'))));
     }
 
     public function getUserInfo(Request $request){
@@ -56,10 +76,14 @@ class UserController extends Controller
 
     public function cources(){
 
-        $cources = cources::paginate(10);
+    //     $cources = cources::paginate(10);
 
-        return view('Courses',['courses'=>$courses]);
+    //     return view('Courses',['courses'=>$courses]);
     }
+    public function Courses(){
+        return view('Courses');
+    }
+   
 
     public function allUser(){
         $users = DB::table('user')->get();

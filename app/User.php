@@ -9,7 +9,7 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    protected $table = 'user';
+    protected $table = 'users';
 
     /**
      * The attributes that are mass assignable.
@@ -30,5 +30,12 @@ class User extends Authenticatable
     ];
   
     public $timestamps = false;
+
+    public function user_role(){
+        return $this->belongsToMany('role','user_role', 'role_id', 'user_id');
+    }
+    public function user_course(){
+        return $this->belongsToMany('courses','user_course', 'course_id', 'user_id');
+    }
 
 }

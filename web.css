@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+table tr td{
+    border: 0.05px solid black; 
+    text-align: center
+}
+table{
+    border-spacing: 0ch;
+    width: 800px;
+    padding:1em;
+}
+#vien{
+    text-align: left
+}
+.title{
+    background-color: #b9bfc9;
+}
+.input1{
+    margin-left: 35px;
+    margin-top: 10px
+}
+.input2{
+   margin-left: 30px;
+    margin-top: 10px
+}
+.delete{
+    background-color: #ffffff;
+}
