@@ -11,10 +11,10 @@
   <title>Admin - Register - public</title>
 
   <!-- Custom fonts for this template-->
-  <link href="/views/register_files/all.min.css" rel="stylesheet" type="text/css">
+  <link href="views/register_files/all.min.css" rel="stylesheet" type="text/css">
 
   <!-- Custom styles for this template-->
-  <link href="/views/register_files/sb-admin.css" rel="stylesheet">
+  <link href="views/register_files/sb-admin.css" rel="stylesheet">
 
 </head>
 
@@ -41,7 +41,7 @@
 
       <div class="card-header">Register an Account</div>
       <div class="card-body">
-        <form action="register" method="post" class="beta-form-checkout">
+        <form action="auth/register" method="post" class="beta-form-checkout">
           <!-- <input type="hidden" name="_token" value="{{csrf_token()}}"> -->
           @if(count($errors)>0)
           <div class="alert alert-danger">
@@ -57,7 +57,7 @@
             <div class="form-row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <input style="" type="text" id="firstname" class="form-control" placeholder="First name" required="required" autofocus="autofocus">
+                  <input style="" type="text" name="name" id="firstname" class="form-control" placeholder="First name" required="required" autofocus="autofocus">
                 </div>
               </div>
               <div class="col-md-6">
@@ -68,13 +68,14 @@
             </div>
           </div>
           <div class="form-group">
-            <input type="email" id="email" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
+            <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
           </div>
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <input type="password" id="password" class="form-control" placeholder="Password" required="required" autofocus="autofocus">                 </div>
+                  <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="required" autofocus="autofocus">                 
+                </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
@@ -82,7 +83,7 @@
               </div>
             </div>
           </div>
-          <a class="btn btn-primary btn-block" href="login.html">Register</a>
+          <button type="submit" class="btn btn-primary btn-block">Register</button>   
         </form>
         <div class="text-center">
           <a class="d-block small mt-3" href="/views/login.blade.php">Login Page</a>
@@ -93,12 +94,13 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
+
   <script src="/views/register_files/jquery.min.js"></script>
   <script src="/views/register_files/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="/views/register_files/jquery.easing.min.js.tải xuống"></script>
-  <script src="/views/register_files/script.js.tải xuống" type="text/javascript" charset="utf-8" async="" defer=""></script>
+  <script src="views/register_files/jquery.easing.min.js.tải xuống"></script>
+  <script src="views/register_files/script.js.tải xuống" type="text/javascript" charset="utf-8" async="" defer=""></script>
 
 
 
