@@ -53,6 +53,14 @@ Route::get('index',['as'=>'index','uses'=>'AdminController@index']);
 Route::get('courseAdmin',['as'=>'course','uses'=>'AdminController@course']);
 
 Route::get("userAdmin", 'AdminController@users');
+
+
+/*
+* Get data for basic cousce
+*/
+Route::get('getlession/{type}/{level}/{topicid}', 'BasicCourseController@getTopic');
+
+
 /*
 * Generate data
 */
