@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/jquery-ui.min.css">
+    <!-- <link rel="stylesheet" href="../css/jquery-ui.theme.min.css"> -->
+    <style>
+        #id{
+            position: absolute;
+        }
+        .flex-style{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <button class="open-form" level="1" type-t="basic" topicid="animal" style="width: 100px;  height: 100px;">haha</button>
+    <div id="multicheck-form" style="display: none;">
+        <div class="multicheck">
+            <div class="form-question flex-style">
+                <div class="form-question-number">Question 1:</div>
+                <div class="form-question-title">Câu hỏi 1</div>
+            </div>
+            <div class="form-answer">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                        Default radio
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                        Second default radio
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
+                    <label class="form-check-label" for="exampleRadios3">
+                        Disabled radio
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <!-- <script src="../js/bootstrap.min.js"></script> -->
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/firstSignInPage.js"></script>
+</body>
+</html>

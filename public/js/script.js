@@ -1,5 +1,6 @@
 $(document).ready(function(){
     init_event();
+    
 })
 var loginSignupJS = {   
     login: function(){
