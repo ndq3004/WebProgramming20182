@@ -15,10 +15,10 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('question_id');
-            $table->string('course_id');
-            $table->string('topic_id');
+            $table->integer('course_id');
+            $table->integer('topic_id');
             $table->string('content');
-            $table->string('answer_id');
+            $table->integer('answer_id');
         });
     }
 
