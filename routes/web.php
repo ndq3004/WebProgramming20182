@@ -12,8 +12,10 @@
 */
 
 Route::get('/', function () {
-    return File::get(public_path() . '/views/usercourse.html');
+    return File::get(public_path() . '/views/landingPage.html');
 });
+
+
 
 /*
 * Get view login, register
@@ -27,10 +29,20 @@ Route::post('auth/register', 'UserController@register');
 Route::post('auth/login', 'UserController@login');
 
 Route::group(['middleware' => 'jwt.auth'], function () {
-    Route::get('user-info', 'UserController@getUserInfo');
+	Route::get('user-info', 'UserController@getUserInfo');
 });
 Route::get('allUser', 'UserController@allUser');
 
+/*
+* Get page after login
+*/
+Route::get('mainpage', function () {
+	return File::get(public_path() . '/views/usercourse.html');
+});
+
+/*
+*get profile
+*/
 
 Route::get('/profile', function(){
 	return view("userprofile");

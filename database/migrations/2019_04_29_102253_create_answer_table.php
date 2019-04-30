@@ -19,6 +19,7 @@ class CreateAnswerTable extends Migration
             $table->string('answerB');
             $table->string('answerC');
             $table->string('answerD');
+            $table->string('rightAnswer');
         });
     }
 
