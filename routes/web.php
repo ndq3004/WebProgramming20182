@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return File::get(public_path() . '/views/landingPage.html');
+    return File::get(public_path() . '/views/usercourse.html');
 });
 
 /*
@@ -39,8 +39,8 @@ Route::get('/profile', function(){
 Route::get('/home', function(){
 	return view("test");
 });
-Route::get('/userindex', function(){
-	return view("userindex");
+Route::get('/course', function(){
+	return view("usercourse");
 });
 
 //Route::get('courses',['as'=>'courses','uses'=>'UserController@courses']);
