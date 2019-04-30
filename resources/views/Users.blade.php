@@ -93,12 +93,12 @@
     <ul class="sidebar navbar-nav">
 
       <li class="nav-item">
-        <a class="nav-link" href="Courses.html">
+        <a class="nav-link" href="{{ route('courseAdmin') }}">
           <i class="fas fa-book"></i>
           <span>Courses</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Users.html">
+          <a class="nav-link" href="{{ route('userAdmin') }}">
             <i class="fas fa-user"></i>
             <span>Users</span></a>
           </li>
@@ -111,7 +111,7 @@
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
-                <a href="#">Home</a>
+                <a href="{{ route('index') }}">Home</a>
               </li>
               <li class="breadcrumb-item active">Courses</li>
             </ol>
@@ -126,30 +126,25 @@
                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                       <tr>
-                        <th>STT</th>
-                        <th>Họ Tên</th>
+                        <th>ID</th>
+                        <th>Name</th>
                         <th>Email</th>  
                         <th>Point</th>                  
                       </tr>
                     </thead>
-
-                    @if($users)
                     <tbody>
-
-                      <?php 
-                      $stt = 0;
-                      ?>
-                      @foreach($users as $user)
+                      @foreach ($users as $user)
                       <tr>
-                        <td>{{++$stt}}</td>
-                        <td>{{$user->name}}</td>
-                        <td>{{$user->email}}</td>
-                        <td>{{$user->user_point}}</td>
+                        <td>{{ $user->id }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>  
+                        <td>{{ $user->user_point }}</td>                  
                       </tr>
                       @endforeach
-
+                      
                     </tbody>
-                    @endif
+
+                    
 
 
                   </table>
