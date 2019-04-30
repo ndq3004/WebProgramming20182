@@ -42,6 +42,9 @@ class DialogJS{
             $('#multicheck-form').dialog("option", "maxHeight", 500);
             // $('#multicheck-form').dialog("option" ,"position", { my: 'top', at: 'top+80' });
             $('#multicheck-form').dialog('open');
+            $(".ui-dialog").draggable({
+                // disabled: true
+            });
             dialogJS.bindDataToMultiCheckForm(element);
             
         });
@@ -111,7 +114,7 @@ var ValidateJSFunc = {
     checkToken: function(){
         var token = localStorage.getItem('token');
         if(token.length < 10){
-            // window.location.href=host.Config.localhost;
+            window.location.href=host.Config.localhost;
         }
         else{
             $.ajax({
@@ -121,10 +124,12 @@ var ValidateJSFunc = {
                     'token': token
                 },
                 success: function(data, status, xhr){
-                    
+                    var name = data.name;
+                    // var emailName = (data.email).split("@");
+                    $('#user-name').html(name);
                 },
                 error: function(error){
-                    // window.location.href=host.Config.localhost;
+                    window.location.href=host.Config.localhost;
                 }
             });
         }
