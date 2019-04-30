@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return File::get(public_path() . '/views/landingPage.html');
+    return File::get(public_path() . '/views/usercourse.html');
 });
 
 /*
@@ -39,8 +39,8 @@ Route::get('/profile', function(){
 Route::get('/home', function(){
 	return view("test");
 });
-Route::get('/userindex', function(){
-	return view("userindex");
+Route::get('/course', function(){
+	return view("usercourse");
 });
 
 //Route::get('courses',['as'=>'courses','uses'=>'UserController@courses']);
@@ -53,6 +53,14 @@ Route::get('index',['as'=>'index','uses'=>'AdminController@index']);
 Route::get('courseAdmin',['as'=>'course','uses'=>'AdminController@course']);
 
 Route::get("userAdmin", 'AdminController@users');
+
+
+/*
+* Get data for basic cousce
+*/
+Route::get('getlession/{type}/{level}/{topicid}', 'BasicCourseController@getTopic');
+
+
 /*
 * Generate data
 */
