@@ -41,12 +41,12 @@ class UserController extends Controller
           'password' => bcrypt($request->get('password'))
         ]);
 
-        // return response()->json([
-        //     'status'=> 200,
-        //     'message'=> 'User created successfully',
-        //     'data'=>$user
-        // ]);
-        return view('Users', ['users'=>$user]);
+        return response()->json([
+            'status'=> 200,
+            'message'=> 'User created successfully',
+            'data'=>$user
+        ]);
+        // return view('Users', ['users'=>$user]);
     }
     
     public function login(Request $request){

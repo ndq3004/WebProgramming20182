@@ -24,16 +24,13 @@
 <link rel="shortcut icon" href="https://giasutoeic.com/static/favicon/favicon.ico">
 <meta name="msapplication-config" content="/static/favicon/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" href="./usercourse_files/template-1052220419.css" type="text/css">
-<link rel="stylesheet" href="./usercourse_files/jquery-ui-1.11.4.min.css" type="text/css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="usercourse_files/template-1052220419.css" type="text/css">
+<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/jquery-ui.min.css">
+  <!-- <link rel="stylesheet" href="../css/jquery-ui.theme.min.css"> -->
 <style>
 	  	
 		.ui-widget, 
@@ -45,10 +42,19 @@
   		.ui-button {
 			padding: 3px 7px;	
 		}
-		
+		/* .ui-dialog{
+      margin-top:200px;
+      top:200px;
+    } */
 		.ui-button .ui-button-text {
 			font-size: 16px;
 		}
+    .open-form{
+      cursor: pointer;
+    }
+    .multicheck{
+      border-bottom: 1px solid gray;
+    }
 	</style>
 <link rel="stylesheet" href="./usercourse_files/slick.css">
 <link rel="stylesheet" href="./usercourse_files/slick-theme.css">
@@ -295,24 +301,34 @@ Các khóa học trả phí
 <section class="how-to-learn-wrapper">
 <div class="inner">
 <div class="learning-approach">
-<h2 class="learing-title blue-color">Các khóa học nền tảng tiếng Anh căn bản</h2>
-<h4>Bạn muốn <strong>lấy lại nền tảng tiếng Anh</strong> sau khi học ?</h4>
+<h2 class="learing-title blue-color">Your way to England</h2>
+<h4>You <strong>still keep working</strong> ,hummmmmmm ?</h4>
 <ul class="review-topics clearfix">
-<li style="margin-right: 30px;">
-<img src="./usercourse_files/ngu_phap_toeic.png">
-<h3>Học ngữ pháp tiếng Anh căn bản</h3>
-với Chương trình Ngữ Pháp PRO
-<p class="text-center">
-<a href="https://giasutoeic.com/ngu-phap-tieng-anh/?r=dashboard-h2learn" class="button-link style-1">Học ngữ pháp căn bản</a>
-</p>
-</li>
+
 <li>
 <img src="./usercourse_files/600_tu_vung_toeic.png">
-<h3>Học 600 từ vựng hay gặp trong cuộc sống</h3>
-được chia theo chủ đề, với đầy đủ thông tin về từ
+<h3>Topic cơ bản 1 - Từ vựng</h3>
+
 <p class="text-center">
-<a href="https://giasutoeic.com/600-tu-vung-toeic/?r=dashboard-h2learn" class="button-link style-1">Học 600 từ vựng thường gặp</a>
+<div class="d-flex">
+    <div class="button-link style-1 open-form" type-t="basic" level="1" topicid="1">Animal</div>
+    <div class="button-link style-1 open-form" type-t="basic" level="1" topicid="2">Family</div>
+    <div class="button-link style-1 open-form" type-t="basic" level="1" topicid="3">Education</div>
+</div>
+
 </p>
+</li>
+<li style="margin-right: 30px;">
+    <img src="./usercourse_files/ngu_phap_toeic.png">
+    <h3>Ngữ pháp cơ bản 1</h3>
+    
+    <p class="text-center">
+    <div class="d-flex">
+        <div class="button-link style-1 open-form" type-t="basic" level="" topicid="">Thì hiện tại đơn</div>
+        <div class="button-link style-1 open-form" type-t="basic" level="" topicid="">Thì hiện tương lai đơn</div>
+        <div class="button-link style-1 open-form" type-t="basic" level="" topicid="">Thì quá khứ đơn</div>
+    </div>
+    </p>
 </li>
 <li>
 <img src="./usercourse_files/luyen_nghe_toeic.webp">
@@ -430,7 +446,7 @@ Bắt đầu Luyện Ngay
 
 
 </div>
-<script type="text/javascript" src="./usercourse_files/jquery-3.1.1_with_migrate-3.0.0_with_bootstrap3.3.7.min.js.tải xuống"></script>
+<script type="text/javascript" src="usercourse_files/jquery-3.1.1_with_migrate-3.0.0_with_bootstrap3.3.7.min.js"></script>
 <script type="text/javascript" src="./usercourse_files/jquery-ui-1.11.4.min.js.tải xuống"></script>
 <script type="text/javascript" src="./usercourse_files/template-1052220419.js.tải xuống"></script>
 <script>
@@ -537,5 +553,13 @@ var isHomePage = '/dashboard/' == '/' ? true : false;
     <div class="nof">GiasuTOEIC.com works best with JavaScript enabled! To use standard view, enable JavaScript by changing your browser options, then try again.</div>
 </noscript>
 
+
+<!-- form do multicheck -->
+<div id="multicheck-form" style="display: none;">
+
+</div>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui.min.js"></script>
+<script src="/js/firstSignInPage.js"></script>
 
 </body></html>
