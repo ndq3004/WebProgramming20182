@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return File::get(public_path() . '/views/landingPage.html');
+	return File::get(public_path() . '/views/landingPage.html');
 });
 
 
@@ -60,11 +60,6 @@ Route::get('/course', function(){
 * Get admin view and data
 */
 
-Route::get('index',['as'=>'index','uses'=>'AdminController@index']);
-Route::get('courseAdmin',['as'=>'course','uses'=>'AdminController@course']);
-
-Route::get("userAdmin", 'AdminController@users');
-
 
 /*
 * Get data for basic cousce
@@ -76,6 +71,22 @@ Route::get('getlession/{type}/{level}/{topicid}', 'BasicCourseController@getTopi
 * Generate data
 */
 Route::get('gendata', 'GenerateDataController@handleDatabase');
-Route::get('lienket', 'AdminController@user1');
+
 
 Route::get('getrole','UserController@GetRole');
+
+
+
+// Route::get('adminLogin', 'AdminController@getLoginAdmin');
+// Route::post('adminLogin','AdminController@postLoginAdmin');
+
+Route::get('index',[
+	'as'=>'index','uses'=>'AdminController@index'
+],'middleware'=>'login');
+Route::get('courseAdmin',
+	['as'=>'courseAdmin','uses'=>'AdminController@course'
+], 'middleware'=>'login');
+
+Route::get("userAdmin", ['as'=>'userAdmin','uses'=>'AdminController@users'
+], 'middleware'=>'login');
+Route::get('lienket', 'AdminController@user1');
