@@ -19,7 +19,7 @@ var loginSignupJS = {
                 alert(response.token);
                 console.log(response.token);
                 localStorage.setItem("token", response.token);
-                window.location.href=host.Config.localhost + "/user/mainpage";
+                window.location.href=host.Config.localhost + "/mainpage";
             },
             error: function(error){
                 alert('error');
