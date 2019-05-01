@@ -26,10 +26,10 @@
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top"> <!-- header -->
 
-      <a class="navbar-brand mr-1" href="index.html">
-        <img src="../image/logo.png" alt="" class="logo">
-        <h6 class="nameweb"> Learning English</h6>
-      </a>
+    <a class="navbar-brand mr-1" href="index.html">
+      <img src="../image/logo.png" alt="" class="logo">
+      <h6 class="nameweb"> Learning English</h6>
+    </a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -118,32 +118,32 @@
         <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Charts</span></a>
-      </li> -->
-      <li class="nav-item">
-        <a class="nav-link" href="Courses.html">
-          <i class="fas fa-book"></i>
-          <span>Courses</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="Users.html">
-          <i class="fas fa-user"></i>
-          <span>Users</span></a>
-      </li>
-    </ul>
-
-    <div id="content-wrapper">
-
-      <div class="container-fluid">
-
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="#">Home</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('courseAdmin') }}">
+            <i class="fas fa-book"></i>
+            <span>Courses</span></a>
           </li>
-          <li class="breadcrumb-item active">Courses</li>
-        </ol>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('userAdmin') }}">
+              <i class="fas fa-user"></i>
+              <span>Users</span></a>
+            </li>
+          </ul>
 
-        <!-- Icon Cards-->
+          <div id="content-wrapper">
+
+            <div class="container-fluid">
+
+              <!-- Breadcrumbs-->
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="{{ route('index') }}">Home</a>
+                </li>
+                <li class="breadcrumb-item active">Courses</li>
+              </ol>
+
+              <!-- Icon Cards-->
         <!-- <div class="row">
           <div class="col-xl-3 col-sm-6 mb-3">
             <div class="card text-white bg-primary o-hidden h-100">
@@ -210,8 +210,8 @@
             </div>
           </div>
         </div>
- -->
-        <!-- Area Chart Example-->
+      -->
+      <!-- Area Chart Example-->
         <!-- <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-chart-area"></i>
@@ -227,20 +227,36 @@
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            Courses</div>
+          Courses</div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
+
                   <tr>
+                    <th>ID</th>
                     <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
+                    <th>Level</th>
+                    <th>Discription</th>
+                    <th>Link</th>
+                    <th>number-lession</th>
                   </tr>
+
+                  
                 </thead>
+                <tbody>
+                  @foreach ($course as $kh)
+                  <tr>
+                    <td>{{ $kh->id }}</td>
+                    <td>{{ $kh->name }}</td>
+                    <td>{{ $kh->level }}</td>
+                    <td>{{ $kh->discription }}</td>
+                    <td>{{ $kh->link }}</td>
+                    <td>{{ $kh->number_lession }}</td>
+                  </tr>
+                  @endforeach
+
+                </tbody>
                 
               </table>
             </div>

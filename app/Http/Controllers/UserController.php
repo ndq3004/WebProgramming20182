@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\admin;
+use App\roles;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use JWTAuth;
 use JWTAuthException;
 use App\Course;
+use Illuminate\Support\Facades\DB;
 
 
 class UserController extends Controller
@@ -17,7 +20,7 @@ class UserController extends Controller
     public function __construct(User $user){
         $this->user = $user;
     }
-
+ 
     public function viewRegister(){
      
         return view('register');
@@ -28,10 +31,12 @@ class UserController extends Controller
     }
    
     public function register(Request $request){
+        //console log==========
         $out = new \Symfony\Component\Console\Output\ConsoleOutput();
             $out->writeln($request->name);
+        //===================
         $user = $this->user->create([
-          'name' => $request->get('name'),
+          'name' => $request->get('name'),  
           'email' => $request->get('email'),
           'password' => bcrypt($request->get('password'))
         ]);
@@ -41,28 +46,38 @@ class UserController extends Controller
             'message'=> 'User created successfully',
             'data'=>$user
         ]);
+        // return view('Users', ['users'=>$user]);
     }
     
     public function login(Request $request){
+        $this->validate($request,[
+            'email'=>'required',
+            'password'=>'required|min:3|max:32'
+        ],[
+            'password.min'=>'Password không nhỏ hơn 3 kí tự',
+            'password.max'=>'Password không lớn hơn 3 kí tự'
+        ]);
         $credentials = $request->only('email', 'password');
         $token = null;
+
         try {
            if (!$token = JWTAuth::attempt($credentials)) {
-               $res = json(['error' => ['reason' => 'invalid_email_or_password','status' => 422]]);
-            // return response()->json(['reason' => 'invalid_email_or_password','status' => 422]);
-            return redirect('login');
+               $error = ['reason' => 'invalid_email_or_password','status' => 422];
+            return redirect('login')->with('notice','Sai tên tài khoản hoặc mật khẩu!');
            }
         } catch (JWTAuthException $e) {
-            // return response()->json(['error' => ['reason' => 'error!', 'status' => 500]]);
-            return redirect('login');
+            return redirect('login')->with('notice','Lỗi đăng nhập!');
         }
-        // return response()->json(compact('token'));
-        return redirect('login');
+        return response()->json(compact('token'));
+        // return redirect()->route('home', array('token'=>json(compact('token'))));
     }
 
     public function getUserInfo(Request $request){
-        $user = JWTAuth::toUser($request->token);
-        return response()->json(['result' => $user]);
+        // return "null"; 
+        // return $request->header('token');
+        $user = JWTAuth::toUser($request->header('token'));
+        // $user = $this->jwt->User();
+        return response()->json($user);
     }
 
     public function cources(){
@@ -74,6 +89,19 @@ class UserController extends Controller
     public function Courses(){
         return view('Courses');
     }
+
+
+    public function allUser(){
+        $users = DB::table('user')->get();
+        return view("Users", ['users'=>$users]); 
+    }
+
+    public function GetRole(){
+        // $role = DB::select('select * from role where role_id=1 ');
+        $ro = admin::find('1')->roles()->get();
+        return $ro;
+    }
    
+
 
 }

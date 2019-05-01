@@ -10,7 +10,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-:root {
+ :root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -10748,29 +10748,32 @@ footer {
 }
 h6.hotline {
   position: absolute;
-    right: 73px;
-    top: 34px;
-    font-size: 15px;
-    color: grey;
+  right: 73px;
+  top: 34px;
+  font-size: 15px;
+  color: grey;
 }
 nav.navbar.navbar-expand.navbar-dark.bg-dark.static-top.password img.logo {
-      width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    position: absolute;
-    left: -176px;   
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  position: absolute;
+  left: -176px;   
 }
 body.bg-dark {
   position: relative;
 }
 nav.navbar.navbar-expand.navbar-dark.bg-dark.static-top.password h6.nameweb{
-      float: right;
-    padding-top: 30px;
-    padding-left: 19px;
-    font-size: 25px;
-    position: absolute;
-    left: -68px;
+  float: right;
+  padding-top: 30px;
+  padding-left: 19px;
+  font-size: 25px;
+  position: absolute;
+  left: -68px;
 }
 tbody tr:hover{
   color: red;
+}
+.card.card-register.mx-auto.mt-5 {
+  top: 100px !important;
 }

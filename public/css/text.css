@@ -22,6 +22,7 @@ color:#ee0959;
 color:#ee0959;
 }
 #grey1{
+	background: #ff66ff;
 	}
 	@font-face {
     font-family: 'PTSansCaptionBold';
@@ -146,9 +147,9 @@ color:#000;
 	text-align:center;
 	}
 .text6{font-family: 'PTSansCaptionBold';
-font-size:30px;
+font-size:40px;
 font-weight:bold;
-	color:#000;
+	color:orange;
 	text-align:center;}
 .text7{font-family: 'PTSansCaptionBold';
 font-size:20px;

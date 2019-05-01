@@ -12,8 +12,7 @@
   <title>SB Admin - Home</title>
 
   <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <!-- Page level plugin CSS-->
   <link href="/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
@@ -26,10 +25,10 @@
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top"> <!-- header -->
 
-      <a class="navbar-brand mr-1" href="index.html">
-        <img src="/image/logo.png" alt="" class="logo">
-        <h6 class="nameweb"> Learning English</h6>
-      </a>
+    <a class="navbar-brand mr-1" href="index.html">
+      <img src="/image/logo.png" alt="" class="logo">
+      <h6 class="nameweb"> Learning English</h6>
+    </a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -92,82 +91,78 @@
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-    
+
       <li class="nav-item">
-        <a class="nav-link" href="Courses.html">
+        <a class="nav-link" href="{{ route('courseAdmin') }}">
           <i class="fas fa-book"></i>
           <span>Courses</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="Users.html">
-          <i class="fas fa-user"></i>
-          <span>Users</span></a>
-      </li>
-    </ul>
-
-    <div id="content-wrapper">
-
-      <div class="container-fluid">
-
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('userAdmin') }}">
+            <i class="fas fa-user"></i>
+            <span>Users</span></a>
           </li>
-          <li class="breadcrumb-item active">Courses</li>
-        </ol>
-        <!-- DataTables Example -->
-        
-        <div class="card mb-3">
-          <div class="card-header">
-            <i class="fas fa-table"></i>
-            Courses</div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                  <tr>
-                    <th>STT</th>
-                    <th>Họ Tên</th>
-                    <th>Email</th>  
-                    <th>Point</th>                  
-                  </tr>
-                </thead>
-                
-                @if($users)
-                <tbody>
-                  <?php 
-                    $stt = 0;
-                  ?>
-                  @foreach($users as $user)
-                    <tr>
-                      <td>{{++$stt}}</td>
-                      <td>{{$user->name}}</td>
-                      <td>{{$user->email}}</td>
-                      <td>{{$user->user_point}}</td>
-                    </tr>
-                  @endforeach
-                  
-                </tbody>
-                @endif
-                  
-                
-              </table>
+        </ul>
+
+        <div id="content-wrapper">
+
+          <div class="container-fluid">
+
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="{{ route('index') }}">Home</a>
+              </li>
+              <li class="breadcrumb-item active">Courses</li>
+            </ol>
+            <!-- DataTables Example -->
+
+            <div class="card mb-3">
+              <div class="card-header">
+                <i class="fas fa-table"></i>
+              Courses</div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>  
+                        <th>Point</th>                  
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @foreach ($users as $user)
+                      <tr>
+                        <td>{{ $user->id }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>  
+                        <td>{{ $user->user_point }}</td>                  
+                      </tr>
+                      @endforeach
+                      
+                    </tbody>
+
+                    
+
+
+                  </table>
+                </div>
+              </div>
+              <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
             </div>
+
           </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-        </div>
+          <!-- /.container-fluid -->
 
-      </div>
-      <!-- /.container-fluid -->
-
-      <!-- Sticky Footer -->
-      <footer class="sticky-footer">
-        <a class="navbar-brand mr-1" href="index.html">
-          <img src="../image/logo.png" alt="" class="logo">
-          <h6 class="nameweb"> Learning English</h6>
-        </a>
-        <h6 class="hotline">Hotline: 0989999999</h6>
+          <!-- Sticky Footer -->
+          <footer class="sticky-footer">
+            <a class="navbar-brand mr-1" href="index.html">
+              <img src="../image/logo.png" alt="" class="logo">
+              <h6 class="nameweb"> Learning English</h6>
+            </a>
+            <h6 class="hotline">Hotline: 0989999999</h6>
         <!-- <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Copyright © Your Website 2019</span>
@@ -223,7 +218,9 @@
   <!-- Demo scripts for this page-->
   <script src="/js/demo/datatables-demo.js"></script>
   <script src="/js/demo/chart-area-demo.js"></script>
+
   <script type="text/javascript" src="js/admin/User.js"></script>
+
 
   
   
