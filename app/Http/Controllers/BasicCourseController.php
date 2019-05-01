@@ -16,11 +16,15 @@ class BasicCourseController extends Controller
                 // +" inner join answers on questions.answer_id=answers.answer_id ";
                 // +" where courses.type = basic and courses.level = 1 and questions.topic_id = 1 ";
         // $result = DB::select($Query, [$type, $level, $topicid]);
-        $result = DB::select("select questions.content, answers.* from
+        $result = DB::select("select questions.*, answers.* from
                                 questions inner join courses on questions.course_id=courses.course_id
                                 inner join answers on questions.answer_id=answers.answer_id 
                                 where courses.type=? and courses.level=? and questions.topic_id=?",
                                 [$type, $level, $topicid]);
         return $result;
-    }   
+    }  
+    
+    function checkAnswer(){
+        
+    }
 }

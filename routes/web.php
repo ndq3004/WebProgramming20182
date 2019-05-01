@@ -29,9 +29,10 @@ Route::post('auth/register', 'UserController@register');
 Route::post('auth/login', 'UserController@login');
 
 Route::group(['middleware' => 'jwt.auth'], function () {
-	
+	Route::get('user-info', 'UserController@getUserInfo');
+	Route::post('checkAnswer', 'BasicCourseController@checkAnswer');
 });
-Route::get('user-info', 'UserController@getUserInfo');
+
 Route::get('allUser', 'UserController@allUser');
 
 /*

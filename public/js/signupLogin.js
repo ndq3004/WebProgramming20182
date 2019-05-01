@@ -16,8 +16,6 @@ var loginSignupJS = {
             contentType:'application/json',
             data: JSON.stringify(data),
             success: function(response){
-                alert(response.token);
-                console.log(response.token);
                 localStorage.setItem("token", response.token);
                 window.location.href=host.Config.localhost + "/mainpage";
             },
