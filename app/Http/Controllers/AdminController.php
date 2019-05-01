@@ -29,4 +29,8 @@ class AdminController extends Controller
         $user = new User(); 
         $user::user_role();
     }
+    // public function getLoginAdmin()
+    // {
+    //     return view('login');
+    // }
 }
