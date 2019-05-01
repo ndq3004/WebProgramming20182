@@ -48,9 +48,7 @@ Route::get('/profile', function(){
 	return view("userprofile");
 	// return File::get(public_path() . '/views/profile.blade.php');
 });
-Route::get('/home', function(){
-	return view("test");
-});
+
 Route::get('/course', function(){
 	return view("usercourse");
 });
