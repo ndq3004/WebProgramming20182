@@ -62,7 +62,7 @@
                             <a href=""> <img style="height: 65px; width: 270px;" src="image/logo1.png" alt="logo"></a>
                            
                         </div>
-                        <!--<div class="col-md-3" id="header-right">
+                        <div class="col-md-3" id="header-right">
                             <div class="pull-right">
                                 <div class="pull-left">
                                     <i class="glyphicon glyphicon-phone-alt"></i>
@@ -72,7 +72,7 @@
                                     <p>0986420994</p>
                                 </div>
                             </div>
-                        </div>-->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -151,7 +151,9 @@
                                     <br><br><br>
                                    <tr>
                                         <td class="col-md-3"></td>
-                                        <td class="col-md-9" ><button style="margin-left: 120px; " class="capnhat" type="button" name="btcapnhat"><b style="color: white; font-size: 20px;">Cập Nhật<b></button></td>
+                                        <td class="col-md-9" ><button class="button-link style-1" style="background-color: #87c52e;"><a>Cập nhật</a></button>
+<!-- ắt đầu Luyện Ngaystyle="margin-left: 120px; " class="capnhat" type="button" name="btcapnhat"><b style="color: white; font-size: 20px;">Cập Nhật<b></button></td>
+ -->
                                     </tr>
                                     
                                 </table>
