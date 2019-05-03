@@ -33,4 +33,14 @@ class AdminController extends Controller
     // {
     //     return view('login');
     // }
-}
+    // public function login(){
+    //     //get admin name, password
+    //     $adminname = 
+    //     //check role
+    // }
+    public function allUser(){
+        //$users = DB::table('user')->get();
+        $users = User::select()->get()::paginate(5);
+        return view("Users", ['users'=>$users]); 
+    }
+} 

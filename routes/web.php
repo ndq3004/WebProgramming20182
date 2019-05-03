@@ -33,7 +33,7 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 	Route::post('checkAnswer', 'BasicCourseController@checkAnswer');
 });
 
-Route::get('allUser', 'UserController@allUser');
+// Route::get('allUser', 'AdminController@allUser');
 
 /*
 * Get page after login
@@ -81,13 +81,13 @@ Route::get('getrole','UserController@GetRole');
 // Route::get('adminLogin', 'AdminController@getLoginAdmin');
 // Route::post('adminLogin','AdminController@postLoginAdmin');
 
-Route::get('index',[
-	'as'=>'index','uses'=>'AdminController@index'
-],'middleware'=>'login');
-Route::get('courseAdmin',
-	['as'=>'courseAdmin','uses'=>'AdminController@course'
-], 'middleware'=>'login');
 
-Route::get("userAdmin", ['as'=>'userAdmin','uses'=>'AdminController@users'
-], 'middleware'=>'login');
-Route::get('lienket', 'AdminController@user1');
+Route::group(['prefix'=>'auth','middleware'=>'auth'],function(){
+	Route::get('index',['as'=>'index','uses'=>'AdminController@index']);
+	
+
+	
+	Route::get('lienket', 'AdminController@user1');
+});
+Route::get("userAdmin", ['as'=>'userAdmin','uses'=>'AdminController@users']);
+Route::get('courseAdmin',['as'=>'courseAdmin','uses'=>'AdminController@course']);
