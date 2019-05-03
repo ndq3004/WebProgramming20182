@@ -80,6 +80,21 @@ Route::get('getrole','UserController@GetRole');
 
 // Route::get('adminLogin', 'AdminController@getLoginAdmin');
 // Route::post('adminLogin','AdminController@postLoginAdmin');
+// Route::group(['prefix' => 'admin'],'middleware'=>'login', function() {
+//     //
+// });
+Route::group(['prefix' => 'admin', 'middleware'=>'adminLogin'], function() {
+	Route::get('index',[
+		'as'=>'index','uses'=>'AdminController@index'
+	]);
+	Route::get('courseAdmin',
+		['as'=>'courseAdmin','uses'=>'AdminController@course'
+	]);
+
+	Route::get("userAdmin", ['as'=>'userAdmin','uses'=>'AdminController@users'
+]);
+});
+Route::get('lienket', 'AdminController@user1');
 
 // Route::get('index',
 // 	['as'=>'index','uses'=>'AdminController@index'],

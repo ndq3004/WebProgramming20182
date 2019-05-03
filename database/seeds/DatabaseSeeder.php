@@ -12,14 +12,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-    	 Model::unguard();
+    	 // Model::unguard();
+         $this ->call([
+             UserTableSeeder::class,
+             CourseTableSeeder::class,
+             QuestionTableSeeder::class,
+             TopicTableSeeder::class,
+              QuestionTableSeeder::class,
+             AnswerTableSeeder::class,
+         ]);
 
-         $this->call(UserTableSeeder::class);
-         $this->call(CourseTableSeeder::class);
-         $this->call(QuestionTableSeeder::class);
-         $this->call(TopicTableSeeder::class);
-         $this->call(AnswerTableSeeder::class);
 
-         Model::unguard();
     }
 }
