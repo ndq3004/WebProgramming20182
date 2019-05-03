@@ -126,6 +126,7 @@ var ValidateJSFunc = {
                 },
                 success: function(data, status, xhr){
                     var name = data.name;
+                    
                     // var emailName = (data.email).split("@");
                     $('#user-name').html(name);
                 },

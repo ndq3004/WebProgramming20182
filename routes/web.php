@@ -16,7 +16,6 @@ Route::get('/', function () {
 });
 
 
-
 /*
 * Get view login, register
 */
@@ -34,26 +33,38 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 });
 
 Route::get('allUser', 'UserController@allUser');
+Route::get('course',function () {
+	
+	return File::get(public_path() . '/views/registercourse.html');
+});
 
 /*
 * Get page after login
 */
 Route::get('mainpage', function () {
-	return File::get(public_path() . '/views/usercourse.html');
+	return File::get(public_path() . '/views/coursebasic.html');
 });
+Route::get('profile', function () {
+	return File::get(public_path() . '/views/userprofile.html');
+
+});
+Route::get('paid', function () {
+	return File::get(public_path() . '/views/coursepaid.html');
+});
+
 
 /*
 *get profile
 */
 
-Route::get('/profile', function(){
-	return view("userprofile");
-	// return File::get(public_path() . '/views/profile.blade.php');
-});
+// Route::get('/profile', function(){
+// 	return view("userprofile");
+// 	// return File::get(public_path() . '/views/profile.blade.php');
+// });
 
-Route::get('/course', function(){
-	return view("usercourse");
-});
+// Route::get('/course', function(){
+// 	return view("usercourse");
+// });
 
 //Route::get('courses',['as'=>'courses','uses'=>'UserController@courses']);
 //Route Admin
@@ -81,13 +92,15 @@ Route::get('getrole','UserController@GetRole');
 // Route::get('adminLogin', 'AdminController@getLoginAdmin');
 // Route::post('adminLogin','AdminController@postLoginAdmin');
 
-Route::get('index',[
-	'as'=>'index','uses'=>'AdminController@index'
-],'middleware'=>'login');
-Route::get('courseAdmin',
-	['as'=>'courseAdmin','uses'=>'AdminController@course'
-], 'middleware'=>'login');
+// Route::get('index',[
+// 	'as'=>'index','uses'=>'AdminController@index'
+// ], 'middleware'=>'login');
+// Route::get('courseAdmin',
+// 	['as'=>'courseAdmin','uses'=>'AdminController@course'
+// ], 'middleware'=>'login');
 
-Route::get("userAdmin", ['as'=>'userAdmin','uses'=>'AdminController@users'
-], 'middleware'=>'login');
-Route::get('lienket', 'AdminController@user1');
+// Route::get("userAdmin", ['as'=>'userAdmin','uses'=>'AdminController@users'
+// ], 'middleware'=>'login');
+// Route::get('lienket', 'AdminController@user1');
+// 
+

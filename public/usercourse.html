@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <!-- saved from url=(0033)https://giasutoeic.com/dashboard/ -->
 <html xmlns:fb="http://ogp.me/ns/fb#" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Luyện thi TOEIC Online Hiệu quả nhất | Gia sư TOEIC</title>
+<title>Khóa học</title>
 <meta property="og:title" content="Luyện thi TOEIC Online Hiệu quả nhất | Gia sư TOEIC">
 <meta name="description" content="Luyện thi TOEIC online hiệu quả với 7000+ đề thi và đề luyện tập TOEIC có giải thích chi tiết cùng một lộ trình học rõ ràng giúp bạn đạt điểm TOEIC bạn muốn.">
 <meta property="og:description" content="Luyện thi TOEIC online hiệu quả với 7000+ đề thi và đề luyện tập TOEIC có giải thích chi tiết cùng một lộ trình học rõ ràng giúp bạn đạt điểm TOEIC bạn muốn.">
 <meta name="keywords" content="luyện thi toeic, luyen thi toeic, luyện thi toeic online, luyen thi toeic online, học toeic, làm đề thi toeic, đề thi toeic">
 <meta property="og:type" content="website">
-<meta property="og:image" content="http://giasutoeic.com/static/RealEdu/images/dashboard.png" alt="Góc học tập">
-<meta property="og:url" content="https://giasutoeic.com/dashboard/">
+<!-- <meta property="og:image" content="http://giasutoeic.com/static/RealEdu/images/dashboard.png" alt="Góc học tập"> -->
+<meta property="og:url" content="localhost:8000/mainpage>
 <meta property="fb:app_id" content="956108007815000">
+
+<link rel="canonical" href="localhost:8000/mainpage">
+<link rel="shortcut icon" href="localhost:8000/mainpage" type="image/x-icon">
 
 <meta name="author" content="GiasuTOEIC.com">
 <meta name="copyright" content="© copyright 2015-">
 <meta name="viewport" content="width=device-width,initial-scale=1, minimal-ui">
-<link rel="canonical" href="https://giasutoeic.com/dashboard/">
-<link rel="shortcut icon" href="https://giasutoeic.com/dashboard/" type="image/x-icon">
+
 <link rel="apple-touch-icon" sizes="180x180" href="https://giasutoeic.com/static/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" href="https://giasutoeic.com/static/favicon/favicon-32x32.png" sizes="32x32">
 <link rel="icon" type="image/png" href="https://giasutoeic.com/static/favicon/favicon-16x16.png" sizes="16x16">
@@ -24,16 +26,20 @@
 <link rel="shortcut icon" href="https://giasutoeic.com/static/favicon/favicon.ico">
 <meta name="msapplication-config" content="/static/favicon/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
-<link rel="stylesheet" href="./usercourse_files/template-1052220419.css" type="text/css">
-<link rel="stylesheet" href="./usercourse_files/jquery-ui-1.11.4.min.css" type="text/css">
+<link rel="stylesheet" href="usercourse_files/template-1052220419.css" type="text/css">
+<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/jquery-ui.min.css">
+  <!-- <link rel="stylesheet" href="../css/jquery-ui.theme.min.css"> -->
 <style>
 	  	
 		.ui-widget, 
@@ -45,10 +51,19 @@
   		.ui-button {
 			padding: 3px 7px;	
 		}
-		
+		/* .ui-dialog{
+      margin-top:200px;
+      top:200px;
+    } */
 		.ui-button .ui-button-text {
 			font-size: 16px;
 		}
+    .open-form{
+      cursor: pointer;
+    }
+    .multicheck{
+      border-bottom: 1px solid gray;
+    }
 	</style>
 <link rel="stylesheet" href="./usercourse_files/slick.css">
 <link rel="stylesheet" href="./usercourse_files/slick-theme.css">
@@ -80,23 +95,23 @@
 <div id="page-container">
 <header data-sticky="" data-class-name="bg-blue" class="clearfix header1">
 <div class="content">
-<div class="logo">
+<div class="logo" style="width: 100px;">
 <a href="https://giasutoeic.com/?r=nav" title="Gia sư TOEIC">
-<img src="../image/logo3.png" alt="Gia sư TOEIC Logo">
+<img src="../image/pic.png" alt="Gia sư TOEIC Logo" style="width: 220px;">
 </a>
 </div>
-<div class="logo-text">
+<!-- <div class="logo-text">
 <a href="https://giasutoeic.com/?r=nav" title="Luyện thi TOEIC Online">
-<img src="../image/logo2.png" alt="Luyện thi TOEIC Online">
+<img src="../image/pic.png" alt="Luyện thi TOEIC Online">
 </a>
-</div>
+</div> -->
 <div class="header__menu header__menu--desktop">
 <div data-sub-menu="" class="header__menu__left">
-<ul class="list-menu">
+<ul class="list-menu" style="margin-left: 200px;">
 <li class="list-menu__item menu-in-li">
 <div data-btn-submenu-user="" class="user-block user-avatar">
 <img src="./usercourse_files/user_icon.webp" alt="User icon" class="icon-user">
-<p class="name-user">Loan</p>
+<p class="name-user"></p>
 <img src="./usercourse_files/show_menu_icon.png" alt="Menu icon" class="icon-show">
 </div>
 <ul data-sub-menu-user="" class="list-menu submenu">
@@ -190,12 +205,12 @@ Các khóa học trả phí
 <div class="header__menu__right">
 <div data-btn-submenu-user="" class="user-block">
 <img src="./usercourse_files/user_icon.webp" alt="User icon" class="icon-user">
-<p class="name-user">Loan</p>
+<p class="name-user" id="user-name"></p>
 <img src="./usercourse_files/show_menu_icon.png" alt="Menu icon" class="icon-show" style="">
 </div>
 <ul data-sub-menu-user="" class="list-menu submenu">
 <li class="list-menu__item">
-<a href="https://giasutoeic.com/user/hoangloantIl/?r=nav" title="Thiết lập tài khoản">
+<a href="localhost:8000/profile" title="Thiết lập tài khoản">
 <figure><img src="./usercourse_files/profile_page_icon.png" alt="Thiết lập tài khoản"></figure>
 <span>Thiết lập tài khoản</span>
  </a>
@@ -251,7 +266,156 @@ Các khóa học trả phí
 </header>
 <article class="playfield " id="dashboard-id">
 
+<div style="width: 100%">
+<section class="how-to-learn-wrapper">
+<div class="inner">
+<div class="learning-approach" style="left: CALC(50% - 480px)">
+<h2 class="learing-title blue-color">Your way to England</h2>
+<h4>You <strong>still keep working</strong> ,hummmmmmm ?</h4>
+<ul class="review-topics clearfix">
+
+<li>
+<img src="./usercourse_files/600_tu_vung_toeic.png">
+<h3>Topic cơ bản 1 - Từ vựng</h3>
+
+<p class="text-center">
+<div class="d-flex">
+    <div class="button-link style-1 open-form" type-t="basic" level="1" topicid="1">Animal</div>
+    <div class="button-link style-1 open-form" type-t="basic" level="1" topicid="2">Family</div>
+    <div class="button-link style-1 open-form" type-t="basic" level="1" topicid="3">Education</div>
+</div>
+
+</p>
+</li>
+<li style="margin-right: 30px;">
+    <img src="./usercourse_files/ngu_phap_toeic.png">
+    <h3>Ngữ pháp cơ bản 1</h3>
+    
+    <p class="text-center">
+    <div class="d-flex">
+        <div class="button-link style-1 open-form" type-t="basic" level="" topicid="">Thì hiện tại đơn</div>
+        <div class="button-link style-1 open-form" type-t="basic" level="" topicid="">Thì hiện tương lai đơn</div>
+        <div class="button-link style-1 open-form" type-t="basic" level="" topicid="">Thì quá khứ đơn</div>
+    </div>
+    </p>
+</li>
+<li>
+<img src="./usercourse_files/luyen_nghe_toeic.webp">
+<h3>Cải thiện kĩ năng nghe tiếng Anh</h3>
+Vừa luyện nghe, vừa chơi game!
+<p class="text-center">
+<a href="https://giasutoeic.com/luyen-nghe-toeic/?r=dashboard-h2learn" class="button-link style-1">Cải thiện kĩ năng Nghe</a>
+</p>
+</li>
+</ul>
+</div>
+<hr class="faded" style="margin: 20px auto;">
+<div class="learning-approach">
+<h2 class="learing-title blue-color">Learning English</h2>
+<h4>Bạn <strong>đã nắm được ngữ pháp và từ vựng</strong> tiếng Anh căn bản?
+</h4>
+<p class="text-center">
+<a href="javascript:goToIdByScroll(&#39;sec3&#39;)" class="button-link style-1" style="background-color: #87c52e;">
+Bắt đầu Luyện Ngay
+</a>
+</p>
+</div>
+</div>
+</section>
+<section class="suggest-block" id="suggested-unit">
+<div style="background: #fff; padding: 5px;">
+<a href="https://giasutoeic.com/huong-dan/cach-hoc-tren-gia-su-toeic/?r=video-guide-link#cach-luyen-thi" target="_blank">
+
+</a>
+</div>
+<div id="sec2" class="block-milestone block-milestone-2">
+<div class="inner">
+<h2 style="text-align: center; font-family: cursive;color: #33ebe5;font-size: 40px;">Một số khóa học khác</h2>
+<div id="myCarousel" class="carousel slide" style="width: 100%; text-align: center;" data-ride="carousel">
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+      <li data-target="#myCarousel" data-slide-to="5"></li>
+     <!--  <li data-target="#myCarousel" data-slide-to="6"></li> -->
+    </ul>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../image/6.jpg" alt="Level 0" width="650" height="400" border="0">
+         
+        <div class="carousel-caption">
+        <h3 style="color: black;">Khóa học cơ bản</h3>
+        
+      </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../image/2.jpg" alt="Level 1" width="650" height="400" border="0">
+        <div class="carousel-caption">
+        <h3 style="color: black;">Khóa học chuyên sâu</h3>
+        </div>
+      </div>
+    
+      <div class="carousel-item">
+        <img class="hinhanh" src="../image/3.jpg" alt="Level 2" width="650" height="400" border="0">
+        <div class="carousel-caption">
+        <h3 style="color: black;">Khóa học luyện nghe</h3>
+       </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="../image/4.jpg" alt="Level 3" width="650" height="400" border="0">
+        <div class="carousel-caption">
+        <h3 style="color: black;">Khóa học luyện viết</h3>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img " src="../image/7.jpg" alt="Level 4" width="650" height="400" border="0">
+        <div class="carousel-caption">
+        <h3 style="color: black;">Khóa học luyện phát âm</h3>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img class="hinhanh" src="../image/5.jpg" alt="Level 5" width="650" height="400" border="0">
+        <div class="carousel-caption">
+        <h3 style="color: black;">Khóa học luyện từ vựng</h3>
+        </div>
+      </div>
+
+      <!-- <div class="carousel-item">
+        <img  src="../image/7.jpg" alt="Level 6" width="650" height="400" border="0">
+        <div class="carousel-caption">
+        <h3 style="color: black;">Khóa học trả phí</h3>
+        </div>
+      </div>
+ -->
+    </div>
+
+   
+         <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+
+</div>
+
+</div>
+</div>
+</section>
+
+
 <div class="container">
+
 <div class="milestone">
 <div id="sec1" class="heading-milestone">
 
@@ -288,149 +452,7 @@ Các khóa học trả phí
 <div class="milestone-process hidden-lg hidden-md">
 
 </div>
-
-
-<div class="row">
-<div class="col-md-8">
-<section class="how-to-learn-wrapper">
-<div class="inner">
-<div class="learning-approach">
-<h2 class="learing-title blue-color">Các khóa học nền tảng tiếng Anh căn bản</h2>
-<h4>Bạn muốn <strong>lấy lại nền tảng tiếng Anh</strong> sau khi học ?</h4>
-<ul class="review-topics clearfix">
-<li style="margin-right: 30px;">
-<img src="./usercourse_files/ngu_phap_toeic.png">
-<h3>Học ngữ pháp tiếng Anh căn bản</h3>
-với Chương trình Ngữ Pháp PRO
-<p class="text-center">
-<a href="https://giasutoeic.com/ngu-phap-tieng-anh/?r=dashboard-h2learn" class="button-link style-1">Học ngữ pháp căn bản</a>
-</p>
-</li>
-<li>
-<img src="./usercourse_files/600_tu_vung_toeic.png">
-<h3>Học 600 từ vựng hay gặp trong cuộc sống</h3>
-được chia theo chủ đề, với đầy đủ thông tin về từ
-<p class="text-center">
-<a href="https://giasutoeic.com/600-tu-vung-toeic/?r=dashboard-h2learn" class="button-link style-1">Học 600 từ vựng thường gặp</a>
-</p>
-</li>
-<li>
-<img src="./usercourse_files/luyen_nghe_toeic.webp">
-<h3>Cải thiện kĩ năng nghe tiếng Anh</h3>
-Vừa luyện nghe, vừa chơi game!
-<p class="text-center">
-<a href="https://giasutoeic.com/luyen-nghe-toeic/?r=dashboard-h2learn" class="button-link style-1">Cải thiện kĩ năng Nghe</a>
-</p>
-</li>
-</ul>
-</div>
-<hr class="faded" style="margin: 20px auto;">
-<div class="learning-approach">
-<h2 class="learing-title blue-color">Learning English</h2>
-<h4>Bạn <strong>đã nắm được ngữ pháp và từ vựng</strong> tiếng Anh căn bản?
-</h4>
-<p class="text-center">
-<a href="javascript:goToIdByScroll(&#39;sec3&#39;)" class="button-link style-1" style="background-color: #87c52e;">
-Bắt đầu Luyện Ngay
-</a>
-</p>
-</div>
-</div>
-</section>
-<section class="suggest-block" id="suggested-unit">
-<div style="background: #fff; padding: 5px;">
-<a href="https://giasutoeic.com/huong-dan/cach-hoc-tren-gia-su-toeic/?r=video-guide-link#cach-luyen-thi" target="_blank">
-
-</a>
-</div>
-<div id="sec2" class="block-milestone block-milestone-2">
-<div class="inner">
-<h2 class="learing-title">Một số khóa học khác</h2>
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ul class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-      <li data-target="#myCarousel" data-slide-to="4"></li>
-      <li data-target="#myCarousel" data-slide-to="5"></li>
-      <li data-target="#myCarousel" data-slide-to="6"></li>
-    </ul>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="../image/5.jpg" alt="Level 0" width="650" height="400" border="0">
-         
-        <div class="carousel-caption">
-        <h3>Khóa học cơ bản</h3>
-        <p> Cho người mới bắt đầu</p>
-      </div>
-      </div>
-      <div class="carousel-item">
-        <img src="../image/2.jpg" alt="Level 1" width="650" height="400" border="0">
-        <div class="carousel-caption">
-        <h3>Khóa học chuyên sâu</h3>
-        </div>
-      </div>
-    
-      <div class="carousel-item">
-        <img class="hinhanh" src="../image/3.jpg" alt="Level 2" width="650" height="400" border="0">
-        <div class="carousel-caption">
-        <h3>Khóa học luyện nghe</h3>
-       </div>
-      </div>
-
-      <div class="carousel-item">
-        <img src="../image/4.jpg" alt="Level 3" width="650" height="400" border="0">
-        <div class="carousel-caption">
-        <h3>Khóa học luyện viết</h3>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <img " src="../image/5.jpg" alt="Level 4" width="650" height="400" border="0">
-        <div class="carousel-caption">
-        <h3>Khóa học luyện phát âm</h3>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <img class="hinhanh" src="../image/6.jpg" alt="Level 5" width="650" height="400" border="0">
-        <div class="carousel-caption">
-        <h3>Khóa học luyện từ vựng</h3>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <img  src="../image/7.jpg" alt="Level 6" width="650" height="400" border="0">
-        <div class="carousel-caption">
-        <h3>Khóa học trả phí</h3>
-        </div>
-      </div>
-
-    </div>
-
-   
-         <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-</div>
-
-
-</div>
-
-</div>
-</div>
-</section>
-
-
-</div>
-<script type="text/javascript" src="./usercourse_files/jquery-3.1.1_with_migrate-3.0.0_with_bootstrap3.3.7.min.js.tải xuống"></script>
+<script type="text/javascript" src="usercourse_files/jquery-3.1.1_with_migrate-3.0.0_with_bootstrap3.3.7.min.js"></script>
 <script type="text/javascript" src="./usercourse_files/jquery-ui-1.11.4.min.js.tải xuống"></script>
 <script type="text/javascript" src="./usercourse_files/template-1052220419.js.tải xuống"></script>
 <script>
@@ -537,5 +559,13 @@ var isHomePage = '/dashboard/' == '/' ? true : false;
     <div class="nof">GiasuTOEIC.com works best with JavaScript enabled! To use standard view, enable JavaScript by changing your browser options, then try again.</div>
 </noscript>
 
+
+<!-- form do multicheck -->
+<div id="multicheck-form" style="display: none;">
+
+</div>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-ui.min.js"></script>
+<script src="/js/firstSignInPage.js"></script>
 
 </body></html>
