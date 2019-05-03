@@ -16,10 +16,14 @@ var loginSignupJS = {
             contentType:'application/json',
             data: JSON.stringify(data),
             success: function(response){
-                alert(response.token);
-                console.log(response.token);
-                localStorage.setItem("token", response.token);
-                window.location.href=host.Config.localhost + "/user/mainpage";
+                if(response.token != null || response.token != ''){
+                    localStorage.setItem("token", response.token);
+                    window.location.href=host.Config.localhost + "/mainpage";
+                }
+                else{
+                    alert('đăng nhập lỗi!');
+                }
+                
             },
             error: function(error){
                 alert('error');
@@ -37,7 +41,7 @@ var loginSignupJS = {
             contentType:'application/json',
             data: JSON.stringify(data),
             success: function(data){
-                
+                alert('register successfully!');
             },
             error: function(){
                 alert('error');

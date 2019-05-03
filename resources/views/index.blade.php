@@ -163,18 +163,7 @@
       <!-- /.container-fluid -->
 
       <!-- Sticky Footer -->
-      <footer class="sticky-footer">
-        <a class="navbar-brand mr-1" href="index.html">
-          <img src="../image/logo.png" alt="" class="logo">
-          <h6 class="nameweb"> Learning English</h6>
-        </a>
-        <h6 class="hotline">Hotline: 0989999999</h6>
-        <!-- <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright © Your Website 2019</span>
-          </div>
-        </div> -->
-      </footer>
+      
 
     </div>
     <!-- /.content-wrapper -->

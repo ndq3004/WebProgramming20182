@@ -30,7 +30,9 @@ Route::post('auth/login', 'UserController@login');
 
 Route::group(['middleware' => 'jwt.auth'], function () {
 	Route::get('user-info', 'UserController@getUserInfo');
+	Route::post('checkAnswer', 'BasicCourseController@checkAnswer');
 });
+
 Route::get('allUser', 'UserController@allUser');
 
 /*
@@ -48,9 +50,7 @@ Route::get('/profile', function(){
 	return view("userprofile");
 	// return File::get(public_path() . '/views/profile.blade.php');
 });
-Route::get('/home', function(){
-	return view("test");
-});
+
 Route::get('/course', function(){
 	return view("usercourse");
 });
@@ -94,5 +94,15 @@ Route::group(['prefix' => 'admin', 'middleware'=>'adminLogin'], function() {
 	Route::get("userAdmin", ['as'=>'userAdmin','uses'=>'AdminController@users'
 ]);
 });
-
 Route::get('lienket', 'AdminController@user1');
+
+// Route::get('index',
+// 	['as'=>'index','uses'=>'AdminController@index'],
+// 	 'middleware'=>'login');
+// Route::get('courseAdmin',
+// 	['as'=>'courseAdmin','uses'=>'AdminController@course'
+// ], 'middleware'=>'login');
+
+// Route::get("userAdmin", ['as'=>'userAdmin','uses'=>'AdminController@users'
+// ], 'middleware'=>'login');
+// Route::get('lienket', 'AdminController@user1');
