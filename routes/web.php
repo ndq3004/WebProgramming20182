@@ -91,3 +91,9 @@ Route::group(['prefix'=>'auth','middleware'=>'auth'],function(){
 });
 Route::get("userAdmin", ['as'=>'userAdmin','uses'=>'AdminController@users']);
 Route::get('courseAdmin',['as'=>'courseAdmin','uses'=>'AdminController@course']);
+
+Route::get('listUser',['as'=>'listUser','uses'=>'AdminController@listUser']);
+Route::get('listCourse',['as'=>'listCourse','uses'=>'AdminController@listCourse']);
+
+Route::get('addCourse',['as'=>'addCourse','uses'=>'AdminController@addCourse']);
+Route::get('addUser',['as'=>'addUser','uses'=>'AdminController@addUser']);

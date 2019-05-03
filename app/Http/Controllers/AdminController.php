@@ -43,4 +43,25 @@ class AdminController extends Controller
         $users = User::select()->get()::paginate(5);
         return view("Users", ['users'=>$users]); 
     }
+
+    public function listUser(){
+        
+        $users = User::select()->get();
+        return view("admin.listUser", ['users'=>$users]); 
+    }
+     public function listCourse(){
+        
+        $course = Course::select()->get();
+        return view("admin.listCourse", ['course'=>$course]); 
+    }
+
+    public function addUser(){
+        $users = User::select()->get();
+        return view("admin.addUser", ['users'=>$users]); 
+    }
+
+    public function addCourse(){
+        $course = Course::select()->get();
+        return view("admin.addCourse", ['course'=>$course]); 
+    }
 } 
