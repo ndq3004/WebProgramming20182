@@ -6,8 +6,11 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\addUserRequest;
+use App\Http\Requests\addCourseRequest;
 use App\User;
 use App\Course;
+use Hash;
 
 class AdminController extends Controller
 {
@@ -59,9 +62,29 @@ class AdminController extends Controller
         $users = User::select()->get();
         return view("admin.addUser", ['users'=>$users]); 
     }
+    public function postAddUser(addUserRequest $request){
+        $user = new User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password =Hash::make($request->password);
+        $user->user_point = $request->user_point;
+        $user->save();
+        return redirect('listUser')->with(['flash_level'=>'success','flash_message'=>'Thêm User thành công']);
+    }
 
     public function addCourse(){
         $course = Course::select()->get();
         return view("admin.addCourse", ['course'=>$course]); 
+    }
+    public function postAddCourse(addCourseRequest $request){
+        $course = new Course;
+        $course->name = $request->name;
+        $course->level = $request->level;
+        $course->link = $request->link;
+        $course->description = $request->description;
+        $course->number_lesion = $request->number_lesion;
+        $course->type = $request->type;
+        $course->save();
+        return redirect('listCourse')->with(['flash_level'=>'success','flash_message'=>'Thêm Khóa Học thành công']);
     }
 } 

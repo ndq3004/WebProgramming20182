@@ -97,3 +97,6 @@ Route::get('listCourse',['as'=>'listCourse','uses'=>'AdminController@listCourse'
 
 Route::get('addCourse',['as'=>'addCourse','uses'=>'AdminController@addCourse']);
 Route::get('addUser',['as'=>'addUser','uses'=>'AdminController@addUser']);
+
+Route::post('postAddUser',['as'=>'postAddUser','uses'=>'AdminController@postAddUser']);
+Route::post('postAddCourse',['as'=>'postAddCourse','uses'=>'AdminController@postAddCourse']);
