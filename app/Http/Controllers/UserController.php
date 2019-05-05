@@ -95,10 +95,7 @@ class UserController extends Controller
     }
 
 
-    public function allUser(){
-        $users = DB::table('user')->get();
-        return view("Users", ['users'=>$users]); 
-    }
+    
 
     public function GetRole(){
         // $role = DB::select('select * from role where role_id=1 ');

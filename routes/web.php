@@ -33,7 +33,7 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 	Route::post('checkAnswer', 'BasicCourseController@checkAnswer');
 });
 
-Route::get('allUser', 'UserController@allUser');
+// Route::get('allUser', 'AdminController@allUser');
 
 /*
 * Get page after login
@@ -80,29 +80,25 @@ Route::get('getrole','UserController@GetRole');
 
 // Route::get('adminLogin', 'AdminController@getLoginAdmin');
 // Route::post('adminLogin','AdminController@postLoginAdmin');
-// Route::group(['prefix' => 'admin'],'middleware'=>'login', function() {
-//     //
-// });
-Route::group(['prefix' => 'admin', 'middleware'=>'adminLogin'], function() {
-	Route::get('index',[
-		'as'=>'index','uses'=>'AdminController@index'
-	]);
-	Route::get('courseAdmin',
-		['as'=>'courseAdmin','uses'=>'AdminController@course'
-	]);
 
-	Route::get("userAdmin", ['as'=>'userAdmin','uses'=>'AdminController@users'
-]);
+
+
+Route::group(['prefix'=>'auth','middleware'=>'auth'],function(){
+	Route::get('index',['as'=>'index','uses'=>'AdminController@index']);
+	
+
+	
+	Route::get('lienket', 'AdminController@user1');
 });
-Route::get('lienket', 'AdminController@user1');
+Route::get("userAdmin", ['as'=>'userAdmin','uses'=>'AdminController@users']);
+Route::get('courseAdmin',['as'=>'courseAdmin','uses'=>'AdminController@course']);
 
-// Route::get('index',
-// 	['as'=>'index','uses'=>'AdminController@index'],
-// 	 'middleware'=>'login');
-// Route::get('courseAdmin',
-// 	['as'=>'courseAdmin','uses'=>'AdminController@course'
-// ], 'middleware'=>'login');
+Route::get('listUser',['as'=>'listUser','uses'=>'AdminController@listUser']);
+Route::get('listCourse',['as'=>'listCourse','uses'=>'AdminController@listCourse']);
 
-// Route::get("userAdmin", ['as'=>'userAdmin','uses'=>'AdminController@users'
-// ], 'middleware'=>'login');
-// Route::get('lienket', 'AdminController@user1');
+Route::get('addCourse',['as'=>'addCourse','uses'=>'AdminController@addCourse']);
+Route::get('addUser',['as'=>'addUser','uses'=>'AdminController@addUser']);
+
+Route::post('postAddUser',['as'=>'postAddUser','uses'=>'AdminController@postAddUser']);
+Route::post('postAddCourse',['as'=>'postAddCourse','uses'=>'AdminController@postAddCourse']);
+
