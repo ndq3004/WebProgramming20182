@@ -18,11 +18,11 @@ class AdminLoginMiddleware
     {
         if (Auth::check()) {
             $user = Auth::users();
-            if ($user->quyen ==1) {
+            if ($user->role ==1) {
                 return $next($request);
-                            }
+            }
             else
-            return redirect('login');
+                return redirect('login');
         }
         else
             return redirect('login');

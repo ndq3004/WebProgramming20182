@@ -82,6 +82,7 @@ Route::get('getrole','UserController@GetRole');
 // Route::post('adminLogin','AdminController@postLoginAdmin');
 
 
+
 Route::group(['prefix'=>'auth','middleware'=>'auth'],function(){
 	Route::get('index',['as'=>'index','uses'=>'AdminController@index']);
 	
@@ -100,3 +101,4 @@ Route::get('addUser',['as'=>'addUser','uses'=>'AdminController@addUser']);
 
 Route::post('postAddUser',['as'=>'postAddUser','uses'=>'AdminController@postAddUser']);
 Route::post('postAddCourse',['as'=>'postAddCourse','uses'=>'AdminController@postAddCourse']);
+

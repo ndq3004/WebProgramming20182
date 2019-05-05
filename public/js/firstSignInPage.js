@@ -16,6 +16,7 @@ class DialogJS{
             autoOpen: false,
             modal: true,
             width: 700,
+            title: "animal topic",
             // maxHeight: 500,
             position: { my: 'top', at: 'top+100' },
             // resizable: false,
@@ -64,9 +65,8 @@ class DialogJS{
             contentType:'appication/json',
             url: host.Config.localhost + '/getlession/'+ type + "/" + level + "/" + topicid,
             success: function(response){
-                console.log(response);
-                for(var i = 0; i < 10; i++) {
-                    dialogJS.appendDataToDialog(response[0], i);
+                for(var i = 0; i < response.length; i++) {
+                    dialogJS.appendDataToDialog(response[i], i);
                 }     
             },
             error: function(){
@@ -105,9 +105,47 @@ class DialogJS{
                 "questionid": element.parent('div').attr('questionid'),
                 "answer"    : element.attr("answer")
             }
-            debugger
-            submitAnswers.push(eachQuestion);
-        } 
+            if(element.length != 0){
+                submitAnswers.push(eachQuestion);
+            }  
+        }
+        var returnObj = {submitAnswers:submitAnswers};
+        if(submitAnswers.length == 0) return;
+        console.log(returnObj);
+        debugger
+        $.ajax({
+            method:'post',
+            url: host.Config.localhost + '/checkAnswer',
+            headers:{
+                'token': localStorage.getItem('token')
+            },
+            data: JSON.stringify(returnObj),
+            success: function(data){
+                //mở box thông báo điểm
+                alert('success');
+                dialogJS.showPoint(data);
+            },
+            error: function(){
+
+            }
+        });
+    }
+
+    showPoint(point){
+        $('.show-point').html('');
+        $('.show-point').html('Bạn đã hoàn thành với số điểm là ' + point);
+        $('.show-point').dialog({
+            autoOpen: false,
+            height: 400,
+            width: 350,
+            modal: true,
+            title: 'thông báo!',
+            buttons: {
+                close: function(){
+                    $('.show-point').dialog('close');
+                }
+            }
+        });
     }
 }
 
