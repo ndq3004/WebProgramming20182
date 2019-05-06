@@ -1,5 +1,8 @@
 $(document).ready(function(){
     Profile.getProfile();
+    $('#updateBtn').click(function(){
+        Profile.updateProfile();
+    })
 });
 var Profile = {
     getProfile: function(){
@@ -10,11 +13,39 @@ var Profile = {
                 'token': localStorage.getItem('token')
             },
             success: function(data){
-                console.log(data);
-                $('#account-name').text(data.user.name);
+                $('#account-name').val(data.user.name);
                 $('#email').text(data.user.email);
-                // $('#phone-number').val();
-
+                if(data.user.phone.length > 0){
+                    $('#phone-number').val(data.user.phone);
+                }
+                if(data.user.address.length){
+                    $('#address').val(data.user.address);
+                }
+            },
+            error: function(){
+                alert('error');
+            }
+        });
+    },
+    updateProfile: function(){
+        
+        var profile = {
+            'name': $('#account-name').val(),
+            'address': $('#address').val(),
+            'phone': $('#phone-number').val()
+        }
+        console.log(profile);
+        $.ajax({
+            method:"put",
+            url: host.Config.localhost + '/updateProfile',
+            headers: {
+                'token': localStorage.getItem('token')
+            },
+            contentType:'application/json',
+            data: JSON.stringify(profile),
+            success:function(data){
+                // alert(data);
+                console.log(data);
             },
             error: function(){
                 alert('error');

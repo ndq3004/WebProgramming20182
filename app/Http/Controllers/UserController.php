@@ -89,6 +89,21 @@ class UserController extends Controller
         return response()->json(['user'=>$user]);
     }
 
+    public function updateProfile(Request $request)
+    {
+        $user = JWTAuth::toUser($request->header('token'));
+        try{
+            $user->phone = $request->phone;
+            $user->name = $request->name;
+            $user->address = $request->address;
+            $user->save();
+        }
+        catch(Exception $e){
+            return "update error";
+        }
+        return "success"; 
+    }
+
     public function cources(){
 
     //     $cources = cources::paginate(10);

@@ -166,7 +166,6 @@ var ValidateJSFunc = {
                     var name = data.name;
                     
                     // var emailName = (data.email).split("@");
-                    debugger
                     $('#user-name').html(name);
                 },
                 error: function(error){

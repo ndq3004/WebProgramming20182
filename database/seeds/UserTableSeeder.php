@@ -11,27 +11,42 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
+        // $table->increments('user_id');
+        //     $table->string('name');
+        //     $table->string('email')->unique();
+        //     $table->string('password'); 
+        //     $table->string('phone', 13);
+        //     $table->text('address');
+        //     $table->string('user_point')->default('0');
 
         for($i = 0; $i < 100; $i++){
             DB::table('users')->insert([[
                 'name'=>'Bùi Thị Mến'.' '.$i,
                 'email'=>('men'.$i.'@gmail.com'),
-                'password'=>bcrypt('12345678')
+                'password'=>bcrypt('12345678'),
+                'phone'=>'01625822299',
+                'address'=>'Hòa Bình'
             ],
             [
                 'name'=>'Nguyễn Đình Quân'.' '.$i,
                 'email'=>'quan'.$i.'@gmail.com',
-                'password'=>bcrypt('12345678')
+                'password'=>bcrypt('12345678'),
+                'phone'=>'01625822299',
+                'address'=>'Hà Nội'
             ],
             [
                 'name'=>'Hòa Thị Hường'.' '.$i,
                 'email'=>'huong'.$i.'@gmail.com',
-                'password'=>bcrypt('12345678')
+                'password'=>bcrypt('12345678'),
+                'phone'=>'01625822299',
+                'address'=>'Hà Nội'
             ],
             [
                 'name'=>'Hoàng Phương Loan'.' '.$i,
                 'email'=>'loan'.$i.'@gmail.com',
-                'password'=>bcrypt('12345678')
+                'password'=>bcrypt('12345678'),
+                'phone'=>'0162287334',
+                'address'=>'Hà Nội'
             ]
         ]);
         }

@@ -31,6 +31,7 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 	Route::get('user-info', 'UserController@getUserInfo');
 	Route::post('checkAnswer', 'BasicCourseController@checkAnswer');
 	Route::get('userProfile', 'UserController@getUserProfile');
+	Route::put('updateProfile', 'UserController@updateProfile');
 });
 
 Route::get('allUser', 'UserController@allUser');
