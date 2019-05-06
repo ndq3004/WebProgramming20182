@@ -47,10 +47,31 @@ var loginSignupJS = {
                 alert('error');
             }
         })
-    }
+    },
+    checkIsLogin: function(){
+        if(localStorage.getItem('token') != null || localStorage.getItem('token') != ''){
+           $.ajax({
+               method:'get',
+               url: host.Config.localhost + '/checkAuthen',
+               headers: {
+                   'token': localStorage.getItem('token')
+               },
+               success: function(data){
+                //    alert(data);
+                    if(data === 'success'){
+                        window.location.href = host.Config.localhost + '/mainpage';
+                    }
+               },
+               error: function(){
+                    console.log('authen error');
+               }   
+            }) 
+        }
+    } 
 }
 
 function init_event(){
+    loginSignupJS.checkIsLogin();
     $('#submit1').click(function(){loginSignupJS.login();});
     $('#submit2').click(function(){loginSignupJS.register();});
 }

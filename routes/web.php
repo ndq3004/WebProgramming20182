@@ -32,6 +32,9 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 	Route::post('checkAnswer', 'BasicCourseController@checkAnswer');
 	Route::get('userProfile', 'UserController@getUserProfile');
 	Route::put('updateProfile', 'UserController@updateProfile');
+	Route::get('checkAuthen', function(){
+		return 'success';
+	});
 });
 
 Route::get('allUser', 'UserController@allUser');
