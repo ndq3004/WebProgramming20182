@@ -44,12 +44,17 @@ Route::get('course',function () {
 Route::get('mainpage', function () {
 	return File::get(public_path() . '/views/coursebasic.html');
 });
-Route::get('profile', function () {
-	return File::get(public_path() . '/views/userprofile.html');
-
-});
+// Route::get('profile', function () {
+// 	return File::get(public_path() . '/views/userprofile.html');
+// });
+ // Route::get('profile', 'UserController@thongtin');
+	
 Route::get('paid', function () {
 	return File::get(public_path() . '/views/coursepaid.html');
+});
+
+Route::get('profile', function () {
+	return File::get(public_path() . '/views/userprofile.html');
 });
 
 
