@@ -12,13 +12,23 @@ class CourseTableSeeder extends Seeder
     public function run()
     {
        DB::table('courses')->insert([
-                'course_id'=>'1',
+            [   'course_id'=>'1',
                 'name'=>'Khóa cơ bản',
                 'level'=>'1',
                 'discription'=>'none',
                 'link'=>'none',
                 'number-lession'=>'0',
-                'type'=>'basic',
+                'type'=>'basic'
+            ],
+            [
+                'course_id'=>'2',
+                'name'=>'Khóa cơ bản',
+                'level'=>'2',
+                'discription'=>'none',
+                'link'=>'none',
+                'number-lession'=>'0',
+                'type'=>'basic'
+            ]
 
 
         ]);
