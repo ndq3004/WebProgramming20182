@@ -32,11 +32,15 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 	Route::post('checkAnswer', 'BasicCourseController@checkAnswer');
 });
 
+<<<<<<< HEAD
 Route::get('allUser', 'UserController@allUser');
 Route::get('course',function () {
 	
 	return File::get(public_path() . '/views/registercourse.html');
 });
+=======
+// Route::get('allUser', 'AdminController@allUser');
+>>>>>>> a1540b1f6b1234c8ec065accaf5aa37836690ddb
 
 /*
 * Get page after login
@@ -97,6 +101,7 @@ Route::get('getrole','UserController@GetRole');
 // Route::get('adminLogin', 'AdminController@getLoginAdmin');
 // Route::post('adminLogin','AdminController@postLoginAdmin');
 
+<<<<<<< HEAD
 // Route::get('index',[
 // 	'as'=>'index','uses'=>'AdminController@index'
 // ], 'middleware'=>'login');
@@ -109,3 +114,26 @@ Route::get('getrole','UserController@GetRole');
 // Route::get('lienket', 'AdminController@user1');
 // 
 
+=======
+
+
+Route::group(['prefix'=>'auth','middleware'=>'auth'],function(){
+	Route::get('index',['as'=>'index','uses'=>'AdminController@index']);
+	
+
+	
+	Route::get('lienket', 'AdminController@user1');
+});
+Route::get("userAdmin", ['as'=>'userAdmin','uses'=>'AdminController@users']);
+Route::get('courseAdmin',['as'=>'courseAdmin','uses'=>'AdminController@course']);
+
+Route::get('listUser',['as'=>'listUser','uses'=>'AdminController@listUser']);
+Route::get('listCourse',['as'=>'listCourse','uses'=>'AdminController@listCourse']);
+
+Route::get('addCourse',['as'=>'addCourse','uses'=>'AdminController@addCourse']);
+Route::get('addUser',['as'=>'addUser','uses'=>'AdminController@addUser']);
+
+Route::post('postAddUser',['as'=>'postAddUser','uses'=>'AdminController@postAddUser']);
+Route::post('postAddCourse',['as'=>'postAddCourse','uses'=>'AdminController@postAddCourse']);
+
+>>>>>>> a1540b1f6b1234c8ec065accaf5aa37836690ddb

@@ -51,12 +51,16 @@ class UserController extends Controller
     
     public function login(Request $request){
         $this->validate($request,[
-            'email'=>'required',
+            'email'=>'required|email',
             'password'=>'required|min:3|max:32'
         ],[
+            'email.required'=>'Vui lòng nhập email',
+            'email.email'=>'Email không đúng định dạng',
+            'password.required'=>'Vui lòng nhập mật khẩu',
             'password.min'=>'Password không nhỏ hơn 3 kí tự',
-            'password.max'=>'Password không lớn hơn 3 kí tự'
+            'password.max'=>'Password quá lớn'
         ]);
+        //Lấy thông tin so sánh với DB
         $credentials = $request->only('email', 'password');
         $token = null;
 
@@ -91,10 +95,7 @@ class UserController extends Controller
     }
 
 
-    public function allUser(){
-        $users = DB::table('user')->get();
-        return view("Users", ['users'=>$users]); 
-    }
+    
 
     public function GetRole(){
         // $role = DB::select('select * from role where role_id=1 ');

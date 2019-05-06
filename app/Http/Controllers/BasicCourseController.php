@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
+use App\Answer;
+use App\Services\PayUService\Exception;
 
 class BasicCourseController extends Controller
 {
@@ -24,7 +27,26 @@ class BasicCourseController extends Controller
         return $result;
     }  
     
-    function checkAnswer(){
-        
+    function checkAnswer(Request $request){
+        $data = Input::get('submitAnswers');
+        $point = count($data);
+        foreach($data as $element){
+            try {
+                if($element == null) break;
+              }
+              catch (\Exception $e) {
+                break;                  
+              }
+            $check = DB::select("
+                select answers.rightAnswer from answers 
+                inner join questions on answers.answer_id=questions.answer_id 
+                where questions.question_id=?
+            ", [$element['questionid']]);   
+            $answer = json_decode(json_encode($check), True)[0]['rightAnswer'];
+            if(strcmp($element['answer'], $answer) != 0){
+                $point--;
+            }
+        }
+        return $point;
     }
 }

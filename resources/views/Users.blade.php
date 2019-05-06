@@ -96,7 +96,7 @@
         <a class="nav-link" href="{{ route('courseAdmin') }}">
           <i class="fas fa-book"></i>
           <span>Courses</span></a>
-        </li>
+      </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('userAdmin') }}">
             <i class="fas fa-user"></i>

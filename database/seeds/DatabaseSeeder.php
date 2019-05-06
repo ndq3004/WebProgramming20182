@@ -12,8 +12,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-    	 Model::unguard();
+    	 // Model::unguard();
+         $this ->call([
+             UserTableSeeder::class,
+             CourseTableSeeder::class,
+             QuestionTableSeeder::class,
+             TopicTableSeeder::class,
+              QuestionTableSeeder::class,
+             AnswerTableSeeder::class,
+         ]);
+        //$this->call(UserTableSeeder::class);
+        $this->call(CourseTableSeeder::class);
+        //$this->call(QuestionTableSeeder::class);
+        //$this->call(TopicTableSeeder::class);
+        //$this->call(QuestionTableSeeder::class);
+        //$this->call(AnswerTableSeeder::class);
 
+<<<<<<< HEAD
          $this->call(UserTableSeeder::class);
          $this->call(CourseTableSeeder::class);
          $this->call(QuestionTableSeeder::class);
@@ -21,5 +36,7 @@ class DatabaseSeeder extends Seeder
          $this->call(AnswerTableSeeder::class);
 
          Model::unguard();
+=======
+>>>>>>> a1540b1f6b1234c8ec065accaf5aa37836690ddb
     }
 }
