@@ -28,6 +28,7 @@ class BasicCourseController extends Controller
     }  
     
     function checkAnswer(Request $request){
+        $user = JWTAuth::toUser($request->header('token'));
         $data = Input::get('submitAnswers');
         $point = count($data);
         foreach($data as $element){
@@ -46,6 +47,12 @@ class BasicCourseController extends Controller
             if(strcmp($element['answer'], $answer) != 0){
                 $point--;
             }
+        }
+        try{
+            $user->user_point = $point;
+        }
+        catch(Exception $e){
+            return "cap nhat diem that bai";
         }
         return $point;
     }
