@@ -84,6 +84,11 @@ class UserController extends Controller
         return response()->json($user);
     }
 
+    public function getUserProfile(Request $request){
+        $user = JWTAuth::toUser($request->header('token'));
+        return response()->json(['user'=>$user]);
+    }
+
     public function cources(){
 
     //     $cources = cources::paginate(10);
