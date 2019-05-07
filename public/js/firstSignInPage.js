@@ -16,7 +16,7 @@ class DialogJS{
             autoOpen: false,
             modal: true,
             width: 700,
-            title: "animal topic",
+            title: "animal",
             // maxHeight: 500,
             position: { my: 'top', at: 'top+100' },
             // resizable: false,

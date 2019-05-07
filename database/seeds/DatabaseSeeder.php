@@ -24,14 +24,10 @@ class DatabaseSeeder extends Seeder
         $this->call(CourseTableSeeder::class);
         $this->call(QuestionTableSeeder::class);
         $this->call(TopicTableSeeder::class);
-        //$this->call(QuestionTableSeeder::class);
+        
         $this->call(AnswerTableSeeder::class);
 
-        //  $this->call(UserTableSeeder::class);
-        //  $this->call(CourseTableSeeder::class);
-        //  $this->call(QuestionTableSeeder::class);
-        //  $this->call(TopicTableSeeder::class);
-        //  $this->call(AnswerTableSeeder::class);
+       
 
         //  Model::unguard();
 
