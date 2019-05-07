@@ -33,7 +33,7 @@ class UserController extends Controller
     public function register(Request $request){
         //console log==========
         $out = new \Symfony\Component\Console\Output\ConsoleOutput();
-            $out->writeln($request->name);
+            $out->writeln($request->email);
         //===================
         $user = $this->user->create([
           'name' => $request->get('name'),  
