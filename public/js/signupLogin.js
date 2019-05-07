@@ -43,7 +43,8 @@ var loginSignupJS = {
             success: function(data){
                 alert('register successfully!');
             },
-            error: function(){
+            error: function(xhr){
+                debugger
                 alert('error');
             }
         })
