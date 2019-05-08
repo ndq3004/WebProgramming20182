@@ -1,0 +1,324 @@
+/*COMMON*/
+@charset "utf-8";
+@font-face {
+font-family: "Roboto";
+src:url("/file/common/lesson/fonts/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+font-family: "Roboto Bold";
+src:url("/file/common/lesson/fonts/Roboto-Bold.ttf") format("truetype");
+}
+@font-face {
+font-family: "Roboto Black";
+src:url("/file/common/lesson/fonts/Roboto-Black.ttf") format("truetype");
+}
+@font-face {
+font-family: "Roboto Light";
+src: url("/file/common/lesson/fonts/Roboto-Light.ttf") format("truetype");
+}
+@font-face {
+font-family: "Roboto Regular";
+src: url("/file/common/lesson/fonts/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+font-family: "Roboto Medium";
+src: url("/file/common/lesson/fonts/Roboto-Medium.ttf") format("truetype");
+}
+@font-face {
+font-family: "Roboto LightItalic";
+src: url("/file/common/lesson/fonts/Roboto-LightItalic.ttf") format("truetype");
+}
+@font-face {
+font-family: 'FontAwesome';
+src: url('/file/common/lesson/fonts/fontawesome-webfont.eot?v=4.7.0');
+src: url('/file/common/lesson/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), 
+url('/file/common/lesson/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), 
+url('/file/common/lesson/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+url('/file/common/lesson/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),
+url('/file/common/lesson/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+.audio_control{display: none}
+#vchat{width: 100%; margin: 0px auto; background: #fff;font-family:Roboto Regular; font-size: 14px;}
+.vchat_content{padding:10px 40px; margin-top:20px}
+.font-light{font-family:Roboto Light}
+.font-medium{font-family:Roboto Medium}
+.font-regular{font-family:Roboto Regular}
+.font-bold{font-family:Roboto Bold}
+.font-light-italic{font-family:Roboto LightItalic}
+.font25{font-size:25px;}
+.font14{font-size:14px;}
+.font13{font-size:13px}
+.font12{font-size:12px}
+.color555{color:#555}
+.color222{color:#222}
+.colorOrange{color:#f36b07}
+.colorAcac{color:#acacac}
+.colorAeae{color:#aeaeae}
+.colorWhite{color:#fff}
+.space20{ height: 20px; clear: both; width: 100%; }
+.clear{clear:both; width:100%; height:1}
+.fa,.far{display: inline-block;font: normal normal normal 14px/1 FontAwesome;font-size: 16px;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;position: relative;top: 2px;cursor: default;}
+.faa{position: absolute}
+.s_link{color:#009688; font-size: 13px; font-family: arial}
+.s_link:hover{color:orange }
+.cvd_line {height: 1px;width: 100%;background: #eee;margin: 5px 0px;clear: both;}
+.cvd_line_light {background: #ffd84e;width: 200px;margin-bottom: -6px;position: relative;z-index: 10;clear: both;height: 1px;}
+.vchat_btn{border-radius:4px;border:none; padding: 6px 10px; cursor: pointer; margin: 10px; background: #65b24a; color:#fff; font-size: 15px;}
+.vchat_btn:hover{background: #fdb759}
+/*Bai mau*/
+#vchat_dialog{margin-left: 0px; display: table; clear: both; background: #f38305}
+#vchat_dialog:hover{background: #3fbb29}
+/*POPUP*/
+.popup{display: none;position: fixed;z-index: 9999;background: rgba(0, 0, 0, 0.61);top: 0px;width: 100%;left: 0px;bottom: 0px;right: 0px;}
+.popup_content {position: relative; width: 740px;margin: 70px auto;background: #fff;padding: 20px 40px;border-radius: 8px;overflow-y: auto;}
+.fa-close {width: 35px;height: 35px;right:0px;cursor: pointer;font-size: 26px; top:10px; position: absolute}
+/*Calling*/
+.cvd_call_user {background: #fff;padding: 30px 0px;}
+.fa-calling{width: 20px;display: inline-block;margin-right: 10px;color: #6fb756;}
+.popup_cont_call, .popup_cont_receiver,.popup_cont_video {width: 315px;height: 410px;background: #f3f3f3;margin: 100px auto;text-align: center; border-radius: 4px;}
+.cvd_call_user .text_call {color: #65b24a;font-size: 16px;}
+#cvd_info_user {margin-top: 10px;}
+#cvd_info_user .avt {width: 150px;margin: 0px auto;border: 1px solid #f8f8f8;border-radius: 150px;height: 150px;line-height: 150px;text-align: center;margin-bottom: 15px;}
+#cvd_info_user .avt img {vertical-align: middle;width: 120px;height: 120px;border-radius: 120px;}
+.popup_cont_call .cvd_username {line-height: 28px;}
+#cvd_info_user .cvd_username {font-size: 24px;}
+#bt_cancel_call {background: #df3434;display: table;margin:0px auto;padding: 8px 40px;}
+.text_note {color: #d01051;}
+#bt_close_box_call {display: none;margin-top: 20px;cursor: pointer;}
+/*RECEIVE*/
+.popup_cont_receiver {width: 440px;height: auto;background: #fff;padding: 20px 0px;}
+.popup_cont_receiver .text_alert {float: left;text-align: left;padding-left: 20px;color: #0c7d73;font-size: 17px;width: 300px;}
+.num_wait_call{color: red}
+#cvd_list_receiver {display: table;clear: both;}
+.ctrl_answer {display: table;margin: 20px 0px;width: 100%;}
+.hide_box_receiver {float: left;cursor: pointer;   padding-left: 30px;margin-left: 20px;}
+.cancel_all_receiver {background: #df3434;float: right;margin-top: -5px;margin-right: 20px;}
+#cvd_list_receiver .other {width: 100%;margin: 0px 0px;}
+#cvd_list_receiver .other .avt {margin-left: 15px;margin-top: 7px;}
+#cvd_list_receiver .other .avt img {width: 64px;height: 64px;}
+#cvd_list_receiver .other .info_member {width: 225px;}
+#cvd_list_receiver .other .bt_call {margin-right: 20px;}
+#cvd_list_receiver .receiver_lesson {max-width: 325px;font-size: 14px;}
+.box_right{float: right;}
+.receiver_lesson {clear: both;max-width: 200px;white-space: nowrap;overflow: hidden !important;text-overflow: ellipsis;text-align: left;}
+#popup_cont_receiver .fa-close{top:-3px;right:10px}
+.fa-hide{top:-3px; font-size: 22px; margin-right: 6px;}
+.receiver_lesson .showLesson {color: #0072bc;font-size: 12px;}
+/*Detail*/
+#popup_detai{position: relative;}
+#popup_detail #close_popup{position: absolute; top:26px; right: 10px;}
+/*VIDEO CHAT*/
+#box_chatting_video{width:1000px; padding:  0px; display: none}    
+/*STATUS*/
+#member-status{float: left; margin-right: 20px; padding-top: 4px}
+#icon-status-member{background-image: url(/file/common/lesson/vchat/images/on-off.png);background-position: 0px -27px;cursor: pointer;width: 73px;height: 24px;display: inline-block;vertical-align: middle;}
+.txt-ready {display: inline-block;margin-left: 10px;font-size: 14px;color: #434343;vertical-align: middle;}
+#icon-status-member.icon-on {background-position: 0px -1px;}
+/*SEARCH MEMBER*/
+.cvd_search {border-radius: 4px;border: 1px solid #f8db84;float: left;margin-bottom: 10px;}
+.f-search {font-size: 14px;margin-left: 7px;color: #ccc;vertical-align: top;margin-top: 5px;}
+.text_search {margin: 0px;padding: 0px;height: 25px;line-height: 25px;border: none;width: 180px;margin: 4px;padding-left: 10px;color: #9f9f9f;font-size: 15px;}
+/*LIST ONLINE*/
+#list_online_call {margin-left: -100px;margin-top: 20px;padding-top: 10px;display: table;padding-bottom: 10px;}
+.other {width: 410px;padding-bottom: 7px;margin-top: 7px;display:inline-block;border-bottom: 1px solid #eaeaea;margin-left: 100px;}
+.other .avt{float: left;margin-right: 5px;height: 68px;width: 64px;}
+.avt img {border-radius: 50px;width: 64px;height: 64px; border: 1px solid #ccc}
+.info_member {float: left;text-align: left;margin-top: 10px;}
+.cvd_username {font-weight: bold;font-size: 14px;line-height: 18px;}
+.online_username {white-space: nowrap;overflow: hidden !important;text-overflow: ellipsis;max-width: 155px;display: inline-block;vertical-align: middle;}
+.img_vip {vertical-align: bottom;}
+.cvd_level {font-size: 13px;line-height: 18px;}
+.level_Beginner {color: #f8a85c;}
+.fa-star-level {color: #e0b100;font-size: 14px;vertical-align: text-top;}
+.fa-device {font-size: 12px !important;margin: 0 5px;top: 0px;}
+.fa-hasdevice {color: #65b24a;}
+.fa-notdevice {color: #ccc;}
+.other .vchat_btn{float: right;  text-transform: uppercase;margin-top: 20px;font-size: 12px;}
+.other .bt_called{background: #ccc}
+.fa-call-video{margin-right: 4px; top:0px !important; font-size: 13px  !important }
+/*go to room*/
+#box_video{display: none; position: relative;}
+#localText,#remoteText{position: absolute;top: 315px;background: rgba(204, 204, 204, 0.43);height: 44px;display: table;text-align: center;width: 330px;}
+
+/* ============================= ROOM CHAT ===========================================*/
+.grad1 {   
+background: rgba(0, 0, 0, 0.61);/* For browsers that do not support gradients */
+background: -webkit-linear-gradient(#fff, #000); /* For Safari 5.1 to 6.0 */
+background: -o-linear-gradient(#fff, #000); /* For Opera 11.1 to 12.0 */
+background: -moz-linear-gradient(#fff, #000); /* For Firefox 3.6 to 15 */
+background: linear-gradient(#fff, #000); /* Standard syntax (must be last) */
+}
+.link_vchat{float: right; color: #65b24a; border-bottom: 1px solid #65b24a;    padding-top: 6px;}
+#cvd_box_video{background: #000; padding: 10px 45px; position: relative; border-radius:4px}
+.r_top_p{ color:#d8d8d8; font-size: 15px; text-align: center; margin-top: 10px;}
+.r_top_no_lesson{margin-bottom: 20px;}
+.r_lesson{text-align: center; margin-bottom: 20px; display:none;width: 560px; margin: 16px auto 0px;}
+.r_lesson.r_show{display: block}
+.r_lesson .r_lesson_gt,.r_lesson .btn-choose-lesson{display: inline-block; width: 20%;}
+.r_lesson .title{color: #fff;  display: inline-block; line-height:30px;width: auto; }
+.r_lesson .title span{border-bottom: 1px solid #777474; cursor: pointer; font-size: 16px}
+.btn-choose-lesson{cursor: pointer;}
+.btn-choose-lesson .txt{color: #00aeef;  border-bottom: 1px solid #004663}
+.btn-choose-lesson .fa{color:#6e6e6e; font-size: 16px; top:2px; cursor: pointer;}
+.btn-choose-lesson .not_choose_lesson{color:#6e6e6e;}
+#the_end_dialog{font-size:14px; position: absolute;top: 142px;color: #fff;background: rgba(0, 0, 0, 0.7);padding: 0px 20px 16px;  left: 333px; width: 300px; display: none; border-radius: 8px}
+#the_end_dialog p{text-align: center; font-size: 14px}
+.btnEnd .far{padding-right: 10px}
+#the_end_dialog .alert_text strong{color: #83ff00}
+.btnEnd{width:100%; height: 40px; line-height: 40px; background: rgba(6, 125, 169, 0.61); margin-top: 15px; border-radius: 8px; padding-left:14px}
+.btnEnd .btn-current{width: 100%; display: inline-block; cursor: pointer; border-radius:8px; text-align: left}
+.btnEnd .fa{margin:0px 10px; top:2px;}
+.btn-choose-lesson.btnEnd{background:rgba(9, 168, 226, 0.71)}
+.btn-choose-lesson.btnEnd .txt{color: #fff;  border-bottom: 1px solid #fff}
+.btn-choose-lesson.btnEnd .fa{color:#fff; font-size: 20px;}
+#cvd_room_member{background: #23231c; padding: 10px;display: flex; color: #fff; margin-bottom: 20px;}
+.r_username{position: absolute;z-index:999;top: 10px;background: rgba(0, 0, 0, 0.6);border-radius: 14px;padding:5px 60px 5px 10px;font-family: arial;}
+#local_user{left: 10px;}
+#remote_user{right: 10px;padding: 5px 10px 5px 45px; text-align: right;}
+.r_username .avt{float: left; width: 36px; height: 36px;}
+.r_username .avt img{width: 36px; height: 36px;}
+#local_user .info{padding-left: 50px;}
+#remote_user .info{padding-right: 50px;}
+.r_username .info .cvd_username{color: #fff; font-size: 14px; font-weight: bold;}
+.r_username .info .cvd_level{font-size: 11px;}
+.r_username .info .cvd_level span:first-child{color:#a1a1a1;} 
+.r_username .info .cvd_level span:last-child{color:#f8a85c;} 
+#remote_user .avt_remote{float: right;}
+.reverse_user{float: left; width: 20%; text-align: center}
+.reverse_user .f-reverse{ width: 65px;height: 32px; line-height:31px;background-color: #164f60;border-radius: 4px; margin: 0px auto}
+.ctrl_reverse{display: none}
+#cvd_room_member .avt{border: 1px solid #d7c8a3; width: 65px; height: 65px; float: left; margin-right: 20px; border-radius: 50px}
+#cvd_room_member .avt img{width: 65px;}
+#cvd_room_member .avt_remote{float: right; margin-right: 0px; margin-left: 20px;}
+#cvd_room_member .cvd_username{margin-top: 10px;}
+#cvd_video{position: relative; display: table; width: 100%}
+#localVideo,#remoteVideo{ width: 450px; height: 338px; float: left; border: 1px solid #4e4e4e}
+#remoteVideo{float: right;}
+.slideText{position: absolute;background:url(/assets/images/bg-opacity.png) repeat-x  center bottom; width: 450px;height: 338px;margin: 1px 1px;color: #fff;}
+.noShareCam{background: url(/assets/images/nocam1.jpg);}
+.noShareCam1{background: url(/assets/images/nocam2.jpg);}
+#localTxt{left: 0px}
+.cont-dialog{position: absolute; bottom: 0px; padding: 20px 2%; width: 96%; overflow: hidden;}
+.status_connect_video{text-align: center;}
+.alert-text{ display:none;text-align: center; font-family: arial;color: #ffac48; float: left;position: relative;animation: animation-dialog 1s ease-in-out infinite}
+.alert-text span:first-child{ display: inline-block;padding: 3px 20px; background: #000; font-size: 14px; border-radius: 4px}
+.fa-arow-down{font-size: 20px; top:0px;}
+.dialog-curr{clear: both; font-size: 16px;}
+.r_hint{float: left; margin-top: -3px;}
+.fa-hint{font-size: 35px; display: inline-block; float: left;color: #dabc50; top:0px;}
+.r_hint_text{padding-left: 35px; color: #717171; font-size: 13px; line-height: 17px; padding-top:3px;}
+#r_speed_lesson{float: left; width: 100%}
+#r_speed{ padding:15px 0px; border-bottom: 1px solid #242424;vertical-align: middle; color: #8e8e8e;text-align: center;}
+.r_number_dialog{ color: #8e8e8e; position: relative; top:-39px; float: right; right: 0px;}
+.r_speed_txt{color: #8e8e8e; position: relative; top:-39px; left:120px; float: left;}
+#box_number_dialog{background: #236780;font-size: 14px; font-weight: bold;color: #fff;width: 64px;text-align: center;display: inline-block;border-radius: 10px;margin-left: 10px;}
+#r_choose_speed{ display: inline-block; vertical-align: middle; }
+.r_ch{width: 84px; cursor: pointer; margin-right: 6px; height: 23px; line-height: 23px; display: inline-block; text-align: center; border-radius: 4px; background: #272727}
+.r_selected{background: #b4b4b4; color: #000}
+.text_alert_start{text-align: center; color: #fff; font-size: 16px;text-shadow: 1px 1px 0px #000;}
+#r_paused{display: none;padding-top: 15px; color: #e0cc18}
+#bt_start{margin: 5px auto 0px;width: 270px;background-color: #53a934; background-position:175px -620px;text-align: center;border-radius: 25px;height: 44px;line-height: 44px;cursor: pointer;font-size: 22px; text-transform: uppercase; display: none;}
+#bt_start:hover,.btn-current:hover,.end_call:hover,.r_ch:hover,.bt_action:hover,.btn_active{-webkit-animation: scale_start 1s ease-in-out infinite;-moz-animation: scale_start 1s ease-in-out infinite;animation: scale_start 1s ease-in-out infinite;}
+.btn-current:hover{color:#FFEB3B;}
+.cvd_btn{width: 284px; text-align: center; height: 40px; cursor: default; line-height: 40px; border-radius: 18px; margin-top: 15px;}
+.bt-not-ready{text-transform: uppercase; font-size: 20px; color: #000; background: #fff200;}
+.bt-ready{ background: rgba(35, 171, 53, 0.51);}
+#bt_ready .click-to-ready{width: 100%; display: inline-block; cursor: pointer;}
+#bt_ready .fa{top:0px; margin-right: 5px}
+.fa-fw {width: 1.28571429em;text-align: center;}       
+#cvd_ctrlVideo{width: 100%; display: table; color: #fff; margin-top: 20px; padding-bottom: 10px;}
+.ctrl_item{float: left; margin-right: 40px; opacity: 0.6; font-size: 16px}  
+#ctrl_dialog{display: none; width: 175px;}
+.end_call{float: right;width: 200px;   background: #eb002c;text-align: center;border-radius: 4px;height: 40px;line-height: 40px; font-size: 17px} 
+#cvd_ctrlVideo div{cursor: pointer;}
+#r_begin_pr{ display:none;position: absolute; top:80px; width: 100%;text-align: center; z-index: 99}
+#r_circle{background-color: #000; color: #fff;  width: 148px; height: 148px; border-radius: 74px;margin: 0px auto }
+#r_second{font-size: 48px; line-height: 45px;}
+#r_person_start{background-color: #000; border-radius: 4px; width: 250px; height: 26px; line-height: 26px; margin: 0px auto; color: #d9ac00; font-size: 16px}
+.r_line_time{background: #f7941d;width: 100%;height: 3px;position: absolute;bottom: 1px;left: 0px}
+#r_line_remote,#r_line_local{display: none}
+.r_line_active{background: #696969; width: 0%}
+#next-dialog{padding:1px 6px; float: right; color: #a7a7a7; font-size: 12px; display: none; border-radius: 4px; margin:0px 0px 15px 0px; cursor: pointer; background-color:rgba(0, 118, 163, 0.77)}
+#next-dialog .fa{color: #a7a7a7;font-size: 12px;top: 0px;left: 4px;}
+/*chat text*/
+#chat_txt,#lesson_chat{background: #fff; padding: 20px 60px; position: relative; float: left; margin-bottom: 20px}
+#lesson_chat .lesson_title{color:#000;}
+#chat_txt_cont{height: 80px; overflow-y:auto; text-align: left; padding: 10px 20px; background: rgb(243, 243, 243); position: relative;}
+#chat_txt_form{background: #f3f3f3; height:50px ; line-height: 50px; padding: 10px 20px; border-radius: 4px;}
+#box_form_chat{float: left; margin-left: 30px;}
+#box_form_chat .txt_chat_text{border: none;height: 28px;width: 530px; padding:0px 20px; color:#1f1e1e;font-size:15px;box-shadow: -1px -1px 3px #9e9c9c; line-height: 28px;}
+#chat_txt_submit{background: #b53f1b; width: 110px; height: 37px; line-height: 37px;  border: none; border-radius: 4px; color: #fff; margin-left: 20px; cursor: pointer;}
+#chat_txt_submit .sub_txt{font-size: 18px;}
+#chat_txt_submit .fa{vertical-align: top; font-size: 18px; top:8px}
+#lesson_chat .lesson_title{font-size: 25px; display: table;}
+.icon_list_lesson{float: right; margin-top: 25px; margin-right: 60px; cursor: pointer;}
+.text_note_small{font-size: 13px; color: #d9ac00;}
+.p_curr{display: none; font-size: 18px; font-family: arial;text-shadow: 1px 0px 1px rgba(0,0,0,1); line-height: 26px}
+.box_alert_room{clear: both; height: 30px; line-height: 30px}
+.box_list_leson{width:980px;margin: 30px auto;background: #fff; padding: 30px;border-radius: 8px; height: 550px; top:20px; position: relative;}
+.box_list_leson .popup_content{height:460px; margin: 10px 0px; width: 100%; padding: 0px 0px}
+.box_list_leson h2{margin: 5px 0px; padding: 0px}
+.box_list_leson .fa-star{display: none}
+.box_list_leson .title_txt{width: 315px}
+.title_txt{display: inline-block; width: 345px}
+#close_popup_list{position: absolute; top:10px; right: 10px; }
+.bt_choice_lesson{float: right; background: #65b24a; color: #fff; padding: 3px 10px; border-radius: 8px; font-size: 14px; margin-top: 9px; display: none;}
+.lesson_title:hover .bt_choice_lesson{display: block;}
+.msg_other span{color:#0c7ed8;}
+.lesson_content{float: left; margin:30px 0px;height: 300px; width: 100%; overflow-y: auto;}
+.btnEnd .btn-yes-continue, .btnEnd .btn-not-continue{text-align: center}
+.popup_content .box_audio_long{float: left; margin: 0px 30px;}
+.popup_content  .jp_audio_long{margin:0px}
+.popup_content .jp-gui.adl_box, .popup_content .jp-gui1{margin:0px}
+#icon_chat{font-size: 28px;padding-left: 8px;color: #53bf31; cursor: pointer;}
+.img_vip{vertical-align: bottom}
+/*scrollbar*/
+.lesson_content.scrollbar{height: 300px; width: 750px;padding: 5px 0px;  margin-bottom: 20px;overflow-y: scroll;}
+.scrollbar::-webkit-scrollbar-track{-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);border-radius: 10px;background-color: #F5F5F5;}
+.scrollbar::-webkit-scrollbar{width: 5px;background-color: #F5F5F5;}
+.scrollbar::-webkit-scrollbar-thumb{border-radius: 10px;-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);background-color: #555;}
+.clear{clear: both;}
+#lesson_chat .box_audio_long{margin-left: 0px; margin-top: 20px}
+#lesson_chat .clear{ height: 10px}
+#lesson_chat .title_trans{font-size: 18px; padding-left: 7px;}
+#cvd_cont_lesson{margin-bottom: 70px; font-size: 17px; color: #525151;}
+#cvd_cont_lesson .cont_item{margin-top: 10px;}
+/*show hide video*/
+#mute-video{position: absolute; left:402px; cursor: pointer; z-index: 999; top:10px;}
+circle {fill: #666; fill-opacity: 0.6;}
+#mute-video:hover circle {fill: #407cf7;}
+#mute-video .on{display:block}
+#mute-video .off{display:none}
+/*detail lesson*/
+.detail_lesson,.lesson_cont_hide{display: none}
+.detail_title{margin: 0px 0px 5px 0px; float: left;}
+.lesson_title{text-align: left; font-size: 15px; color: #2a2a2a; margin-right: 20px; padding:7px 7px}
+.lesson_title .title_ta{font-weight: bold;}
+.lesson_title .title_tv{color:#858585}
+.detail_title .lesson_title{font-size:22px}
+.lesson_title .title_trans{color:#858585; font-size:14px;margin-top: -3px; padding-top: 0px;}
+.title_ls_ta{font-weight:bold}
+.lesson_title .lesson_index{color:#b7b7b7; font-weight:bold ; display:inline-block; width:30px; text-align:right; margin-right:5px; vertical-align: top};
+.detail_title .lesson_title{font-size: 22px; color: #000}
+.detail_title .title_trans {color:#747474; font-size: 16px; padding-top:0px; margin-top:-3px; margin-left:10px}
+.lesson_title:hover,.lesson_ative{background: #f2f2f2; color: #ec8400; border-radius:4px;}
+.text_green{color: #00902c}
+.text_center{text-align: center;}
+.text_note{color: #d01051}
+.text_score{color:#333; background: yellow; padding: 7px 15px; border-radius: 25px; font-weight: bold;}
+.bt_back,.bt_back_room{color:#008dc2 ; cursor: pointer; margin: 10px auto; width: 300px; font-size: 15px; padding: 5px 0px; text-align: center; clear: both}
+.translate_button{background-image: url(//noidung.tienganh123.com/file/common/images/sprite_img/bg_button.png);background-position: 5px 1px;height: 35px;cursor: pointer;background-repeat: no-repeat;background-color: #d55;border: none;color: #fff;font-weight: 400;border-radius: 7px;padding-right: 10px;padding-left: 45px;width: 170px;font-size: 16px;}
+.cont_item{padding-left: 70px; margin:0px}
+.far.fa-check{top:-2px; right: 10px}
+.play_audio_part .person{float: left;}
+.show_mes_trans{color: #EE7600; margin: 20px 0px 10px 30px;}
+.text_tv{color: #a66322; text-align: justify;} 
+.p_text_tv{display: none; padding: 0px 16px;padding-left:76px;margin: 0px 0px 10px; color: #4c4b4b; font-size: 14px; font-style:italic; margin-top: -5px}
+.device_member span{margin-right:4px}
+#vchat .bgPractice{margin-left:40px; margin-top: 20px}
+#dialogLocal{display:none; clear:both;background: #d2ecec;
+    padding: 20px 30px;box-shadow: 1px 2px 6px #ccc;
+    border-radius: 4px;}
+#btn_choose_lesson{background: #3ba90f; padding: 8px 20px;margin: 30px 0px;display: table;cursor: pointer;border-radius: 4px;color: #fff;}
