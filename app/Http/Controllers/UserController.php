@@ -73,7 +73,7 @@ class UserController extends Controller
             return redirect('login')->with('notice','Lỗi đăng nhập!');
         }
         return response()->json(compact('token'));
-        // return redirect()->route('home', array('token'=>json(compact('token'))));
+        return redirect('home')->with(['flash_level'=>'success','flash_message'=>'Sửa User thành công']);
     }
 
     public function getUserInfo(Request $request){
