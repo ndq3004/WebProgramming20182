@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\addUserRequest;
 use App\Http\Requests\addCourseRequest;
+use App\Http\Requests\editUserRequest;
 use App\User;
 use App\Course;
 use Hash;
@@ -87,5 +88,16 @@ class AdminController extends Controller
         $course->type = $request->type;
         $course->save();
         return redirect('listCourse')->with(['flash_level'=>'success','flash_message'=>'Thêm Khóa Học thành công']);
+    }
+
+    public function postEditUser(editUserRequest $request,$id){
+        $us = new User;
+        $us->editUser($request,$id);
+        return redirect('listUser')->with(['flash_level'=>'success','flash_message'=>'Sửa User thành công']);
+    }
+    public function editUser($id){
+        $us = User::where('id',$id)->get()->first();
+        $user = User::select()->get();
+        return View('admin.editUser',['us'=>$us,'user'=>$user]);
     }
 } 
