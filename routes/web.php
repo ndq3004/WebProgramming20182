@@ -63,7 +63,10 @@ Route::get('paid', function () {
 Route::get('profile', function () {
 	return File::get(public_path() . '/views/userprofile.html');
 });
-
+//get video lesstion html
+Route::get('videolession', function () {
+	return File::get(public_path() . '/views/lessionVideo.html');
+});
 
 /*
 *get profile

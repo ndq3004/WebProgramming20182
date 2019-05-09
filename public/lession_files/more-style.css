@@ -1,0 +1,27 @@
+.more-header{
+	/*position: fixed;
+*/	display: block;
+	width: 100%;
+	height: 91px;
+	box-sizing: border-box;
+	background-color: #2BABD0;
+}
+	.more-left-header{
+		float: right;
+		margin-right:20px;
+		height: 91px;
+		display:inline-flex;
+		padding-top: 15px;
+	}
+		.more-user-ava{
+			background-color: grey;
+			border-radius: 50%;
+			width: 60px;
+			height: 60px;
+			margin-right: 10px;
+		}
+		.more-user-name{
+			color: green;
+			font-weight: bold;
+			margin-top: 23px;
+		}
