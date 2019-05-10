@@ -20,13 +20,16 @@
 <meta name="msapplication-config" content="/static/favicon/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" href="./userlogin_files/template-1052220419.css" type="text/css">
-<link rel="stylesheet" href="./userlogin_files/jquery-ui-1.11.4.min.css" type="text/css">
+<!-- <link rel="stylesheet" href="./userlogin_files/jquery-ui-1.11.4.min.css" type="text/css"> -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 <!-- style tong hop -->  
-        <link rel="stylesheet" type="text/css" href="./coursepaid_files/ta123_styles.css">              
+        <!-- <link rel="stylesheet" type="text/css" href="./coursepaid_files/ta123_styles.css">               -->
         <!-- Load lib common -->
         <script src="./coursepaid_files/276686619460649" async=""></script><script async="" src="./coursepaid_files/fbevents.js"></script><script type="text/javascript" async="" src="./coursepaid_files/libs_async.js"></script><script type="text/javascript" async="" src="./coursepaid_files/ga.js"></script><script language="JavaScript"></script>
 
@@ -37,7 +40,27 @@
         <script type="text/javascript" src="./coursepaid_files/jquery_ready.js"></script>
 
 <style>
-      
+tr{
+    color: black;
+}
+      .tcb2_item_te {
+    width: 100%;
+    height: 38px;
+    text-align: center;
+    font-weight: bold;
+    color: #0081a1;
+    border-top: 1px solid #EEEEEE;
+    margin-top: 1px;
+    line-height: normal;
+}
+.containt_center_cen_left {
+    float: left;
+    _width: 760px;
+    padding: 9px 8px 8px 13px;
+    line-height: 180%;
+    /* width: 770px; */
+    width: 750px;
+}
     .ui-widget, 
     .ui-widget textarea,  
     .ui-button .ui-button-text {
@@ -51,6 +74,51 @@
     .ui-button .ui-button-text {
       font-size: 16px;
     }
+    .bt_hdh_vip_in {
+    float: left;
+    height: 28px;
+    width: 100%;
+    background: url(//data.tienganh123.com/images/v2/home/bg_hdh_vip_faqicon.png) top right no-repeat;
+    color: #fff;
+    font-weight: bold;}
+    .bt_hdh_vip {
+    clear: both;
+    width: 280px;
+    height: 28px;
+    background: url(//data.tienganh123.com/images/v2/home/bg_hdh_vip.jpg) repeat-x;
+    border-radius: 6px;
+    padding: 4px 14px 0 16px;
+}
+.comment_bai_hoc {
+    float: left;
+    line-height: 180%;
+    width: 750px;
+    margin-top: 10px;
+    font-size: 10pt;
+}
+.2ul.grid {
+    padding: 0;
+}
+.ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.shadow {
+    -moz-box-shadow: 0px 2px 2px #DDDDDD;
+    -webkit-box-shadow: 0px 2px 2px #DDDDDD;
+    box-shadow: 0 1px 2px #DDDDDD;}
+    .tcb2_item_li li {
+    margin: 10px 10px 20px 20px;
+}
+.grid li {
+    float: left;
+    margin: 10px 27px 20px 0;
+    padding: 4px;
+    border: 1px solid #DDDDDD;
+    height: 120px;
+    width: 142px;
+}
   </style>
 <link rel="stylesheet" href="/userlogin_files/TimeCircles.css">
 <link rel="stylesheet" href="/userlogin_files/blog-style-1052220419.css" type="text/css">
@@ -122,7 +190,7 @@ Các khóa học cơ bản
 </li>
 <li style="padding:0;" class="list-menu__item">
 <div data-btn-submenu-user="" class="user-block" style="display: block;">
-<a href="" title="Các khóa học trả phí" class="name-user submit-btn oval-btn">
+<a href="/paid" title="Các khóa học trả phí" class="name-user submit-btn oval-btn">
 Các khóa học trả phí
 </a>
 </div>
@@ -281,7 +349,7 @@ Các khóa học trả phí
         <img class="centerpic" src="./coursepaid_files/bannerta_cb2.jpg"><br>
 
 <center>
-    <a href="https://www.tienganh123.com/huong-dan/6338-tacb2-gioi-thieu.html" target="_blank"> 
+    <a href="" target="_blank"> 
         <div class="bt_hdh_vip">
             <div class="bt_hdh_vip_in">
                 Giới thiệu và hướng dẫn cách học
@@ -293,17 +361,18 @@ Các khóa học trả phí
 <div class="comment_bai_hoc clear" style="width: 100%;">
         <ul class="grid tcb2_item_li">
             <style>
+
                 .grid li {
         width: 152px;}
             </style>
 
-                <li class="shadow">
+               <!--  <li class="shadow">
             
             <div class="button-link style-1 open-form" title="Bài 1 - Appearance"><img width="142" height="71" src="./coursepaid_files/coban_1.jpg"></div>
             <div class="tcb2_item_te"><table width="100%">
                     <tbody><tr valign="middle"><td><div class="button-link style-1 open-form" title="Bài 1 - Appearance">- Appearance</div></td></tr>
                 </tbody></table></div>
-        </li>
+        </li> -->
         
     </ul>
     
@@ -515,7 +584,7 @@ Các khóa học trả phí
 		<div id="load_pop_ads"></div>
         
     <script type="text/javascript" src="./course_files/jquery-3.1.1_with_migrate-3.0.0_with_bootstrap3.3.7.min.js"></script>
-<script type="text/javascript" src="./course_files/jquery-ui-1.11.4.min.js"></script>
+<!-- <script type="text/javascript" src="./course_files/jquery-ui-1.11.4.min.js"></script> -->
 <script type="text/javascript" src="./course_files/template-1052220419.js"></script>
 <script>
 var isMobileWeb = false;
@@ -620,11 +689,24 @@ var isHomePage = '/paid/' == '/' ? true : false;
 <noscript>
     <div class="nof">GiasuTOEIC.com works best with JavaScript enabled! To use standard view, enable JavaScript by changing your browser options, then try again.</div>
 </noscript>
-<div id="detailcourse-form" style="display: none;">
+<div class="detailcourse-form">
+ <p><b>Chào mừng các bạn đến với khóa học Tiếng Anh trên website Learning English. Trước khi bắt đầu khóa học các bạn hãy dành một chút thời gian để tìm hiểu về những giới thiệu chung nhất và những cách giúp bạn đạt kết quả cao nhất trong khóa học này nhé:</b></p>
+           <p><b>1. Who learns? (Khóa học này dành cho ai?)</b></p>
+           <p>Đây là khóa học dành cho các bạn đã hoàn thành xong khóa học Tiếng Anh Cơ Bản miễn phí và có nhu cầu học thêm về tiếng Anh với trình độ nâng cao hơn. Ngoài ra khóa học còn hoàn toàn phù hợp với những bạn đã có nền tảng về tiếng Anh và muốn tiếp tục quá trình học của mình với trình độ tương đương Pre – Intermediate và Intermediate. Những bạn muốn ôn tập lại ngữ pháp, mở rộng vốn từ vựng về các chủ đề khác nhau cũng như luyện tập các kỹ năng tiếng Anh, Nghe – Nói – Đọc – Viết cũng sẽ tìm thấy những điểm hữu ích trong khóa học này.</p><br>
+           <p><b>2. What to learn? (Bạn sẽ học những gì trong khóa học này?)</b></p>
+           <p>Khóa học Tiếng Anh này bao gồm 12 bài học và các bài kiểm tra. Những bài kiểm tra này sẽ được tiến hành sau mỗi bài học nhằm giúp các bạn ôn tập và đánh giá quá trình học tập của mình. Mỗi bài trong khóa học này bao gồm 2 phần chính như sau:</p>
+           <p>  + Học lý thuyết và luyện thực hành theo video học của giáo viên day.</p>
+           <p>  + Thực hiện bài test kiểm tra kiến thức</p>
 
 </div>
-
+<div class="courseregister_form">
+    
+</div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+  <!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
+      <script src="js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/coursepaid.js"></script>
-    <script src="/js/jquery-3.2.1.min.js"></script>
-    <script src="/js/jquery-ui.min.js"></script>
+  
+
+
      </body></html>

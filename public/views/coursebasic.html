@@ -20,7 +20,8 @@
 <meta name="msapplication-config" content="/static/favicon/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" href="./course_files/template-1052220419.css" type="text/css">
-<link rel="stylesheet" href="./course_files/jquery-ui-1.11.4.min.css" type="text/css">
+<!-- <link rel="stylesheet" href="./course_files/jquery-ui-1.11.4.min.css" type="text/css"> -->
+<link rel="stylesheet" href="css/jquery-ui.min.css">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -121,7 +122,7 @@ Các khóa học cơ bản
 </li>
 <li style="padding:0;" class="list-menu__item">
 <div data-btn-submenu-user="" class="user-block" style="display: block;">
-<a href="" title="Các khóa học trả phí" class="name-user submit-btn oval-btn">
+<a href="/paid" title="Các khóa học trả phí" class="name-user submit-btn oval-btn">
 Các khóa học trả phí
 </a>
 </div>
@@ -334,7 +335,7 @@ Bắt đầu Luyện Ngay
 <div class="account-heading">
 <img src="./course_files/user_icon.webp" alt="Hoàng Loan" class="avt">
 <div class="account-name">
-<span>Hoàng Loan</span>
+<span id="user-name-rank"></span>
 <!--  -->
 <img width="23" height="29" src="./course_files/level_1.webp" alt="Mầm non" title="Mầm non">
 </div>
@@ -1042,6 +1043,5 @@ var isHomePage = '/mainpage/' == '/' ? true : false;
 </div>
 <script src="/js/jquery-3.2.1.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
-<script src="/js/jquery-ui.min.js"></script>
 <script src="js/firstSignInPage.js"></script>
 </body></html>

@@ -16,7 +16,7 @@ class DialogJS{
             autoOpen: false,
             modal: true,
             width: 700,
-            title: "animal",
+            title: "Animal",
             // maxHeight: 500,
             position: { my: 'top', at: 'top+100' },
             // resizable: false,
@@ -167,6 +167,7 @@ var ValidateJSFunc = {
                     
                     // var emailName = (data.email).split("@");
                     $('#user-name').html(name);
+                    $('#user-name-rank').html(name);
                 },
                 error: function(error){
                     window.location.href=host.Config.localhost;
