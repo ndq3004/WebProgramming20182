@@ -17,6 +17,7 @@ class CreateVideoLessonTable extends Migration
            $table->increments('video_id');
            $table->string('video_name');
            $table->string('order');
+           $table->string('describe');
            $table->string('demo_content');
             $table->integer('course_id')->unsigned();
             $table->integer('video_url')->default('0');
