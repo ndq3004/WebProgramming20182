@@ -39,13 +39,13 @@
             </div>
             @endforeach
           @endif
-          @if (session('notice'))
+          @if (!empty($notice))
             <div class="alert alert-danger">
-                {{ session('notice') }}
+                {{ $notice }}
             </div>
           @endif
-        <form action="{{URL::route('auth/login')}}" method="post">
-          <input type="hidden" name="_token" value="{{csrf_token()}}">      
+        <form action="{{URL::route('loginAdmin')}}" method="post">
+          {{-- <input type="hidden" name="_token" value="{{csrf_token()}}">       --}}
 
           <div class="form-group">
             <div class="form-label-group">
@@ -70,10 +70,10 @@
           </div>
           <input type="submit" class="btn btn-primary btn-block" value="Login">
         </form>
-        <div class="text-center">
+        {{-- <div class="text-center">
           <a class="d-block small mt-3" href="register.html">Register an Account</a>
           <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
-        </div>
+        </div> --}}
       </div>
     </div>
   </div>
@@ -84,6 +84,7 @@
 
   <!-- Core plugin JavaScript-->
   <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+  {{-- <script></script> --}}
 
 </body>
 

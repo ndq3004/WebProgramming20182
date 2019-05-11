@@ -17,6 +17,7 @@ class AdminController extends Controller
 {
     public function index(){
        $course = Course::all();
+  
        return view('index',compact('course'));
 
     	// return view('index');
