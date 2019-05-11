@@ -123,10 +123,5 @@ class UserController extends Controller
         return $ro;
     }
    
-    public function thongtin(){
-        $test = "Hoàng Phương Loan";
-      
-        return File::get(public_path() . '/views/userprofile.html');
-    }
 
 }

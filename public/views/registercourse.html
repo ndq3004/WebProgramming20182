@@ -259,9 +259,9 @@ Các khóa học trả phí
   
   <ul id="list_lesson">
         <li class="lesson_item">
-      <div class="avt"><a href="https://www.tienganh123.com/tieng-anh-giao-tiep-cho-nguoi-mat-goc/23090-cach-chao-hoi-lan-dau-gap-ai-do-trong-tieng-anh.html" title="Unit 1: First Greetings">  <img src="/courses_files/cach-chao-hoi-lan-dau-gap.jpg" width="190px" height="106px" alt="Unit 1: First Greetings"></a> </div>
+      <div class="avt"><a href="/videolession" title="Unit 1: First Greetings">  <img src="/courses_files/cach-chao-hoi-lan-dau-gap.jpg" width="190px" height="106px" alt="Unit 1: First Greetings"></a> </div>
       <div class="cont">
-        <h3 class="title font-bold"><a href="https://www.tienganh123.com/tieng-anh-giao-tiep-cho-nguoi-mat-goc/23090-cach-chao-hoi-lan-dau-gap-ai-do-trong-tieng-anh.html" title="Unit 1: First Greetings"><span class="colorOrange">Unit 1: </span> <span class="color222"></span> First Greetings</a></h3>
+        <h3 class="title font-bold"><a href="/videolession" id="lesson_name" title="Unit 1: First Greetings"><span class="colorOrange">Unit 1: </span> <span class="color222"></span> First Greetings</a></h3>
         <div class="font-regular font14 color555">Học cách chào hỏi cho lần đầu tiên gặp ai đó</div>
         <div class="font-regular font13 colorAcac">Hello, Hi, I'm ..., Nice to meet you, Nice to meet you too</div>
       </div>
@@ -567,79 +567,9 @@ var isHomePage = '/mainpage/' == '/' ? true : false;
 <script type="text/javascript" src="./course_files/stickbar.js"></script>
 <script type="text/javascript" src="./course_files/dashboard-1052220419.js"></script>
 <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./course_files/d_vbiawPdxB.html" style="border: none;" __idm_frm__="429"></iframe></div></div></div>
-<script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId          : "956108007815000",
-        cookie         : true,    // enable cookies to allow the server to access the session
-        status         : true,  // Check Facebook Login status
-          xfbml          : true,    // parse social plugins on this page
-          version        : 'v2.12' 
-      });
-      
-      // do this checking to make sure that FB api is available 
-      // a func named "callBackAfterFBInit" needs to be defined above this code 
-      // => in the header js of the html that want to execute codes after fb init
-        if (typeof callBackAfterFBInit == 'function') {
-          callBackAfterFBInit();
-        };
-       
-        
-    };
-    
-    //Load the SDK asynchronously
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return; }
-        js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.12&appId=956108007815000";
-        js.async = true;
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));   
-  </script>
 
-<script>
-(function(){
-  // if firefox 3.5+, hide content till load (or 3 seconds) to prevent FOUT
-  var d = document, e = d.documentElement, s = d.createElement('style');
-  if (e.style.MozTransform === ''){ // gecko 1.9.1 inference
-    s.textContent = 'h1,h2{visibility:hidden}';
-    var r = document.getElementsByTagName('script')[0];
-    r.parentNode.insertBefore(s, r);
-    function f(){ s.parentNode && s.parentNode.removeChild(s); }
-    addEventListener('load',f,false);
-    setTimeout(f,3000); 
-  }
-
-})();
-</script>
-
-<script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.que  ue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  
-  fbq('init', '1621041464887282');
-  fbq('track', "PageView");
-  
-  
-  fbq('trackCustom', 'VisitedDashboard');
-
-  </script>
-<noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1621041464887282&ev=PageView&noscript=1"
-  /></noscript>
-
-<noscript>
-    <div class="nof">GiasuTOEIC.com works best with JavaScript enabled! To use standard view, enable JavaScript by changing your browser options, then try again.</div>
-</noscript>
-<div id="multicheck-form" style="display: none;">
-
-</div>
 <script src="/js/jquery-3.2.1.min.js"></script>
 <script src="js/jquery-ui.min.js"></script><!-- 
 <script src="/js/jquery-ui.min.js"></script> -->
-<!-- <script type="text/javascript" src="js/firstSignInPage.js"></script> -->
+<script type="text/javascript" src="js/registercourse.js"></script>
 </body></html>

@@ -2,7 +2,7 @@ $(document).ready(function(){
     dialogJS.init_event();
     // $('.detailcourse-form').dialog('open');
     ValidateJSFunc.checkToken();
-    
+
 });
 
 class DialogJS{
@@ -19,7 +19,7 @@ class DialogJS{
             // $('#detailcourse-form').dialog("option" ,"position", { my: 'top', at: 'top+80' });
             // $('#detailcourse-form').html("");
             // debugger
-            $('.detailcourse-form').dialog('open');
+            $('.detailcourse-form').dialog('open');// cái này là form1
             // $(".ui-dialog").draggable({
             //     // disabled: true
             // });
@@ -50,33 +50,17 @@ class DialogJS{
             },
             buttons: {
                 Register: function(){
-                     dialogJS.init_event2();
+                     //$('.detailcourse-form').dialog( "close" );
+                     $('.courseregister-form').dialog("open");
                 },
                 Cancel: function() {
-                    $('#detailcourse-form').dialog( "close" );
+                    $('.detailcourse-form').dialog( "close" ); 
                 }
             }
         }).prev('.ui-dialog-titlebar').css('background','#2D96C8');
         
     }
-     init_event2(){ $('.open-form').click(function(){
-             debugger
-            // var element = $(this);
-            // console.log(element.html());
-            // var maxHeight = $( "#detailcourse-form" ).dialog( "option", "maxHeight" );
-            // $('#detailcourse-form').dialog("option", "maxHeight", 500);
-            // $('#detailcourse-form').dialog("option" ,"position", { my: 'top', at: 'top+80' });
-            // $('#detailcourse-form').html("");
-            debugger
-            $('.courseregister-form').dialog('open');
-            // $(".ui-dialog").draggable({
-            //     // disabled: true
-            // });
-            
-            // dialogJS.bindDataToDetailCourseForm(element);
-            
-        });
-    }
+
     initShowCourseregisterForm(){
         $('.courseregister-form').dialog({
             autoOpen: false,
@@ -97,10 +81,11 @@ class DialogJS{
             },
             buttons: {
                 Accept: function(){
-                     // dialogJS.init_event2();
+
+                    window.location.href = 'http://localhost:8000/course';
                 },
                 Cancel: function() {
-                    $('#detailcourse-form').dialog( "close" );
+                    $('.courseregister-form').dialog( "close" );
                 }
             }
         }).prev('.ui-dialog-titlebar').css('background','#2D96C8');
