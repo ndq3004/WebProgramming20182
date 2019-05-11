@@ -15,8 +15,11 @@ class CreateVideoLessonTable extends Migration
     {
         Schema::create('video_lesson', function (Blueprint $table) {
            $table->increments('video_id');
+           $table->string('video_name');
+           $table->string('order');
+           $table->string('demo_content');
             $table->integer('course_id')->unsigned();
-            $table->integer('video_url');
+            $table->integer('video_url')->default('0');
              $table->foreign('course_id')->references('course_id')->on('courses');
         });
     }

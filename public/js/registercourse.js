@@ -1,5 +1,6 @@
 $(document).ready(function(){
-    dialogJS.init_event();
+    dialogJS.getVideoInfo();
+    // dialogJS.init_event();
     ValidateJSFunc.checkToken();
 });
 
@@ -9,6 +10,26 @@ class DialogJS{
     }
     init_event(){
         
+    }
+
+    getVideoInfo(){
+        // $('.lesson_item').click(function(){
+        //     alert("haha");
+        // })
+        $('.lesson_item').on('click', function(){
+            // alert("haha");
+            localStorage.setItem('courseid', $(this).attr('courseid'));
+            console.log(this);
+            if($(this).attr('videoid') != ""){
+
+                localStorage.setItem('videoid', $(this).attr('videoid'));    
+            }
+            else{
+
+            }
+            
+            window.location.href="/videolession";
+        });
     }
 }
 
@@ -28,7 +49,7 @@ var ValidateJSFunc = {
                 },
                 success: function(data, status, xhr){
                     var name = data.name;
-                    debugger
+                    // debugger
                     // var emailName = (data.email).split("@");
                     $('#user-name').html(name);
                     
