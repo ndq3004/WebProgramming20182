@@ -25,7 +25,7 @@ Route::get('register', 'UserController@viewRegister');
 * signin and signup using JWT 
 */
 Route::post('auth/register', 'UserController@register');
-Route::post('auth/login', 'UserController@login');
+Route::post('auth/login',['as'=>'auth/login','uses'=>'UserController@login']);
 
 Route::group(['middleware' => 'jwt.auth'], function () {
 	Route::get('user-info', 'UserController@getUserInfo');
@@ -108,10 +108,10 @@ Route::get('getrole','UserController@GetRole');
 // Route::post('adminLogin','AdminController@postLoginAdmin');
 
 
-
+Route::get('index',['as'=>'index','uses'=>'AdminController@index']);
 
 Route::group(['prefix'=>'auth','middleware'=>'auth'],function(){
-	Route::get('index',['as'=>'index','uses'=>'AdminController@index']);
+	
 	
 
 	
