@@ -11,10 +11,6 @@ class DialogJS{
         
     }
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> bbb2e839d0b2eb09419ccf5bf2a423b72d52c826
 var ValidateJSFunc = {
     checkToken: function(){
         var token = localStorage.getItem('token');

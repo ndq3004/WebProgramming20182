@@ -1,21 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
-class PageController extends Controller
-{
-    //
-}
-
-<?php
-
-namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\;
+use App;
 use App\LoaiTin;
 use App\BaiViet;
 use App\User;
@@ -181,13 +170,12 @@ class PageController extends Controller
 //   $baiviet = BaiViet::where('tieude','like',"%$tukhoa%")->orWhere('noidung','like',"%$tukhoa")->take(4)->paginate(5);
 //   return view('page.giaodien.timkiem',['baiviet'=>$baiviet, 'tukhoa'=>$tukhoa,'nguoidung'=>$nguoidung]);
 // }
-// }
 function thongtin(){
           if(Auth::check()){
-    $user = Auth::user();
-    return return File::get(public_path() . '/views/userprofile.html');
+                $user = Auth::user();
+                return File::get(public_path() . '/views/userprofile.html');
 
-}
+            }
 
     }
 }
