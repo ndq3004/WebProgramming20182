@@ -11,6 +11,8 @@ class DialogJS{
         this.initShowCourseregisterForm();
     }
     init_event(){ $('.open-form').click(function(){
+                var courseid = $(this).attr("course-id");
+                localStorage.setItem("courseid", courseid);
             // debugger
             // var element = $(this);
             // console.log(element.html());

@@ -1,5 +1,6 @@
 $(document).ready(function(){
     dialogJS.init_event();
+    dialogJS.bindVideo();
     ValidateJSFunc.checkToken();
 });
 
@@ -9,6 +10,18 @@ class DialogJS{
     }
     init_event(){
         
+    }
+
+    bindVideo(){
+        var courseid=localStorage.getItem("courseid");
+        var videoid=localStorage.getItem("videoid");
+        console.log(courseid + videoid);
+        $('.video-area').append(
+            '<video width="900" height="540" style="padding-top: 30px;" controls>'+
+                '<source id="video-link" src="video/'+ courseid + '/' + videoid + '.mp4" type="video/mp4">'+
+            '</video>' 
+        );
+          // $("source").attr("src", "/video/" + courseid + "/" + videoid + ".mp4"); 
     }
 }
 var ValidateJSFunc = {
