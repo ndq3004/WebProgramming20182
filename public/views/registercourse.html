@@ -257,21 +257,8 @@ Các khóa học trả phí
     </div>
   </div>
   
-  <ul id="list_lesson">
-        <li class="lesson_item">
-      <div class="avt"><a href="/videolession" title="Unit 1: First Greetings">  <img src="/courses_files/cach-chao-hoi-lan-dau-gap.jpg" width="190px" height="106px" alt="Unit 1: First Greetings"></a> </div>
-      <div class="cont">
-        <h3 class="title font-bold"><a href="/videolession" id="lesson_name" title="Unit 1: First Greetings"><span class="colorOrange">Unit 1: </span> <span class="color222"></span> First Greetings</a></h3>
-        <div class="font-regular font14 color555">Học cách chào hỏi cho lần đầu tiên gặp ai đó</div>
-        <div class="font-regular font13 colorAcac">Hello, Hi, I'm ..., Nice to meet you, Nice to meet you too</div>
-      </div>
-      <div class="lesson-status">
-        <div class="">Hoàn thành</div>
-        <div class=" colorAcac font12"><span class="far fa-circle-right"></span> Lý thuyết</div>
-        <div class=" colorAcac font12"><span class=" far fa-circle-right"></span> Bài tập</div>
-        <div class=" colorAcac font12"><span class="far fa-circle-right"></span> Video chat</div>
-      </div>
-    </li>
+  <!-- <ul id="list_lesson">
+        
     
     <li class="lesson_item">
       <div class="avt"><a href="https://www.tienganh123.com/tieng-anh-giao-tiep-cho-nguoi-mat-goc/23100-cach-chao-hoi-hang-ngay-trong-tieng-anh.html" title="Unit 2: Greetings">  <img src="/courses_files/cach-chao-hoi-hang-ngay.jpg" width="190px" height="106px" alt="Unit 2: Greetings"></a> </div>
@@ -483,6 +470,10 @@ Các khóa học trả phí
       </div>
     </li>
     
+  </ul> -->
+  
+  <ul id="list_lesson" class="list-video-lesson">
+
   </ul>
   <script type="text/javascript">
   $(document).ready(function(){
@@ -498,7 +489,8 @@ Các khóa học trả phí
   
 </div> 
 
-<link rel="stylesheet" type="text/css" href="/courses_files/style.css"><style>
+<link rel="stylesheet" type="text/css" href="/courses_files/style.css">
+<style>
 .containt_center_cen_left {padding-left: 0px; width:1000px !important; padding-top:0px}
 .containt_center_top,.navigations{display:none}
 #box_lecture{display:none}
@@ -557,7 +549,7 @@ var isHomePage = '/mainpage/' == '/' ? true : false;
     $(".view-all").on("click", function() {
           $("[data-load-toeic]").removeClass("hidden");
           $(this).hide();
-      })
+      });
   </script>
 <script type="text/javascript" src="./course_files/jquery.mCustomScrollbar.concat.min.js"></script>
 <script type="text/javascript" src="./course_files/slick.min.js"></script>

@@ -90,10 +90,12 @@ class UserController extends Controller
         try {
            if (!$token = JWTAuth::attempt($credentials)) {
                $error = ['reason' => 'invalid_email_or_password','status' => 422];
-            return redirect('login')->with('notice','Sai tên tài khoản hoặc mật khẩu!');
+               return response()->json($error);
+            // return redirect('login')->with('notice','Sai tên tài khoản hoặc mật khẩu!');
            }
         } catch (JWTAuthException $e) {
-            return redirect('login')->with('notice','Lỗi đăng nhập!');
+            return response()->json(['reason' => 'login error']);
+            // return redirect('login')->with('notice','Lỗi đăng nhập!');
         }
         return response()->json(compact('token'));
 
