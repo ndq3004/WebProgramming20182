@@ -5,12 +5,12 @@ $(document).ready(function(){
 
 class DialogJS{
     constructor(){
-        this.initShowMulticheckForm();
+        // this.initShowMulticheckForm();
     }
     init_event(){
         
     }
-
+}
 
 var ValidateJSFunc = {
     checkToken: function(){
@@ -30,6 +30,7 @@ var ValidateJSFunc = {
                     
                     // var emailName = (data.email).split("@");
                     $('#user-name').html(name);
+                    $('#user-name-rank').html(name);
                     
                 },
                 error: function(error){
