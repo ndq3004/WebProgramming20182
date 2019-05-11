@@ -12,7 +12,9 @@ use JWTAuth;
 use JWTAuthException;
 use App\Course;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Input;
+use Illuminate\Http\RedirectResponse;
+use File;
 
 class UserController extends Controller
 {
@@ -49,6 +51,26 @@ class UserController extends Controller
         ]);
         // return view('Users', ['users'=>$user]);
     }
+    public function loginAdmin(Request $request){
+        $email=$request->email;
+
+        $password=$request->get('password');
+        if($email=="admin@admin"){
+            if ($password=="admin") {
+              
+                return redirect('admin/index');
+            }
+            else {
+                return redirect('login')->with('notice','Sai tên tài khoản hoặc mật khẩu!');
+                // return "error";
+                // return view('login')->with('notice','Sai tên tài khoản hoặc mật khẩu!');
+            }
+        }
+        else {
+            return redirect('login')->with('notice','Sai tên tài khoản hoặc mật khẩu!');
+            // return view('login')->with('notice','Sai tên tài khoản hoặc mật khẩu!');
+        }
+    }
     
     public function login(loginRequest $request){
         $this->validate($request,[
@@ -74,7 +96,7 @@ class UserController extends Controller
             return redirect('login')->with('notice','Lỗi đăng nhập!');
         }
         //return response()->json(compact('token'));
-        return redirect('index')->with(['flash_level'=>'success','flash_message'=>'Sửa User thành công']);
+        // return redirect('index')->with(['flash_level'=>'success','flash_message'=>'Sửa User thành công']);
 
     }
 

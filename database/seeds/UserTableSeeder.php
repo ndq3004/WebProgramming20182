@@ -18,7 +18,12 @@ class UserTableSeeder extends Seeder
         //     $table->string('phone', 13);
         //     $table->text('address');
         //     $table->string('user_point')->default('0');
+        DB::table('users')->insert([
+            'name'=>'admin',
+            'email'=>('admin@admin'),
+            'password'=>bcrypt('admin'),
 
+        ]);
         for($i = 0; $i < 100; $i++){
             DB::table('users')->insert([[
                 'name'=>'Bùi Thị Mến'.' '.$i,
