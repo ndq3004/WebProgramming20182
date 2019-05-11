@@ -73,8 +73,8 @@ class UserController extends Controller
         } catch (JWTAuthException $e) {
             return redirect('login')->with('notice','Lỗi đăng nhập!');
         }
-        //return response()->json(compact('token'));
-        return redirect('index')->with(['flash_level'=>'success','flash_message'=>'Sửa User thành công']);
+        return response()->json(compact('token'));
+        // return redirect('index')->with(['flash_level'=>'success','flash_message'=>'Sửa User thành công']);
 
     }
 

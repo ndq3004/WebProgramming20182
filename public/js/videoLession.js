@@ -10,8 +10,7 @@ class DialogJS{
     init_event(){
         
     }
-
-
+}
 var ValidateJSFunc = {
     checkToken: function(){
         var token = localStorage.getItem('token');
