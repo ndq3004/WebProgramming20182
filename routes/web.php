@@ -26,6 +26,10 @@ Route::get('register', 'UserController@viewRegister');
 */
 Route::post('auth/register', 'UserController@register');
 Route::post('auth/login',['as'=>'auth/login','uses'=>'UserController@login']);
+/*
+login admin
+*/
+Route::post('loginAdmin',['as'=>'loginAdmin','uses'=>'UserController@loginAdmin']);
 
 Route::group(['middleware' => 'jwt.auth'], function () {
 	Route::get('user-info', 'UserController@getUserInfo');
@@ -55,7 +59,7 @@ Route::get('mainpage', function () {
 // 	return File::get(public_path() . '/views/userprofile.html');
 // });
  // Route::get('profile', 'UserController@thongtin');
-	
+
 Route::get('paid', function () {
 	return File::get(public_path() . '/views/coursepaid.html');
 });
@@ -108,17 +112,15 @@ Route::get('getrole','UserController@GetRole');
 // Route::post('adminLogin','AdminController@postLoginAdmin');
 
 
-Route::get('index',['as'=>'index','uses'=>'AdminController@index']);
 
-Route::group(['prefix'=>'auth','middleware'=>'auth'],function(){
-	
-	
 
-	
-	Route::get('lienket', 'AdminController@user1');
+Route::group(['prefix'=>'admin'],function(){
+	Route::get('index',['as'=>'index','uses'=>'AdminController@index']);
+	Route::get("userAdmin", ['as'=>'userAdmin','uses'=>'AdminController@users']);
+	Route::get('courseAdmin',['as'=>'courseAdmin','uses'=>'AdminController@course']);
+	//Route::get('lienket', 'AdminController@user1');
 });
-Route::get("userAdmin", ['as'=>'userAdmin','uses'=>'AdminController@users']);
-Route::get('courseAdmin',['as'=>'courseAdmin','uses'=>'AdminController@course']);
+
 
 Route::get('listUser',['as'=>'listUser','uses'=>'AdminController@listUser']);
 Route::get('listCourse',['as'=>'listCourse','uses'=>'AdminController@listCourse']);

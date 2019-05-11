@@ -5,12 +5,16 @@ $(document).ready(function(){
 
 class DialogJS{
     constructor(){
-        this.initShowMulticheckForm();
+        // this.initShowMulticheckForm();
     }
     init_event(){
         
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> bbb2e839d0b2eb09419ccf5bf2a423b72d52c826
 var ValidateJSFunc = {
     checkToken: function(){
         var token = localStorage.getItem('token');
@@ -29,6 +33,7 @@ var ValidateJSFunc = {
                     
                     // var emailName = (data.email).split("@");
                     $('#user-name').html(name);
+                    $('#user-name-rank').html(name);
                     
                 },
                 error: function(error){

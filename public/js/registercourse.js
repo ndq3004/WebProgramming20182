@@ -5,11 +5,12 @@ $(document).ready(function(){
 
 class DialogJS{
     constructor(){
-        this.initShowMulticheckForm();
+        // this.initShowMulticheckForm();
     }
     init_event(){
         
     }
+}
 
 
 var ValidateJSFunc = {
@@ -27,7 +28,7 @@ var ValidateJSFunc = {
                 },
                 success: function(data, status, xhr){
                     var name = data.name;
-                    
+                    debugger
                     // var emailName = (data.email).split("@");
                     $('#user-name').html(name);
                     

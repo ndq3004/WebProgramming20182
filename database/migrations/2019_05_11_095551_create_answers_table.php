@@ -20,6 +20,7 @@ class CreateAnswersTable extends Migration
             $table->string('ansB');
             $table->string('ansC');
             $table->string('ansD');            
+    
         });
     }
 
