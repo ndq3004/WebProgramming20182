@@ -14,8 +14,10 @@ class CreateUserCourseTable extends Migration
     public function up()
     {
         Schema::create('user_course', function (Blueprint $table) {
-            $table->integer('user_id');
-            $table->integer('course_id');
+            $table->integer('user_id')->unsigned();
+            $table->integer('course_id')->unsigned();
+            $table->foreign('user_id')->references('user_id')->on('users');
+             $table->foreign('course_id')->references('course_id')->on('courses');
         });
     }
 
