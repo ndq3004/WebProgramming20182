@@ -44,8 +44,8 @@
                 {{ session('notice') }}
             </div>
           @endif
-        <form action="auth/login" method="post">
-        
+        <form action="{{URL::route('auth/login')}}" method="post">
+          <input type="hidden" name="_token" value="{{csrf_token()}}">      
 
           <div class="form-group">
             <div class="form-label-group">

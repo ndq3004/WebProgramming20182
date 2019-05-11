@@ -7,6 +7,7 @@ use App\admin;
 use App\roles;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\loginRequest;
 use JWTAuth;
 use JWTAuthException;
 use App\Course;
@@ -49,7 +50,7 @@ class UserController extends Controller
         // return view('Users', ['users'=>$user]);
     }
     
-    public function login(Request $request){
+    public function login(loginRequest $request){
         $this->validate($request,[
             'email'=>'required|email',
             'password'=>'required|min:3|max:32'
@@ -72,9 +73,11 @@ class UserController extends Controller
         } catch (JWTAuthException $e) {
             return redirect('login')->with('notice','Lỗi đăng nhập!');
         }
-        return response()->json(compact('token'));
-        return redirect('home')->with(['flash_level'=>'success','flash_message'=>'Sửa User thành công']);
+        //return response()->json(compact('token'));
+        return redirect('index')->with(['flash_level'=>'success','flash_message'=>'Sửa User thành công']);
+
     }
+
 
     public function getUserInfo(Request $request){
         // return "null"; 
