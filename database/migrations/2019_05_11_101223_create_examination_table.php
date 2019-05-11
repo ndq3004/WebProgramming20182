@@ -8,7 +8,6 @@ class CreateExaminationTable extends Migration
 {
     /**
      * Run the migrations.
-     * Write by Quan
      *
      * @return void
      */
@@ -21,8 +20,10 @@ class CreateExaminationTable extends Migration
             $table->string('numRegister')->default('0');//so nguoi dang ki hoc
             $table->string('numRate')->default('0');//số lượt đánh giá
             $table->string('avgRate')->default('0');//điểm đánh giá trung bình
-            $table->string('course_id');
+            $table->integer('course_id')->unsigned();
+             $table->foreign('course_id')->references('course_id')->on('courses');
             $table->timestamps();
+            
         });
     }
 
