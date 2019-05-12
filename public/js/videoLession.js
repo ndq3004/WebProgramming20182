@@ -23,6 +23,25 @@ class DialogJS{
         );
           // $("source").attr("src", "/video/" + courseid + "/" + videoid + ".mp4"); 
     }
+
+    getVideoLessonInfo(){
+        var url = host.Config.localhost + "/getVideoInfo"
+                                        + "/" + localStorage.getItem('courseid')
+                                        + "/" + localStorage.getItem('videoid');
+        $.ajax({
+            method:"get",
+            url: url,
+            headers: {
+                token: localStorage.getItem('token')
+            },
+            success: function (videoInfo) {
+                $('#lesson-name').text(videoInfo);
+            },
+            error: function(){
+
+            }
+        });  
+    }
 }
 var ValidateJSFunc = {
     checkToken: function(){

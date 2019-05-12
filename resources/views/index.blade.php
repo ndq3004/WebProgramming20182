@@ -143,7 +143,7 @@
                     @foreach ($course as $kh)
                     
                     <tbody>
-                     <a href="#" title="" class="chitiet">
+                     
                       <tr>
                         <td>{{ $kh->id }}</td>
                         <td>{{ $kh->name }}</td>
@@ -159,7 +159,6 @@
                       Level: {{ $kh->level }} <br>
                       Discription: {{ $kh->discription }}
                     </div>
-                    </a>
                     
                     @endforeach
                     
