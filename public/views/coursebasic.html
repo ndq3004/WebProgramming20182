@@ -183,9 +183,9 @@ Các khóa học trả phí
 
 <p class="text-center">
 <div class="d-flex">
-    <div class="button-link style-1 open-form" type-t="basic" level="1" topicid="1">Animal</div>
-    <div class="button-link style-1 open-form" type-t="basic" level="1" topicid="2">Family</div>
-    <div class="button-link style-1 open-form" type-t="basic" level="1" topicid="3">Education</div>
+    <div class="button-link style-1 open-form" type-t="video" level="4" topicid="7">Animal</div>
+    <div class="button-link style-1 open-form" type-t="video" level="4" topicid="8">Family</div>
+    <div class="button-link style-1 open-form" type-t="basic" level="2" topicid="3">Education</div>
 </div>
 
 </p>
@@ -196,9 +196,9 @@ Các khóa học trả phí
     
     <p class="text-center">
     <div class="d-flex">
-        <div class="button-link style-1 open-form" type-t="basic" level="" topicid="">Thì hiện tại đơn</div>
-        <div class="button-link style-1 open-form" type-t="basic" level="" topicid="">Thì hiện tương lai đơn</div>
-        <div class="button-link style-1 open-form" type-t="basic" level="" topicid="">Thì quá khứ đơn</div>
+        <div class="button-link style-1 open-form" type-t="basic" level="2" topicid="4">Thì hiện tại đơn</div>
+        <div class="button-link style-1 open-form" type-t="video" level="3" topicid="5">Thì hiện tương lai đơn</div>
+        <div class="button-link style-1 open-form" type-t="video" level="3" topicid="6">Thì quá khứ đơn</div>
     </div>
     </p>
 </li>
@@ -919,10 +919,6 @@ Vu Quoc Hung
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="./course_files/template-1052220419.js"></script>
-<script src="js/firstSignInPage.js"></script>
-
 <script>
 var isMobileWeb = false;
 
@@ -952,87 +948,15 @@ var isHomePage = '/mainpage/' == '/' ? true : false;
 	        $(this).hide();
 	    })
 	</script>
+  
+<script src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="./course_files/template-1052220419.js"></script>
 <script type="text/javascript" src="./course_files/jquery.mCustomScrollbar.concat.min.js"></script>
 <script type="text/javascript" src="./course_files/slick.min.js"></script>
 <script type="text/javascript" src="./course_files/chart.js"></script>
 <script type="text/javascript" src="./course_files/stickbar.js"></script>
 <script type="text/javascript" src="./course_files/dashboard-1052220419.js"></script>
 <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./course_files/d_vbiawPdxB.html" style="border: none;" __idm_frm__="429"></iframe></div></div></div>
-<!-- <script>
-		window.fbAsyncInit = function() {
-			FB.init({
-			 	appId          : "956108007815000",
-	 		 	cookie         : true,    // enable cookies to allow the server to access the session
-	 		 	status         : true,  // Check Facebook Login status
-			    xfbml          : true,    // parse social plugins on this page
-			    version        : 'v2.12' 
-			});
-			
-			// do this checking to make sure that FB api is available 
-			// a func named "callBackAfterFBInit" needs to be defined above this code 
-			// => in the header js of the html that want to execute codes after fb init
-		  	if (typeof callBackAfterFBInit == 'function') {
-		  		callBackAfterFBInit();
-		    };
-		   
-		    
-		};
-		
-		//Load the SDK asynchronously
-		(function(d, s, id) {
-		    var js, fjs = d.getElementsByTagName(s)[0];
-		    if (d.getElementById(id)) {return; }
-		    js = d.createElement(s); js.id = id;
-		    js.src = "https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.12&appId=956108007815000";
-		    js.async = true;
-		    fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));   
-	</script>
+<script src="js/firstSignInPage.js"></script>
 
-<script>
-(function(){
-  // if firefox 3.5+, hide content till load (or 3 seconds) to prevent FOUT
-  var d = document, e = d.documentElement, s = d.createElement('style');
-  if (e.style.MozTransform === ''){ // gecko 1.9.1 inference
-    s.textContent = 'h1,h2{visibility:hidden}';
-    var r = document.getElementsByTagName('script')[0];
-    r.parentNode.insertBefore(s, r);
-    function f(){ s.parentNode && s.parentNode.removeChild(s); }
-    addEventListener('load',f,false);
-    setTimeout(f,3000); 
-  }
-
-})();
-</script>
-
-<script>
-
-	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-	document,'script','https://connect.facebook.net/en_US/fbevents.js');
-	
-	fbq('init', '1621041464887282');
-	fbq('track', "PageView");
-	
-	
-	fbq('trackCustom', 'VisitedDashboard');
-
-	</script>
-<noscript><img height="1" width="1" style="display:none"
-	src="https://www.facebook.com/tr?id=1621041464887282&ev=PageView&noscript=1"
-	/></noscript>
-  <script src="./course_files/sdk.js" async="" crossorigin="anonymous"></script><script src="./course_files/1621041464887282" async=""></script><script async="" src="./course_files/fbevents.js"></script><script id="facebook-jssdk" src="./course_files/sdk.js(1)" async=""></script><script type="text/javascript" async="" src="./course_files/analytics.js"></script><script async="" src="./course_files/js"></script>
-  <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments)};
-        gtag('js', new Date());
-      
-        gtag('config', 'UA-67182944-1');
-      </script>
-<noscript>
-    <div class="nof">GiasuTOEIC.com works best with JavaScript enabled! To use standard view, enable JavaScript by changing your browser options, then try again.</div>
-</noscript>
- -->
 </body></html>
