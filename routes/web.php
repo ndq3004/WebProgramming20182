@@ -19,7 +19,7 @@ Route::get('/', function () {
 /*
 * Get view login, register
 */
-Route::get('login', 'UserController@viewLogin');
+Route::get('login',['as'=>'login', 'uses'=>'UserController@viewLogin']);
 Route::get('register', 'UserController@viewRegister');
 /*
 * signin and signup using JWT 
@@ -39,7 +39,7 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 	Route::get('checkAuthen', function(){
 		return 'success';
 	});
-	Route::get('getCourseVideo/{course_id}', 'PaidCourseController@getCourseVideo');
+	Route::get('getSingleVideoInfo/{video_id}', 'PaidCourseController@getSingleVideoInfo');
 });
 
 Route::get('allUser', 'UserController@allUser');
