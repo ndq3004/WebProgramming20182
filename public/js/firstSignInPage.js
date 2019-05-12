@@ -16,7 +16,7 @@ class DialogJS{
             autoOpen: false,
             modal: true,
             width: 700,
-            title: "Animal",
+            title: "TEST",
             // maxHeight: 500,
             position: { my: 'top', at: 'top+100' },
             // resizable: false,
@@ -65,12 +65,13 @@ class DialogJS{
             contentType:'appication/json',
             url: host.Config.localhost + '/getlession/'+ type + "/" + level + "/" + topicid,
             success: function(response){
+                debugger
                 for(var i = 0; i < response.length; i++) {
                     dialogJS.appendDataToDialog(response[i], i);
                 }     
             },
             error: function(){
-
+                console.log("load data error");
             }
         })
         

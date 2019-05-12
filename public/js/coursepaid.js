@@ -171,6 +171,7 @@ class DialogJS{
                     }
                     else{
                         debugger
+                        dialogJS.registered = 'false';
                         window.location.href = '/course';
 
                     }

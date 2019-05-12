@@ -11,6 +11,7 @@ class PaidCourseController extends Controller
         $courseVideo = DB::select("select * from video_lesson where course_id=?", [$course_id]);
         return $courseVideo;
     }
+
     
     public function getVideoLessonInfo($course_id, $video_id){
         // $courseInfo = DB::select("select * from courses where course_id=?",[$course_id]);
@@ -23,5 +24,10 @@ class PaidCourseController extends Controller
     public function getCourseInfo($course_id){
         $courseInfo = DB::table('courses')->where('course_id', $course_id)->first();
         return response()->json($courseInfo);
+    }
+    public function getSingleVideoInfo($video_id){
+    	$lessonVideo = DB::select("select * from video_lesson where video_id=?", [$video_id]);
+        return $lessonVideo;
+
     }
 }

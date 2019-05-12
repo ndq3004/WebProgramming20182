@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    commonJS.showDialog('hello', 'success');
+    // commonJS.showDialog('hello', 'success');
 });
 class CommonJS{
     constructor(){

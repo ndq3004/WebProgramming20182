@@ -19,7 +19,7 @@ Route::get('/', function () {
 /*
 * Get view login, register
 */
-Route::get('login', 'UserController@viewLogin');
+Route::get('login',['as'=>'login', 'uses'=>'UserController@viewLogin']);
 Route::get('register', 'UserController@viewRegister');
 /*
 * signin and signup using JWT 
@@ -39,12 +39,14 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 	Route::get('checkAuthen', function(){
 		return 'success';
 	});
+
 	//lấy thông video và course để hiển thị lên trang lesson video( trang xem cụ thể 1 video)
 	Route::get('getCourseInfo/{course_id}', 'PaidCourseController@getCourseInfo');
 	Route::get('getVideoLessonInfo/{course_id}/{video_id}', 'PaidCourseController@getVideoLessonInfo');
 	Route::get('getCourseVideo/{course_id}', 'PaidCourseController@getCourseVideo');
 	Route::post('updateRegisterCourse', 'UserController@updateRegisterCourse');
 	Route::get('checkIfUserRegisteredCourse/{course_id}', 'UserController@checkIfUserRegisteredCourse');
+	Route::get('getSingleVideoInfo/{video_id}', 'PaidCourseController@getSingleVideoInfo');
 });
 
 Route::get('allUser', 'UserController@allUser');
