@@ -31,11 +31,29 @@ class CourseTableSeeder extends Seeder
             ],
             [
                 'course_id'=>'3',
-                'name'=>'Khóa trả phí',
+                'name'=>'Khóa trả phí 1',
                 'level'=>'3',
                 'discription'=>'none',
                 'link'=>'none',
-                'number-lession'=>'12',
+                'number-lession'=>'6',
+                'type'=>'video'
+            ],
+            [
+                'course_id'=>'4',
+                'name'=>'Khóa trả phí 2',
+                'level'=>'4',
+                'discription'=>'none',
+                'link'=>'none',
+                'number-lession'=>'3',
+                'type'=>'video'
+            ],
+            [
+                'course_id'=>'5',
+                'name'=>'Khóa trả phí 3',
+                'level'=>'5',
+                'discription'=>'none',
+                'link'=>'none',
+                'number-lession'=>'3',
                 'type'=>'video'
             ]
 
