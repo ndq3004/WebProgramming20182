@@ -1,0 +1,30 @@
+.carousel-indicators li {
+border-radius: 10px;
+border: 1px solid gray;
+height: 4px;
+width: 30px; margin-left: 3px; 
+margin-right: 3px;
+text-indent: -999px; 
+background-color: transparent;}
+.carousel-indicators .active {
+border-radius: 10px;
+height: 6px;
+width: 30ppx;
+margin-left: 3px;                          
+margin-right: 3px; 
+text-indent: -999px; 
+background-color: honeydew;}
+@keyframes zoom {
+from {
+  transform: scale(1,1);
+      }
+to {
+  transform: scale(1.2,1.2);
+  }
+   }                   
+#imgslide {
+width: 1200px;
+height: 500px;
+animation: zoom 3s infinite alternate; 
+}                        
+                        

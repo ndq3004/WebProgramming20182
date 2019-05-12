@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use App\Answer;
 use App\Services\PayUService\Exception;
+use JWTAuth;
+use JWTAuthException;
 
 class BasicCourseController extends Controller
 {
@@ -49,7 +51,8 @@ class BasicCourseController extends Controller
             }
         }
         try{
-            $user->user_point = $point;
+            $user->user_point += $point;
+            $user->save();
         }
         catch(Exception $e){
             return "cap nhat diem that bai";

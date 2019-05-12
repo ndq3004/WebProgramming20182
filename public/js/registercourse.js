@@ -1,6 +1,8 @@
 $(document).ready(function(){
     dialogJS.init_event();
     ValidateJSFunc.checkToken();
+    dialogJS.bindListVideo();
+
 });
 
 class DialogJS{
@@ -9,6 +11,78 @@ class DialogJS{
     }
     init_event(){
         
+    }
+
+    bindListVideo(){
+        //get data of video course
+        var courseid = localStorage.getItem("courseid");
+        $.ajax({
+            method: "get",
+            url: host.Config.localhost + "/getCourseVideo/" + courseid,
+            headers:{
+                'token': localStorage.getItem('token')
+            },
+            success: function(data){
+                $.each(data, function(key, value){
+                    dialogJS.appendALessonToList(key,value);
+                    
+                });
+                dialogJS.getVideoInfo();
+            },
+            error: function(){
+
+            }
+        });
+        
+    }
+
+    appendALessonToList(key, value){
+        var nameSplit = value.video_name.split(":");
+        $('.list-video-lesson').append(
+            '<li class="lesson_item" videoid="'+value.video_id+'">'+
+                '<div class="avt">'+
+                    '<a  title="'+value.video_name+'">'+  
+                    '<img src="/courses_files/image/'+ value.course_id + '/' + value.video_id +'.jpg" width="190px"'+
+                    'height="106px" alt="'+value.video_name+'"></a>'+ 
+                '</div>'+
+                '<div class="cont">'+
+                    '<h3 class="title font-bold">'+
+                        '<a id="lesson_name" title="'+value.video_name+'">'+
+                            '<span class="colorOrange">'+nameSplit[0]+': </span>'+ 
+                            '<span class="color222"></span>' + nameSplit[1]+
+                        '</a>'+
+                    '</h3>'+
+                    '<div class="font-regular font14 color555">'+
+                        value.describe +
+                    '</div>'+
+                    '<div class="font-regular font13 colorAcac">'+
+                        value.demo_content+
+                    '</div>'+
+                '</div>'+
+                '<div class="lesson-status">'+
+                    '<div class="">Hoàn thành</div>'+
+                    '<div class=" colorAcac font12">'+
+                        '<span class="far fa-circle-right"></span> Lý thuyết</div>'+
+                    '<div class=" colorAcac font12"><span class=" far fa-circle-right"></span> Bài tập</div>'+
+                    '<div class=" colorAcac font12"><span class="far fa-circle-right"></span> Video chat</div>'+
+                '</div>'+
+            '</li>'
+        );
+
+    }
+
+    getVideoInfo(){
+        $('.lesson_item').on('click', function(){
+            console.log(this);
+            if($(this).attr('videoid') != ""){
+                localStorage.setItem('videoid', $(this).attr('videoid'));  
+                window.location.href="/videolession";  
+            }
+            else{
+
+            }  
+            
+        });
     }
 }
 
@@ -28,7 +102,7 @@ var ValidateJSFunc = {
                 },
                 success: function(data, status, xhr){
                     var name = data.name;
-                    debugger
+                    // debugger
                     // var emailName = (data.email).split("@");
                     $('#user-name').html(name);
                     
