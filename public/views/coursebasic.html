@@ -20,17 +20,9 @@
 <meta name="msapplication-config" content="/static/favicon/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" href="./course_files/template-1052220419.css" type="text/css">
-<!-- <link rel="stylesheet" href="./course_files/jquery-ui-1.11.4.min.css" type="text/css"> -->
 <link rel="stylesheet" href="css/jquery-ui.min.css">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
 <style>
 	  	
 		.ui-widget, 
@@ -62,21 +54,14 @@
 		    font-size: 12px;
 		}
 	</style>
-<script src="./course_files/sdk.js" async="" crossorigin="anonymous"></script><script src="./course_files/1621041464887282" async=""></script><script async="" src="./course_files/fbevents.js"></script><script id="facebook-jssdk" src="./course_files/sdk.js(1)" async=""></script><script type="text/javascript" async="" src="./course_files/analytics.js"></script><script async="" src="./course_files/js"></script>
-<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments)};
-		  gtag('js', new Date());
-		
-		  gtag('config', 'UA-67182944-1');
-		</script>
+
 </head>
 <body class="gochoctap" cz-shortcut-listen="true">
 <div id="page-container">
 <header data-sticky="" data-class-name="bg-blue" class="clearfix header1">
 <div class="content">
 <div class="logo" style="width: 100px; margin-top: 0px;">
-<a href="https://giasutoeic.com/?r=nav" title="Gia sư TOEIC">
+<a href="/mainpage" title="Learning English">
 <img src="../image/pic.png" alt="Gia sư TOEIC Logo" style="width: 220px;">
 </a>
 </div>
@@ -550,7 +535,7 @@ Tracy
 <span>
 759
 </span>
-<a class="user-button" href="https://giasutoeic.com/pay/" target="_blank" title="Kích để tìm hiểu thêm về Tài khoản này">TK Tự Luyện
+<a class="user-button" href="" target="_blank" title="Kích để tìm hiểu thêm về Tài khoản này">TK Tự Luyện
 </a>
 </div>
 </div>
@@ -628,7 +613,7 @@ Thành
 <span>
 612
 </span>
-<a class="user-button" href="https://giasutoeic.com/pay/" target="_blank" title="Kích để tìm hiểu thêm về Tài khoản này">TK Tự Luyện
+<a class="user-button" href="" target="_blank" title="Kích để tìm hiểu thêm về Tài khoản này">TK Tự Luyện
 </a>
 </div>
 </div>
@@ -738,7 +723,7 @@ Bảo Nhi
 <span>
 51527
 </span>
-<a class="user-button" href="https://giasutoeic.com/pay/" target="_blank" title="Kích để tìm hiểu thêm về Tài khoản này">TK Tự Luyện
+<a class="user-button" href="" target="_blank" title="Kích để tìm hiểu thêm về Tài khoản này">TK Tự Luyện
 </a>
 </div>
 </div>
@@ -931,9 +916,20 @@ Vu Quoc Hung
 </div>
 </section>
 </div>
-<script type="text/javascript" src="./course_files/jquery-3.1.1_with_migrate-3.0.0_with_bootstrap3.3.7.min.js"></script>
-<script type="text/javascript" src="./course_files/jquery-ui-1.11.4.min.js"></script>
+
+<div id="multicheck-form" style="display: none;">
+
+</div>
+<div class="show-point" style="display: none;">
+
+</div>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="./course_files/template-1052220419.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/firstSignInPage.js"></script>
+
 <script>
 var isMobileWeb = false;
 
@@ -1020,7 +1016,7 @@ var isHomePage = '/mainpage/' == '/' ? true : false;
 
 	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-	n.push=n;n.loaded=!0;n.version='2.0';n.que  ue=[];t=b.createElement(e);t.async=!0;
+	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 	document,'script','https://connect.facebook.net/en_US/fbevents.js');
 	
@@ -1034,14 +1030,16 @@ var isHomePage = '/mainpage/' == '/' ? true : false;
 <noscript><img height="1" width="1" style="display:none"
 	src="https://www.facebook.com/tr?id=1621041464887282&ev=PageView&noscript=1"
 	/></noscript>
-
+  <script src="./course_files/sdk.js" async="" crossorigin="anonymous"></script><script src="./course_files/1621041464887282" async=""></script><script async="" src="./course_files/fbevents.js"></script><script id="facebook-jssdk" src="./course_files/sdk.js(1)" async=""></script><script type="text/javascript" async="" src="./course_files/analytics.js"></script><script async="" src="./course_files/js"></script>
+  <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments)};
+        gtag('js', new Date());
+      
+        gtag('config', 'UA-67182944-1');
+      </script>
 <noscript>
     <div class="nof">GiasuTOEIC.com works best with JavaScript enabled! To use standard view, enable JavaScript by changing your browser options, then try again.</div>
 </noscript>
-<div id="multicheck-form" style="display: none;">
 
-</div>
-<script src="/js/jquery-3.2.1.min.js"></script>
-<script src="js/jquery-ui.min.js"></script>
-<script src="js/firstSignInPage.js"></script>
 </body></html>

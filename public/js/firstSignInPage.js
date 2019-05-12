@@ -112,17 +112,16 @@ class DialogJS{
         var returnObj = {submitAnswers:submitAnswers};
         if(submitAnswers.length == 0) return;
         console.log(returnObj);
-        debugger
         $.ajax({
             method:'post',
             url: host.Config.localhost + '/checkAnswer',
             headers:{
                 'token': localStorage.getItem('token')
             },
+            contentType:'application/json', 
             data: JSON.stringify(returnObj),
             success: function(data){
                 //mở box thông báo điểm
-                alert('success');
                 dialogJS.showPoint(data);
             },
             error: function(){
@@ -130,22 +129,36 @@ class DialogJS{
             }
         });
     }
-
-    showPoint(point){
-        $('.show-point').html('');
-        $('.show-point').html('Bạn đã hoàn thành với số điểm là ' + point);
+    initShowPointDialog(){
         $('.show-point').dialog({
             autoOpen: false,
-            height: 400,
-            width: 350,
             modal: true,
-            title: 'thông báo!',
+            title: 'Thông báo!',
             buttons: {
                 close: function(){
                     $('.show-point').dialog('close');
+                    $('#multicheck-form').dialog( "close" );
                 }
             }
         });
+    }
+    showPoint(point){
+        $('.show-point').html('');
+        var strPoint = 'Bạn đã hoàn thành với số điểm là ' + point +'<br>';
+        // $('.show-point').html('Bạn đã hoàn thành với số điểm là ' + point);
+        if(point >= 8) {
+            strPoint += 'Bạn rất xuất sắc! Hãy tiếp tục với thử thách mới nào!';
+        }
+        else if(point >= 6) {
+            strPoint += 'Khá tốt! Tuy nhiên bạn nên luyện tập thêm phần này!';
+        }
+        else{
+            strPoint += 'Oh! Có vẻ bạn nên luyện tập nhiều hơn nữa. Đừng nản lòng, hãy cố gắng nhé!';
+        }
+        $('.show-point').html(strPoint);
+        dialogJS.initShowPointDialog();
+        $('.show-point').dialog('open');
+
     }
 }
 

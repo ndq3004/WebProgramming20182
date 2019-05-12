@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use App\Answer;
 use App\Services\PayUService\Exception;
+use JWTAuth;
+use JWTAuthException;
 
 class BasicCourseController extends Controller
 {

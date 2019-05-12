@@ -1,6 +1,8 @@
 $(document).ready(function(){
-    dialogJS.bindListVideo();
+    dialogJS.init_event();
     ValidateJSFunc.checkToken();
+    dialogJS.bindListVideo();
+
 });
 
 class DialogJS{
@@ -12,31 +14,49 @@ class DialogJS{
     }
 
     bindListVideo(){
-        for(var i = 1; i < 12; i++){
-            dialogJS.appendALessonToList();
-        }
+        //get data of video course
+        var courseid = localStorage.getItem("courseid");
+        $.ajax({
+            method: "get",
+            url: host.Config.localhost + "/getCourseVideo/" + courseid,
+            headers:{
+                'token': localStorage.getItem('token')
+            },
+            success: function(data){
+                $.each(data, function(key, value){
+                    dialogJS.appendALessonToList(key,value);
+                    
+                });
+                dialogJS.getVideoInfo();
+            },
+            error: function(){
+
+            }
+        });
+        
     }
 
-    appendALessonToList(imageUrl, title, describe, demoContent){
+    appendALessonToList(key, value){
+        var nameSplit = value.video_name.split(":");
         $('.list-video-lesson').append(
-            '<li class="lesson_item">'+
+            '<li class="lesson_item" videoid="'+value.video_id+'">'+
                 '<div class="avt">'+
-                    '<a href="/videolession" title="Unit 1: First Greetings">'+  
-                    '<img src="/courses_files/cach-chao-hoi-lan-dau-gap.jpg" width="190px"'+
-                    'height="106px" alt="Unit 1: First Greetings"></a>'+ 
+                    '<a  title="'+value.video_name+'">'+  
+                    '<img src="/courses_files/image/'+ value.course_id + '/' + value.video_id +'.jpg" width="190px"'+
+                    'height="106px" alt="'+value.video_name+'"></a>'+ 
                 '</div>'+
                 '<div class="cont">'+
                     '<h3 class="title font-bold">'+
-                        '<a href="/videolession" id="lesson_name" title="Unit 1: First Greetings">'+
-                            '<span class="colorOrange">Unit 1: </span>'+ 
-                            '<span class="color222"></span> First Greetings'+
+                        '<a id="lesson_name" title="'+value.video_name+'">'+
+                            '<span class="colorOrange">'+nameSplit[0]+': </span>'+ 
+                            '<span class="color222"></span>' + nameSplit[1]+
                         '</a>'+
                     '</h3>'+
                     '<div class="font-regular font14 color555">'+
-                        'Học cách chào hỏi cho lần đầu tiên gặp ai đó'+
+                        value.describe +
                     '</div>'+
-                    '<div class="font-regular font13 colorAcac">Hello, Hi, I\'m ..., '+
-                        'Nice to meet you, Nice to meet you too'+
+                    '<div class="font-regular font13 colorAcac">'+
+                        value.demo_content+
                     '</div>'+
                 '</div>'+
                 '<div class="lesson-status">'+
@@ -48,6 +68,21 @@ class DialogJS{
                 '</div>'+
             '</li>'
         );
+
+    }
+
+    getVideoInfo(){
+        $('.lesson_item').on('click', function(){
+            console.log(this);
+            if($(this).attr('videoid') != ""){
+                localStorage.setItem('videoid', $(this).attr('videoid'));  
+                window.location.href="/videolession";  
+            }
+            else{
+
+            }  
+            
+        });
     }
 }
 
@@ -67,7 +102,7 @@ var ValidateJSFunc = {
                 },
                 success: function(data, status, xhr){
                     var name = data.name;
-                    debugger
+                    // debugger
                     // var emailName = (data.email).split("@");
                     $('#user-name').html(name);
                     
