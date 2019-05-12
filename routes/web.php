@@ -19,7 +19,7 @@ Route::get('/', function () {
 /*
 * Get view login, register
 */
-Route::get('login', 'UserController@viewLogin');
+Route::get('login',['as'=>'login', 'uses'=>'UserController@viewLogin']);
 Route::get('register', 'UserController@viewRegister');
 /*
 * signin and signup using JWT 

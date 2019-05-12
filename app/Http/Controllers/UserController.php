@@ -57,7 +57,6 @@ class UserController extends Controller
         $password=$request->get('password');
         if($email=="admin@admin"){
             if ($password=="admin") {
-              
                 return redirect('admin/index');
             }
             else {

@@ -92,128 +92,140 @@
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-      
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('courseAdmin') }}">
+          <i class="fas fa-book"></i>
+          <span>Courses</span></a>
+        </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('courseAdmin') }}">
-            <i class="fas fa-book"></i>
-            <span>Courses</span></a>
+          <a class="nav-link" href="{{ route('userAdmin') }}">
+            <i class="fas fa-user"></i>
+            <span>Users</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('userAdmin') }}">
-              <i class="fas fa-user"></i>
-              <span>Users</span></a>
-            </li>
-          </ul>
+        </ul>
 
-          <div id="content-wrapper">
+        <div id="content-wrapper">
 
-            <div class="container-fluid">
+          <div class="container-fluid">
 
-              <!-- Breadcrumbs-->
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                  <a href="{{ route('index') }}">Home</a>
-                </li>
-               
-              </ol>
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="{{ route('index') }}">Home</a>
+              </li>
 
-              
-        
-        <div class="card mb-3">
-          <div class="card-header">
-            <i class="fas fa-table"></i>
-          Courses</div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
+            </ol>
 
-                  <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Level</th>
-                    <th>Discription</th>
-                    <th>Link</th>
-                    <th>number-lession</th>
-                  </tr>
 
-                  
-                </thead>
-                <tbody>
-                  @foreach ($course as $kh)
-                  <tr>
-                    <td>{{ $kh->id }}</td>
-                    <td>{{ $kh->name }}</td>
-                    <td>{{ $kh->level }}</td>
-                    <td>{{ $kh->discription }}</td>
-                    <td>{{ $kh->link }}</td>
-                    <td>{{ $kh->number_lession }}</td>
-                  </tr>
-                  @endforeach
 
-                </tbody>
-                
-              </table>
+            <div class="card mb-3">
+              <div class="card-header">
+                <i class="fas fa-table"></i>
+              Courses</div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+
+                      <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Level</th>
+                        <th>Discription</th>
+                        <th>Link</th>
+                        <th>number-lession</th>
+                      </tr>
+
+
+                    </thead>
+                    
+                    @foreach ($course as $kh)
+                    
+                    <tbody>
+                     <a href="#" title="" class="chitiet">
+                      <tr>
+                        <td>{{ $kh->id }}</td>
+                        <td>{{ $kh->name }}</td>
+                        <td>{{ $kh->level }}</td>
+                        <td>{{ $kh->discription }}</td>
+                        <td>{{ $kh->link }}</td>
+                        <td>{{ $kh->number_lession }}</td>
+                      </tr>
+                      
+
+                    </tbody>
+                    <div class="detail">Course name: {{ $kh->name }} <br>
+                      Level: {{ $kh->level }} <br>
+                      Discription: {{ $kh->discription }}
+                    </div>
+                    </a>
+                    
+                    @endforeach
+                    
+
+
+                  </table>
+                </div>
+              </div>
+              <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </div>
+
+          </div>
+          <!-- /.container-fluid -->
+
+          <!-- Sticky Footer -->
+
+
+        </div>
+        <!-- /.content-wrapper -->
+
+      </div>
+      <!-- /#wrapper -->
+
+      <!-- Scroll to Top Button-->
+      <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+      </a>
+
+      <!-- Logout Modal-->
+      <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+              <a class="btn btn-primary" href="login.html">Logout</a>
             </div>
           </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-        </div>
-
-      </div>
-      <!-- /.container-fluid -->
-
-      <!-- Sticky Footer -->
-      
-
-    </div>
-    <!-- /.content-wrapper -->
-
-  </div>
-  <!-- /#wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="../vendor/jquery/jquery.min.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Bootstrap core JavaScript-->
+      <script src="../vendor/jquery/jquery.min.js"></script>
+      <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+      <!-- Core plugin JavaScript-->
+      <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Page level plugin JavaScript-->
-  <script src="../vendor/chart.js/Chart.min.js"></script>
-  <script src="../vendor/datatables/jquery.dataTables.js"></script>
-  <script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
+      <!-- Page level plugin JavaScript-->
+      <script src="../vendor/chart.js/Chart.min.js"></script>
+      <script src="../vendor/datatables/jquery.dataTables.js"></script>
+      <script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="../js/sb-admin.min.js"></script>
+      <!-- Custom scripts for all pages-->
+      <script src="../js/sb-admin.min.js"></script>
 
-  <!-- Demo scripts for this page-->
-  <script src="../js/demo/datatables-demo.js"></script>
-  <script src="../js/demo/chart-area-demo.js"></script>
+      <!-- Demo scripts for this page-->
+      <script src="../js/demo/datatables-demo.js"></script>
+      <script src="../js/demo/chart-area-demo.js"></script>
 
-</body>
+    </body>
 
-</html>
+    </html>
