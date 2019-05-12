@@ -1,5 +1,6 @@
 $(document).ready(function(){
     dialogJS.init_event();
+    dialogJS.getVideoLessonInfo();
     dialogJS.bindVideo();
     ValidateJSFunc.checkToken();
 });
@@ -26,7 +27,7 @@ class DialogJS{
 
     getVideoLessonInfo(){
         var url = host.Config.localhost + "/getVideoInfo"
-                                        + "/" + localStorage.getItem('courseid')
+                                        // + "/" + localStorage.getItem('courseid')
                                         + "/" + localStorage.getItem('videoid');
         $.ajax({
             method:"get",
@@ -35,6 +36,7 @@ class DialogJS{
                 token: localStorage.getItem('token')
             },
             success: function (videoInfo) {
+                debugger
                 $('#lesson-name').text(videoInfo);
             },
             error: function(){

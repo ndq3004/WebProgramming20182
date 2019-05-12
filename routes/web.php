@@ -39,7 +39,7 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 	Route::get('checkAuthen', function(){
 		return 'success';
 	});
-	Route::get('getSingleVideoInfo', 'PaidCourseController');
+	Route::get('getSingleVideoInfo/{video_id}', 'PaidCourseController@getSingleVideoInfo');
 });
 
 Route::get('allUser', 'UserController@allUser');
