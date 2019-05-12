@@ -70,6 +70,19 @@ class DialogJS{
         );
 
     }
+    getVideoInfo(){
+        $('.lesson_item').on('click', function(){
+            console.log(this);
+            if($(this).attr('videoid') != ""){
+                localStorage.setItem('videoid', $(this).attr('videoid'));  
+                window.location.href="/videolession";  
+            }
+            else{
+
+            }  
+            
+        });
+    }
 
    
 }

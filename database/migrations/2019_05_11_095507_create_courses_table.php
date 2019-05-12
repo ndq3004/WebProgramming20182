@@ -21,6 +21,7 @@ class CreateCoursesTable extends Migration
             $table->string('link');
             $table->integer('number-lession');//=0
             $table->string('type');// basic, multichoise, video
+            $table->bigInteger('price')->default(1000);
         });
     }
 

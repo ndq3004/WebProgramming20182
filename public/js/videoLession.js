@@ -1,21 +1,39 @@
 $(document).ready(function(){
     dialogJS.init_event();
-    dialogJS.bindVideo();
     ValidateJSFunc.checkToken();
 });
+var host=host || {}
 
+host.Config={
+    localhost:"http://localhost:8000"
+}
 class DialogJS{
     constructor(){
-        // this.initShowMulticheckForm();
-    }
+        this.bindVideo();    }
     init_event(){
-        
     }
 
     bindVideo(){
         var courseid=localStorage.getItem("courseid");
         var videoid=localStorage.getItem("videoid");
         console.log(courseid + videoid);
+        //bind video info
+        $.ajax({
+            method:"get",
+            url: host.Config.localhost + "/getVideoLessonInfo/" + courseid + "/" + videoid,
+            headers:{
+                'token': localStorage.getItem('token')
+            },
+            success: function(data){
+                $('#course-name').html(data.course.discription);
+                $('#video-name').html(data.video.video_name);
+            },
+            error: function(){
+
+            }
+        });
+
+        //append video area
         $('.video-area').append(
             '<video width="900" height="540" style="padding-top: 30px;" controls>'+
                 '<source id="video-link" src="video/'+ courseid + '/' + videoid + '.mp4" type="video/mp4">'+
@@ -23,19 +41,7 @@ class DialogJS{
         );
           // $("source").attr("src", "/video/" + courseid + "/" + videoid + ".mp4"); 
     }
-    getVideoInfo(){
-        $('.lesson_item').on('click', function(){
-            console.log(this);
-            if($(this).attr('videoid') != ""){
-                localStorage.setItem('videoid', $(this).attr('videoid'));  
-                window.location.href="/videolession";  
-            }
-            else{
-
-            }  
-            
-        });
-    }
+    
 }
 var ValidateJSFunc = {
     checkToken: function(){
@@ -67,10 +73,12 @@ var ValidateJSFunc = {
     }
 }
 
-var dialogJS = new DialogJS();
+    var dialogJS = new DialogJS();
 
-var host=host || {}
 
-host.Config={
-    localhost:"http://localhost:8000"
-}
+
+// var host=host || {}
+
+// host.Config={
+//     localhost:"http://localhost:8000"
+// }

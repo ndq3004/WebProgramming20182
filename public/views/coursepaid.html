@@ -736,26 +736,20 @@ var isHomePage = '/paid/' == '/' ? true : false;
             <table  class="table table-user-information">
                  <div><img src="coursepaid_files/button_dk.jpg" style="width: 450px; height: 150px;"></div>
                      <tr>
-                        <td class="col-md-3"><b>Tài khoản: </b></td>
-                        <td class="col-md-9"><input type="text" id="account-name"></td>
+                        <td class="col-md-4"><b>Số dư tài khoản LE: </b></td>
+                        <td class="col-md-8"><input type="text" id="creditAmount" disabled></td>
                     </tr>
                     <tr>
-                        <td class="col-md-3"><b>Email:</b></td>
-                         <td class="col-md-9"><input type="email" id="email"></td>
+                        <td class="col-md-4"><b>Trị giá khóa học:</b></td>
+                         <td class="col-md-8"><input type="text" id="coursePrice" disabled></td>
                     </tr>
                     <tr>
-                        <td class="col-md-3"><b>Số điện thoại:</b></td>
-                        <td class="col-md-9"><input stype="text" id="phone-number" name="txtsodt"></td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-3"><b>Địa chỉ:</b></td>
-                        <td class="col-md-9"><input type="text" id="address"></td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-3"><b>Thanh toán:</b></td>
-                        <td class="col-md-9"><input type="text" id="join-courses"></td>
-                    </tr>                  
+                        <td class="col-md-4"><b>Số dư tà khoản sau đăng kí:</b></td>
+                        <td class="col-md-8"><input type="text" id="creditAmountLeft" disabled></td>
+                    </tr>            
              </table>
+             <!-- message -->
+             <div class="message-course-alert"></div>
     </div>
 
 

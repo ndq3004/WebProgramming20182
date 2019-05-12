@@ -20,7 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('password'); 
             $table->string('phone')->default("");
             $table->string('address', 100)->default("");
-            $table->string('user_point')->default('0');
+            $table->integer('user_point')->default(0);
+            $table->bigInteger('credit')->default(1000000);
         });
     }
 

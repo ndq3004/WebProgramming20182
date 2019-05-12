@@ -130,6 +130,41 @@ class UserController extends Controller
         return "success"; 
     }
 
+    public function updateRegisterCourse(Request $request){
+        $user = JWTAuth::toUser($request->header('token'));
+        try{
+            //check if user registered this course
+            $check = DB::table('user_course')->where(['user_id'=>$user->user_id],
+                                                            ['course_id'=>$request->courseRegister])->exists();
+            if($check == true) 
+                return response()->json(["message"=>"user already register", "status"=>"200"]);
+            //update user_course table
+            DB::table('user_course').insert([
+                'user_id'=>$user->user_id,
+                'course_id'=>$request->courseRegister
+            ]);
+            //update user credit
+            $user->credit -= $request->payPrice;
+            $user->save();
+            
+            return response()->json(["message"=>"update success", "status"=>"200"]);
+        }
+        catch(Exception $e){
+            return response()->json(["message"=>"update fail", "status"=>"422"]);
+        }
+    }
+
+    public function checkIfUserRegisteredCourse(Request $request, $course_id){
+        $user = JWTAuth::toUser($request->header('token'));
+            //check if user registered this course
+            $check = DB::table('user_course')->where(['user_id'=>$user->user_id],
+                                                            ['course_id'=>$course_id])->exists();
+            $checkStr = ($check == true) ? 'true' : 'false';
+            return response()->json(['message'=>"user has already registered this course! <br>"
+                                                 ."Click Accept to continue!", "status"=>$checkStr]);
+    }
+
+
     public function cources(){
 
     //     $cources = cources::paginate(10);

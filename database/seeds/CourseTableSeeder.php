@@ -33,7 +33,7 @@ class CourseTableSeeder extends Seeder
                 'course_id'=>'3',
                 'name'=>'Khóa trả phí',
                 'level'=>'3',
-                'discription'=>'none',
+                'discription'=>'Khóa tiếng anh cơ bản cho người mới bắt đầu',
                 'link'=>'none',
                 'number-lession'=>'12',
                 'type'=>'video'

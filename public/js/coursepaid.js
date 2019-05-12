@@ -9,6 +9,7 @@ class DialogJS{
     constructor(){
         this.initShowDetailcourseForm();
         this.initShowCourseregisterForm();
+        this.registered;
     }
     init_event(){ $('.open-form').click(function(){
                 var courseid = $(this).attr("course-id");
@@ -52,8 +53,64 @@ class DialogJS{
             },
             buttons: {
                 Register: function(){
-                     //$('.detailcourse-form').dialog( "close" );
-                     $('.courseregister-form').dialog("open");
+                    
+                    //lấy thông tin khóa học đang xem
+                    var coursePrice;
+                    var creditAmount;
+                    $.ajax({
+                        method:"get",
+                        url: host.Config.localhost + "/getCourseInfo/" + localStorage.getItem('courseid'),
+                        headers: {
+                            'token': localStorage.getItem('token')
+                        },
+                        success: function(data){
+                            coursePrice = data.price;
+                            $('#coursePrice').val(coursePrice);
+                            //lấy thông tin số dư tài khoản của user
+                            $.ajax({
+                                method:"get",
+                                url: host.Config.localhost + "/userProfile",
+                                headers: {
+                                    'token': localStorage.getItem('token')
+                                },
+                                success: function(data){
+                                    creditAmount = data.user.credit;
+                                    $('#creditAmount').val(creditAmount);
+                                    $('#creditAmountLeft').val(creditAmount-coursePrice);
+                                },
+                                error: function(){
+
+                                }
+                            });
+                            //check xem user đã đăng kí khóa học này hay chưa
+                            $.ajax({
+                                method:"get",
+                                headers:{
+                                    'token': localStorage.getItem('token')
+                                },
+                                url: host.Config.localhost + "/checkIfUserRegisteredCourse/" 
+                                                            + localStorage.getItem('courseid'),
+                                success: function(response){
+                                    $('.message-course-alert').html(response.message);
+                                    $('.message-course-alert').css('color','green');
+                                    dialogJS.registered = response.status;
+                                    $('.courseregister-form').dialog("open"); 
+                                    
+                                },
+                                error: function(){
+
+                                }
+                            });   
+                        },
+                        error: function(){
+
+                        }
+                    });
+                    
+                    
+                                    
+                     
+                     
                 },
                 Cancel: function() {
                     $('.detailcourse-form').dialog( "close" ); 
@@ -61,6 +118,12 @@ class DialogJS{
             }
         }).prev('.ui-dialog-titlebar').css('background','#2D96C8');
         
+    }
+
+    setTimeoutJS(url){
+        setTimeout(function(){
+            window.location.href = url;
+        }, 11000);
     }
 
     initShowCourseregisterForm(){
@@ -83,8 +146,35 @@ class DialogJS{
             },
             buttons: {
                 Accept: function(){
+                    //update user credit amount
+                    if(dialogJS.registered == 'false'){
+                        debugger
+                        var coursePrice = $('#coursePrice').val();
+                        $.ajax({
+                            method:"post",
+                            contentType: 'application/json',
+                            url: host.Config.localhost + '/updateRegisterCourse',
+                            headers:{
+                                'token': localStorage.getItem('token')
+                            },
+                            data: JSON.stringify({payPrice: coursePrice, 
+                                                    courseRegister: localStorage.getItem('courseid')}),
+                            success: function(response){
+                                if(response.status != "422"){
+                                    window.location.href = 'http://localhost:8000/course';
+                                }           
+                            }, 
+                            error: function(){
+                                alert('thanh toán lỗi');
+                            }
+                        });
+                    }
+                    else{
+                        debugger
+                        window.location.href = '/course';
 
-                    window.location.href = 'http://localhost:8000/course';
+                    }
+                    
                 },
                 Cancel: function() {
                     $('.courseregister-form').dialog( "close" );
