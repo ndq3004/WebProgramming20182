@@ -9,7 +9,7 @@ class DialogJS{
     constructor(){
         this.initShowDetailcourseForm();
         this.initShowCourseregisterForm();
-        this.registered;
+        this.registered='false';
     }
     init_event(){ $('.open-form').click(function(){
                 var courseid = $(this).attr("course-id");
@@ -148,7 +148,6 @@ class DialogJS{
                 Accept: function(){
                     //update user credit amount
                     if(dialogJS.registered == 'false'){
-                        debugger
                         var coursePrice = $('#coursePrice').val();
                         $.ajax({
                             method:"post",
@@ -164,8 +163,9 @@ class DialogJS{
                                     window.location.href = 'http://localhost:8000/course';
                                 }           
                             }, 
-                            error: function(){
+                            error: function(xhr){
                                 alert('thanh toán lỗi');
+                                // window.location.href = 'http://localhost:8000/course';
                             }
                         });
                     }

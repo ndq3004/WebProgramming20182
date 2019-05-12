@@ -3,7 +3,7 @@ $(document).ready(function(){
 });
 class CommonJS{
     constructor(){
-
+        this.logout();
     }
     init_events(){
 
@@ -31,6 +31,13 @@ class CommonJS{
         setTimeout(function(){
             $('#noticDialog').dialog('close');
         },2000);
+    }
+
+    logout(){
+        $('.logout-menu').click(function(){
+            localStorage.setItem('token','');
+            window.location.href = '/';
+        });
     }
 }
 var commonJS = new CommonJS();

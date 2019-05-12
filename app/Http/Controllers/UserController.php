@@ -135,10 +135,12 @@ class UserController extends Controller
             //check if user registered this course
             $check = DB::table('user_course')->where(['user_id'=>$user->user_id],
                                                             ['course_id'=>$request->courseRegister])->exists();
-            if($check == true) 
+            if($check == true) {
                 return response()->json(["message"=>"user already register", "status"=>"200"]);
+            }
+            
             //update user_course table
-            DB::table('user_course').insert([
+            DB::table('user_course')->insert([
                 'user_id'=>$user->user_id,
                 'course_id'=>$request->courseRegister
             ]);
@@ -159,8 +161,9 @@ class UserController extends Controller
             $check = DB::table('user_course')->where(['user_id'=>$user->user_id],
                                                             ['course_id'=>$course_id])->exists();
             $checkStr = ($check == true) ? 'true' : 'false';
-            return response()->json(['message'=>"user has already registered this course! <br>"
-                                                 ."Click Accept to continue!", "status"=>$checkStr]);
+            $message = ($check == true) ? 'user has already registered this course! <br>"
+            ."Click Accept to continue!' : 'Click Accept to register this course!';
+            return response()->json(['message'=>$message, "status"=>$checkStr]);
     }
 
 
