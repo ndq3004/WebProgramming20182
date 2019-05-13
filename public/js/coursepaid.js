@@ -160,11 +160,15 @@ class DialogJS{
                                                     courseRegister: localStorage.getItem('courseid')}),
                             success: function(response){
                                 if(response.status != "422"){
-                                    window.location.href = 'http://localhost:8000/course';
+                                    // commonJS.noticeBox('success','Đăng kí khóa học thành công! Chuẩn bị vào học nào!');
+                                    setTimeout(function(){
+                                        window.location.href = 'http://localhost:8000/course';
+                                    },1000);
                                 }           
                             }, 
                             error: function(xhr){
-                                alert('thanh toán lỗi');
+                                commonJS.noticeBox('error','Đăng kí lỗi! Thử lại!');
+
                                 // window.location.href = 'http://localhost:8000/course';
                             }
                         });

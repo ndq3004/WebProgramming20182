@@ -39,5 +39,27 @@ class CommonJS{
             window.location.href = '/';
         });
     }
+
+    noticeBox(status, message){
+        if(status == 'success'){
+            $(function(){
+                $.amaran({
+                    'message'   :message,
+                    'position'  :'top right',
+                    'theme' 	:'default ok'
+                });
+            });
+        }
+        else{
+            $(function(){
+                $.amaran({
+                    'message'   :message,
+                    'position'  :'top right',
+                    'theme' 	:'default ok'
+                });
+                $('.default-spinner span').css('background-color', 'red');
+            });
+        }
+    }
 }
 var commonJS = new CommonJS();

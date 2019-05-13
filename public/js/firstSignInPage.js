@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    
     dialogJS.init_event();
     ValidateJSFunc.checkToken();
 });
