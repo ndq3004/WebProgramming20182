@@ -1,0 +1,9 @@
+ @media only screen and (max-width: 1126px){
+    .hotline{
+        display: none;
+    }
+    .header__menu__right{
+        position: absolute !important;
+        right: 12px !important;
+    }
+}

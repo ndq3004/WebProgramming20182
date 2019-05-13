@@ -1,7 +1,6 @@
 $(document).ready(function(){
     dialogJS.init_event();
     dialogJS.getVideoLessonInfo();
-    dialogJS.bindVideo();
     ValidateJSFunc.checkToken();
 });
 var host=host || {}
@@ -28,7 +27,7 @@ class DialogJS{
             },
             success: function(data){
                 $('#course-name').html(data.course.discription);
-                $('#video-name').html(data.video.video_name);
+                $('#lesson-name').html(data.video.video_name);
             },
             error: function(){
 
