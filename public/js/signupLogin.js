@@ -17,11 +17,16 @@ var loginSignupJS = {
             data: JSON.stringify(data),
             success: function(response){
                 if(typeof response.reason === 'undefined'){
+                    commonJS.noticeBox('success','Đăng nhập thành công!');
+                    $('#dang-nhap').trigger('click');
                     localStorage.setItem("token", response.token);
-                    window.location.href=host.Config.localhost + "/mainpage";
+                    setTimeout(function(){
+                        window.location.href=host.Config.localhost + "/mainpage";
+                    },2000)
+                    
                 }
                 else{
-                    alert('đăng nhập lỗi!');
+                    commonJS.noticeBox('error', 'Đăng nhập lỗi!');
                 }
                 
             },
@@ -41,11 +46,11 @@ var loginSignupJS = {
             contentType:'application/json',
             data: JSON.stringify(data),
             success: function(data){
-                alert('register successfully!');
+                commonJS.noticeBox('success', 'Đăng kí thành công! Mời đăng nhập');
+                $('#dang-ki').trigger('click');
             },
             error: function(xhr){
-                debugger
-                alert('error');
+                commonJS.noticeBox('error', 'Đăng kí lỗi!')
             }
         })
     },
