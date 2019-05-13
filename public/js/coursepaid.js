@@ -148,7 +148,7 @@ class DialogJS{
                 Accept: function(){
                     //update user credit amount
                     if(dialogJS.registered == 'false'){
-                        debugger
+                        // debugger
                         var coursePrice = $('#coursePrice').val();
                         $.ajax({
                             method:"post",
