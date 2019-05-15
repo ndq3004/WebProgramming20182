@@ -161,8 +161,8 @@ class UserController extends Controller
             $check = DB::table('user_course')->where(['user_id'=>$user->user_id],
                                                             ['course_id'=>$course_id])->exists();
             $checkStr = ($check == true) ? 'true' : 'false';
-            $message = ($check == true) ? 'user has already registered this course! <br>"
-            ."Click Accept to continue!' : 'Click Accept to register this course!';
+            $message = ($check == true) ? 'user has already registered this course! <br>
+            Click Accept to continue!' : 'Click Accept to register this course!';
             return response()->json(['message'=>$message, "status"=>$checkStr]);
     }
 
