@@ -31,7 +31,7 @@ var loginSignupJS = {
                 
             },
             error: function(error){
-                alert('error');
+                commonJS.noticeBox('error', 'Đăng nhập lỗi!');
             }
         });
     },

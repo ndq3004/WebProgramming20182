@@ -1,6 +1,6 @@
 $(document).ready(function(){
     dialogJS.init_event();
-    dialogJS.getVideoLessonInfo();
+    // dialogJS.getVideoLessonInfo();
     ValidateJSFunc.checkToken();
 });
 var host=host || {}
@@ -11,7 +11,8 @@ host.Config={
 class DialogJS{
     constructor(){
         this.bindVideo(); 
-        this.initShowMulticheckForm();
+        this.initShowReviewForm();
+        this.initShowPointDialog();
           }
     init_event(){
         // $('.open-form').click(function(){
@@ -61,7 +62,6 @@ class DialogJS{
                 token: localStorage.getItem('token')
             },
             success: function (videoInfo) {
-                debugger
                 $('#lesson-name').text(videoInfo);
             },
             error: function(){
@@ -69,9 +69,9 @@ class DialogJS{
             }
         });  
     }
-     initShowMulticheckForm(){
-        $('#multicheck-form').dialog({
-            autoOpen: true,
+     initShowReviewForm(){
+        $('#review-form').dialog({
+            autoOpen: false,
             modal: true,
             width: 700,
             title: "TEST",
@@ -91,30 +91,30 @@ class DialogJS{
                     dialogJS.submitAnswer();
                 },
                 Cancel: function() {
-                    $('#multicheck-form').dialog( "close" );
+                    $('#review-form').dialog( "close" );
                 }
             }
         }).prev('.ui-dialog-titlebar').css('background','#2D96C8');
 
         $('.open-form').click(function(){
-            
             var element = $(this);
             console.log(element.html());
-            // var maxHeight = $( "#multicheck-form" ).dialog( "option", "maxHeight" );
-            // $('#multicheck-form').dialog("option", "maxHeight", 500);
-            // $('#multicheck-form').dialog("option" ,"position", { my: 'top', at: 'top+80' });
-            // $('#multicheck-form').html("");
-            $('#multicheck-form').dialog('open');
+            dialogJS.bindDataToReviewForm(element);
+            // var maxHeight = $( "#review-form" ).dialog( "option", "maxHeight" );
+            $('#review-form').dialog("option", "maxHeight", 500);
+            $('#review-form').dialog("option" ,"position", { my: 'top', at: 'top+80' });
+            $('#review-form').html("");
+            $('#review-form').dialog('open');
             $(".ui-dialog").draggable({
                 // disabled: true
             });
             
-            // dialogJS.bindDataToMultiCheckForm(element);
+            
             
         });
     }
 
-    bindDataToMultiCheckForm(element){
+    bindDataToReviewForm(element){
         if(element == null) return;
             var type = element.attr('type-t');
             var level = element.attr('level');
@@ -125,7 +125,6 @@ class DialogJS{
             contentType:'appication/json',
             url: host.Config.localhost + '/getlession/'+ type + "/" + level + "/" + topicid,
             success: function(response){
-
                 for(var i = 0; i < response.length; i++) {
                     dialogJS.appendDataToDialog(response[i], i);
                 }     
@@ -138,8 +137,7 @@ class DialogJS{
     }
 
     appendDataToDialog(question, index){
-        debugger
-        $('#multicheck-form').append(
+        $('#review-form').append(
             '<div class="multicheck">' +
                 '<div class="form-question flex-style">'+
                     '<div class="form-question-number"><b>Question ' + (index+1) + ':</b></div>'+
@@ -171,6 +169,7 @@ class DialogJS{
                 submitAnswers.push(eachQuestion);
             }  
         }
+        console.log(submitAnswers);
         var returnObj = {submitAnswers:submitAnswers};
         if(submitAnswers.length == 0) return;
         console.log(returnObj);
@@ -193,6 +192,7 @@ class DialogJS{
     }
 
     initShowPointDialog(){
+        $('body').append('<div class="show-point"></div>');
         $('.show-point').dialog({
             autoOpen: false,
             modal: true,
@@ -200,7 +200,7 @@ class DialogJS{
             buttons: {
                 close: function(){
                     $('.show-point').dialog('close');
-                    $('#multicheck-form').dialog( "close" );
+                    $('#review-form').dialog( "close" );
                 }
             }
         });
@@ -220,7 +220,6 @@ class DialogJS{
             strPoint += 'Oh! Có vẻ bạn nên luyện tập nhiều hơn nữa. Đừng nản lòng, hãy cố gắng nhé!';
         }
         $('.show-point').html(strPoint);
-        dialogJS.initShowPointDialog();
         $('.show-point').dialog('open');
 
     }
