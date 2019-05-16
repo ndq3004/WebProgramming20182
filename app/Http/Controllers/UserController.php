@@ -111,7 +111,9 @@ class UserController extends Controller
 
     public function getUserProfile(Request $request){
         $user = JWTAuth::toUser($request->header('token'));
-        return response()->json(['user'=>$user]);
+        $course = DB::select("select * from courses inner join user_course  
+                                on courses.course_id=user_course.course_id where user_course.user_id=?", [$user->user_id]);
+        return response()->json(['user'=>$user, 'course'=>$course]);
     }
 
     public function updateProfile(Request $request)
